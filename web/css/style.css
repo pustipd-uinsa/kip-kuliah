@@ -1,0 +1,11 @@
+.nav_title {
+    width: 230px;
+    float: left;
+    background: #2b975b !important;
+    border-radius: 0;
+    height: 57px
+}
+
+.left_col {
+    background: #2b975b !important;
+}
