@@ -3,8 +3,6 @@
 namespace app\models;
 
 use Yii;
-use yii\web\UploadedFile;
-
 
 /**
  * This is the model class for table "borang".
@@ -62,56 +60,42 @@ use yii\web\UploadedFile;
  * @property integer $verivikasi_prestasi_non_akademik5
  * @property integer $tingkat_prestasi_non_akademik5
  * @property integer $status_finalisasi
+ * @property string $nama_ayah
+ * @property string $nama_ibu
+ * @property string $pekerjaan_ayah
+ * @property string $pekerjaan_ibu
+ * @property string $penghasilan_ayah
+ * @property string $penghasilan_ibu
+ * @property string $penghasilan_sendiri
+ * @property string $alamat
+ * @property integer $jumlah_anggota_keluarga
+ * @property string $pembayaran_pbb
+ * @property string $daya_pln
+ * @property string $pembayaran_pdam
+ * @property string $luas_tanah
+ * @property string $luas_bangunan
+ * @property integer $kepemilikan_rumah
+ * @property integer $sumber_listrik
+ * @property integer $sumber_air
+ * @property string $file_penghasilan_ayah
+ * @property string $file_penghasilan_ibu
+ * @property string $file_penghasilan_sendiri
+ * @property string $file_kartu_kks
+ * @property string $file_bukti_pembayaran_pbb
+ * @property string $file_bpkb_stnk
+ * @property string $file_foto_atap_rumah
+ * @property string $file_foto_lantai_rumah
+ * @property string $file_foto_kamar_mandi
+ * @property string $file_foto_kartu_keluarga
  */
-class Borang extends \yii\db\ActiveRecord
+class Borang1 extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
-    public $old_file;
-
-
-    public  function saveOld() {
-        $files =
-        [
-            'file_prestasi_akademik10_1', 'file_prestasi_akademik11_1', 'file_prestasi_akademik12_1',
-            'file_prestasi_akademik10_2', 'file_prestasi_akademik11_2', 'file_prestasi_akademik12_2',
-            'file_prestasi_non_akademik1', 'file_prestasi_non_akademik2', 'file_prestasi_non_akademik3',
-            'file_prestasi_non_akademik4', 'file_prestasi_non_akademik5'
-        ];
-    foreach ($files as $file) {
-     
-        $this->old_file[$file] = $this->$file;
-    }
-
-    }
-
     public static function tableName()
     {
         return 'borang';
-    }
-
-    public function beforeSave($insert)
-    {
-
-        if (parent::beforeSave($insert)) {
-            // Place your custom code here
-            $files =
-                [
-                    'file_prestasi_akademik10_1', 'file_prestasi_akademik11_1', 'file_prestasi_akademik12_1',
-                    'file_prestasi_akademik10_2', 'file_prestasi_akademik11_2', 'file_prestasi_akademik12_2',
-                    'file_prestasi_non_akademik1', 'file_prestasi_non_akademik2', 'file_prestasi_non_akademik3',
-                    'file_prestasi_non_akademik4', 'file_prestasi_non_akademik5'
-                ];
-            foreach ($files as $file) {
-             
-                $this->upload($file);
-            }
-
-            return true;
-        } else {
-            return false;
-        }
     }
 
     /**
@@ -125,44 +109,11 @@ class Borang extends \yii\db\ActiveRecord
             [['penghasilan_ayah', 'penghasilan_ibu', 'penghasilan_sendiri', 'pembayaran_pbb', 'daya_pln', 'pembayaran_pdam', 'luas_tanah', 'luas_bangunan'], 'number'],
             [['alamat'], 'string'],
             [['kode'], 'string', 'max' => 20],
-
-            [
-                [
-                    'file_prestasi_akademik10_1', 'file_prestasi_akademik11_1', 'file_prestasi_akademik12_1',
-                    'file_prestasi_akademik10_2', 'file_prestasi_akademik11_2', 'file_prestasi_akademik12_2',
-                    'file_prestasi_non_akademik1', 'file_prestasi_non_akademik2', 'file_prestasi_non_akademik3',
-                    'file_prestasi_non_akademik4', 'file_prestasi_non_akademik5',
-                    'file_penghasilan_ayah', 'file_penghasilan_ibu', 'file_penghasilan_sendiri', 'file_kartu_kks', 'file_bukti_pembayaran_pbb', 'file_bpkb_stnk', 'file_foto_atap_rumah',
-                     'file_foto_lantai_rumah', 'file_foto_kamar_mandi',
-                      'file_foto_kartu_keluarga'
-                ], 'file',
-                'skipOnEmpty' => true, 'extensions' => 'jpeg,jpg,png', 'maxSize' => 1048576
-            ],
-            [['prestasi_akademik10_1',  'prestasi_akademik11_1',  'prestasi_akademik12_1',  'prestasi_akademik10_2',  'prestasi_akademik11_2',  'prestasi_akademik12_2',  'prestasi_non_akademik1',  'prestasi_non_akademik2',  'prestasi_non_akademik3',  'prestasi_non_akademik4',  'prestasi_non_akademik5',], 'string', 'max' => 100],
+            [['prestasi_akademik10_1', 'file_prestasi_akademik10_1', 'prestasi_akademik11_1', 'file_prestasi_akademik11_1', 'prestasi_akademik12_1', 'file_prestasi_akademik12_1', 'prestasi_akademik10_2', 'file_prestasi_akademik10_2', 'prestasi_akademik11_2', 'file_prestasi_akademik11_2', 'prestasi_akademik12_2', 'file_prestasi_akademik12_2', 'prestasi_non_akademik1', 'file_prestasi_non_akademik1', 'prestasi_non_akademik2', 'file_prestasi_non_akademik2', 'prestasi_non_akademik3', 'file_prestasi_non_akademik3', 'prestasi_non_akademik4', 'file_prestasi_non_akademik4', 'prestasi_non_akademik5', 'file_prestasi_non_akademik5'], 'string', 'max' => 100],
+            [['nama_ayah', 'nama_ibu', 'pekerjaan_ayah', 'pekerjaan_ibu', 'file_penghasilan_ayah', 'file_penghasilan_ibu', 'file_penghasilan_sendiri', 'file_kartu_kks', 'file_bukti_pembayaran_pbb', 'file_bpkb_stnk', 'file_foto_atap_rumah', 'file_foto_lantai_rumah', 'file_foto_kamar_mandi', 'file_foto_kartu_keluarga'], 'string', 'max' => 50],
         ];
     }
 
-
-    public function upload($fieldName)
-    {
-        $path = Yii::getAlias('@app') . '/web/document/';
-        //s  die($fieldName);
-        $image = UploadedFile::getInstance($this, $fieldName);
-        if (!empty($image) && $image->size !== 0) {
-            $fileNames = $fieldName . $this->kode . $fieldName . '.' . $image->extension;
-
-            if ($image->saveAs($path . $fileNames)) {
-                $this->attributes = [$fieldName => $fileNames];
-                return true;
-            } else {
-                return false;
-                $this->attributes = [$fieldName => $this->old_file[$fieldName]];
-            }
-        } else {
-            $this->attributes = [$fieldName => $this->old_file[$fieldName]];
-            return true;
-        }
-    }
     /**
      * @inheritdoc
      */
@@ -172,28 +123,28 @@ class Borang extends \yii\db\ActiveRecord
             'id' => Yii::t('app', 'ID'),
             'kode' => Yii::t('app', 'Kode'),
             'hafalan_alquran' => Yii::t('app', 'Hafalan Alquran'),
-            'prestasi_akademik10_1' => Yii::t('app', 'Prestasi Akademik Kelas 10 (Gasal)'),
-            'file_prestasi_akademik10_1' => Yii::t('app', 'File Prestasi Akademik Kelas 10 (Gasal)'),
+            'prestasi_akademik10_1' => Yii::t('app', 'Prestasi Akademik10 1'),
+            'file_prestasi_akademik10_1' => Yii::t('app', 'File Prestasi Akademik10 1'),
             'validasi_prestasi_akademik10_1' => Yii::t('app', 'Validasi Prestasi Akademik10 1'),
             'verivikasi_prestasi_akademik10_1' => Yii::t('app', 'Verivikasi Prestasi Akademik10 1'),
-            'prestasi_akademik11_1' => Yii::t('app', 'Prestasi Akademik Kelas 11 (Gasal)'),
-            'file_prestasi_akademik11_1' => Yii::t('app', 'File Prestasi Akademik Kelas 11 (Gasal)'),
-            'validasi_prestasi_akademik11_1' => Yii::t('app', 'Validasi Prestasi Kelas 11 (Gasal)'),
+            'prestasi_akademik11_1' => Yii::t('app', 'Prestasi Akademik11 1'),
+            'file_prestasi_akademik11_1' => Yii::t('app', 'File Prestasi Akademik11 1'),
+            'validasi_prestasi_akademik11_1' => Yii::t('app', 'Validasi Prestasi Akademik11 1'),
             'verivikasi_prestasi_akademik11_1' => Yii::t('app', 'Verivikasi Prestasi Akademik11 1'),
-            'prestasi_akademik12_1' => Yii::t('app', 'Prestasi Akademik Kelas 12 (Gasal)'),
-            'file_prestasi_akademik12_1' => Yii::t('app', 'File Prestasi Akademik Kelas 12 (Gasal)'),
+            'prestasi_akademik12_1' => Yii::t('app', 'Prestasi Akademik12 1'),
+            'file_prestasi_akademik12_1' => Yii::t('app', 'File Prestasi Akademik12 1'),
             'validasi_prestasi_akademik12_1' => Yii::t('app', 'Validasi Prestasi Akademik12 1'),
             'verivikasi_prestasi_akademik12_1' => Yii::t('app', 'Verivikasi Prestasi Akademik12 1'),
-            'prestasi_akademik10_2' => Yii::t('app', 'Prestasi Akademik Kelas 10 (Genap)'),
-            'file_prestasi_akademik10_2' => Yii::t('app', 'File Prestasi Akademik Kelas 10 (Genap)'),
+            'prestasi_akademik10_2' => Yii::t('app', 'Prestasi Akademik10 2'),
+            'file_prestasi_akademik10_2' => Yii::t('app', 'File Prestasi Akademik10 2'),
             'validasi_prestasi_akademik10_2' => Yii::t('app', 'Validasi Prestasi Akademik10 2'),
             'verivikasi_prestasi_akademik10_2' => Yii::t('app', 'Verivikasi Prestasi Akademik10 2'),
-            'prestasi_akademik11_2' => Yii::t('app', 'Prestasi Akademik Kelas 11 (Genap)'),
-            'file_prestasi_akademik11_2' => Yii::t('app', 'File Prestasi Akademik Kelas 11 (Genap)'),
+            'prestasi_akademik11_2' => Yii::t('app', 'Prestasi Akademik11 2'),
+            'file_prestasi_akademik11_2' => Yii::t('app', 'File Prestasi Akademik11 2'),
             'validasi_prestasi_akademik11_2' => Yii::t('app', 'Validasi Prestasi Akademik11 2'),
             'verivikasi_prestasi_akademik11_2' => Yii::t('app', 'Verivikasi Prestasi Akademik11 2'),
-            'prestasi_akademik12_2' => Yii::t('app', 'Prestasi Akademik Kelas 12 (Genap)'),
-            'file_prestasi_akademik12_2' => Yii::t('app', 'File Prestasi Akademik Kelas 12 (Genap)'),
+            'prestasi_akademik12_2' => Yii::t('app', 'Prestasi Akademik12 2'),
+            'file_prestasi_akademik12_2' => Yii::t('app', 'File Prestasi Akademik12 2'),
             'validasi_prestasi_akademik12_2' => Yii::t('app', 'Validasi Prestasi Akademik12 2'),
             'verivikasi_prestasi_akademik12_2' => Yii::t('app', 'Verivikasi Prestasi Akademik12 2'),
             'prestasi_non_akademik1' => Yii::t('app', 'Prestasi Non Akademik1'),
@@ -222,6 +173,33 @@ class Borang extends \yii\db\ActiveRecord
             'verivikasi_prestasi_non_akademik5' => Yii::t('app', 'Verivikasi Prestasi Non Akademik5'),
             'tingkat_prestasi_non_akademik5' => Yii::t('app', 'Tingkat Prestasi Non Akademik5'),
             'status_finalisasi' => Yii::t('app', 'Status Finalisasi'),
+            'nama_ayah' => Yii::t('app', 'Nama Ayah'),
+            'nama_ibu' => Yii::t('app', 'Nama Ibu'),
+            'pekerjaan_ayah' => Yii::t('app', 'Pekerjaan Ayah'),
+            'pekerjaan_ibu' => Yii::t('app', 'Pekerjaan Ibu'),
+            'penghasilan_ayah' => Yii::t('app', 'Penghasilan Ayah'),
+            'penghasilan_ibu' => Yii::t('app', 'Penghasilan Ibu'),
+            'penghasilan_sendiri' => Yii::t('app', 'Penghasilan Sendiri'),
+            'alamat' => Yii::t('app', 'Alamat'),
+            'jumlah_anggota_keluarga' => Yii::t('app', 'Jumlah Anggota Keluarga'),
+            'pembayaran_pbb' => Yii::t('app', 'Pembayaran Pbb'),
+            'daya_pln' => Yii::t('app', 'Daya Pln'),
+            'pembayaran_pdam' => Yii::t('app', 'Pembayaran Pdam'),
+            'luas_tanah' => Yii::t('app', 'Luas Tanah'),
+            'luas_bangunan' => Yii::t('app', 'Luas Bangunan'),
+            'kepemilikan_rumah' => Yii::t('app', 'Kepemilikan Rumah'),
+            'sumber_listrik' => Yii::t('app', 'Sumber Listrik'),
+            'sumber_air' => Yii::t('app', 'Sumber Air'),
+            'file_penghasilan_ayah' => Yii::t('app', 'File Penghasilan Ayah'),
+            'file_penghasilan_ibu' => Yii::t('app', 'File Penghasilan Ibu'),
+            'file_penghasilan_sendiri' => Yii::t('app', 'File Penghasilan Sendiri'),
+            'file_kartu_kks' => Yii::t('app', 'File Kartu Kks'),
+            'file_bukti_pembayaran_pbb' => Yii::t('app', 'File Bukti Pembayaran Pbb'),
+            'file_bpkb_stnk' => Yii::t('app', 'File Bpkb Stnk'),
+            'file_foto_atap_rumah' => Yii::t('app', 'File Foto Atap Rumah'),
+            'file_foto_lantai_rumah' => Yii::t('app', 'File Foto Lantai Rumah'),
+            'file_foto_kamar_mandi' => Yii::t('app', 'File Foto Kamar Mandi'),
+            'file_foto_kartu_keluarga' => Yii::t('app', 'File Foto Kartu Keluarga'),
         ];
     }
 }
