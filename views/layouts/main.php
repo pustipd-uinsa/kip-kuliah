@@ -86,7 +86,7 @@ if (Yii::$app->controller->action->id === 'login') {
             <div class="left_col scroll-view">
 
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href='#' class="site_title"> <span>BIDIKMISI UINSA <br> 2019</span></a>
+                    <a href='<?=Url::to(['/'])?>' class="site_title"> <span>BIDIKMISI UINSA <br> 2019</span></a>
                 </div>
                 <div class="clearfix"></div>
 

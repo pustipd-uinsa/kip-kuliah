@@ -9,6 +9,7 @@ $this->title = 'Pengajuan Beasiswa Bidikmisi 2019 UIN Sunan Ampel';
 dmstr\web\AdminLteAsset::register($this);
 
 
+
 ?>
 <?php $this->beginPage(); ?>
 

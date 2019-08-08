@@ -76,6 +76,12 @@ class SiteController extends Controller
     public function actionIndex()
     {
 
+        if (Yii::$app->user->identity->jenis_user === 'camaba') {
+            $model = \app\models\Borang::find()->where(['kode' => Yii::$app->user->identity->username])->one();
+            if (is_null($model)) {
+                Yii::$app->session->setFlash('error', 'Dokumen Prestasi Anda Belum Diunggah , Lengkapi Dokumen Untuk Pengajuan Bidikmisi ! ');
+            }
+        }
 
         return $this->render('index');
     }
@@ -186,9 +192,9 @@ class SiteController extends Controller
     public function actionGetEmail($kode, $tglLahir)
     {
         $model = Camaba::find()->select('email')->where(['kode' => $kode, 'tgl_lhr' => $tglLahir])->one();
-           return Json::encode(
-              [ 'email' => is_null($model)?"":$model->email]
-           ); 
+        return Json::encode(
+            ['email' => is_null($model) ? "" : $model->email]
+        );
     }
 
     /**

@@ -26,7 +26,7 @@ $fieldOptions2 = [
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <p class="login-box-msg">Tracer Study UIN Sunan Ampel <br> Harap Login Untuk Memulai</p>
+        <p class="login-box-msg">Bidik Misi UIN Sunan Ampel <br> Harap Login Untuk Memulai</p>
 
         <?php $form = ActiveForm::begin(['id' => 'login-form', 'enableClientValidation' => false]); ?>
 

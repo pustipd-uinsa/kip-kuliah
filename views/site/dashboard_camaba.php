@@ -1,4 +1,5 @@
 <?php 
+use dmstr\widgets\Alert;
 
 use yii\helpers\Html;
 
@@ -29,21 +30,30 @@ use yii\helpers\Html;
     <!-- <b>BIDIKMISI</b> adalah bantuan biaya pendidikan yang hanya ditujukan untuk calon mahasiswa tidak mampu (miskin) -->
 
     <b>BIDIKMISI</b> adalah bantuan biaya pendidikan bagi calon mahasiswa tidak mampu secara ekonomi dan memiliki potensi akademik baik untuk menempuh pendidikan di perguruan tinggi pada program studi unggulan sampai lulus tepat waktu.
+    <br>
+    <br>
+<ul>
+<li> Data Yang ditulis dan dilampirkan harus benar dan lengkap, jika tidak maka kemungkinan dapat digugurkan </li>
+ <li> Untuk melihat upload Sukses cek unggah dokumen jika berubah menjadi gambar maka SUKSES jika tidak upload lagi</li>
 
+ <li> Untuk pengaduan silahkan mengirim pertanyaan di email helpdesk@uinsby.ac.id </li>
+
+ </ul>
 </div>
 <h3 class="prod_title">Data Calon Mahasiswa</h3>
  <h2><?=Yii::$app->user->identity->model->nama;?></h2>
 <h3>
 
 <article class="media event"><i class="fa fa-id-card"></i> No. Pendaftaran: <?= Yii::$app->user->identity->model->kode?> </article>
-<article class="media event"><i class="fa fa-calendar"></i> Tahun Masuk: <?=date("Y")?> </article>
+<article class="media event"><i class="fa fa-calendar"></i> Tahun Masuk: <?=Yii::$app->user->identity->model->tahun_masuk?> </article>
 <article class="media event"><i class="fa fa-building"></i> Program Studi: <?=Yii::$app->user->identity->model->nama_prodi?> </article>
 <article class="media event"><i class="fa fa-home"></i> Alamat: <?=Yii::$app->user->identity->model->alamat?>  <?=Yii::$app->user->identity->model->nama_kabupaten?> <?=Yii::$app->user->identity->model->nama_provinsi?></article>
-<article class="media event"><?=html::a("Pengajuan Bidikmisi",["/"],["class"=>'btn btn-success btn-round']) ?></article>
+<article class="media event"><?=html::a("Unggah Dokumen Prestasi",["/prestasi/index"],["class"=>'btn btn-success btn-flat']) ?></article>
 </h3>  
 
 
         </div>
+   
 
 
     </div>

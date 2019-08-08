@@ -39,9 +39,10 @@ class SignupForm extends Model
             ['email', 'string', 'max' => 255],
             ['email', 'unique', 'targetClass' => '\app\models\User', 'message' => 'No Pendaftaran ini Sudah Terdaftar'],
 
-            ['password', 'required'],
-            [['tanggal', 'bulan', 'tahun'], 'integer'],
-            ['password', 'string', 'min' => 6],
+
+   
+            [['tanggal', 'bulan', 'tahun'], 'required'],
+     
         ];
     }
 
@@ -51,18 +52,15 @@ class SignupForm extends Model
         $model = Camaba::find()->where(['kode' => $this->username, 'tgl_lhr' => $this->tanggal . '-' . $this->bulan . '-' . $this->tahun])->one();
         if (!$model) {
             $this->addError('username', 'No Pendaftaran Tidak Ditemukan');
-        } elseif ($model->jalur == 5) {
-            $this->addError('username', 'Pendaftaran Bidikmisi Tidak Diperkenankan untuk UKT Mandiri');
-        } else {
-            $this->email = $model->email;
-        }
+            
+        } 
     }
 
     public function attributeLabels()
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'username' => Yii::t('app', 'No. Pendaftaran UKT'),
+            'username' => Yii::t('app', 'No. Pendaftaran'),
             'password' => Yii::t('app', 'Password'),
         ];
     }
@@ -77,7 +75,7 @@ class SignupForm extends Model
             $user = new User();
             $user->username = $this->username;
             $user->email = $this->email;
-            $user->setPassword($this->password);
+            $user->setPassword($this->tanggal.'-'.$this->bulan.'-'.$this->tahun);
             $user->generateAuthKey();
             if ($user->save()) {
                 $authAssignment = new AuthAssignment();

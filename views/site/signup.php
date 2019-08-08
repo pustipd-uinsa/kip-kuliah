@@ -20,7 +20,7 @@ for ($i = 1; $i <= 12; $i++) {
 
 $tahun = [];
 for ($i = 1990; $i <= 2019; $i++) {
-    $tahun[] = ['no' => $i];
+    $tahun[] = ['no' => str_pad($i, 4, '0', STR_PAD_LEFT)];
 }
 
 
@@ -75,7 +75,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             <?= $form->field($model, 'email')->textInput() ?>
 
 
-                            <?= $form->field($model, 'password')->passwordInput() ?>
+                       
 
                             <div class="form-group">
                                 <?= Html::submitButton('Daftar', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
