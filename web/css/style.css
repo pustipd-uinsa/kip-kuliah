@@ -8,4 +8,14 @@
 
 .left_col {
     background: #2b975b !important;
+
 }
+.sidebar-footer {
+    bottom: 0px;
+    clear: both;
+    display: block;
+    padding: 5px 0 0 0;
+    position: fixed;
+    width: 230px;
+    background: #2b975b !important;
+        z-index: 999;

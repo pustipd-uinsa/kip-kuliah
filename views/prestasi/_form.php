@@ -28,6 +28,24 @@ $item = [
         ]),
 
     ],
+    [
+        'label' => 'Keluarga',
+        'content' =>     $this->render('_form_keluarga', [
+            'model' => $model,
+            'form' => $form
+
+        ]),
+
+    ],
+    [
+        'label' => 'Rumah',
+        'content' =>     $this->render('_form_rumah', [
+            'model' => $model,
+            'form' => $form
+
+        ]),
+
+    ],
 ]
 
 /* @var $this yii\web\View */

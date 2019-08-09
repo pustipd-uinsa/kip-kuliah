@@ -48,7 +48,7 @@ use yii\helpers\Html;
 <article class="media event"><i class="fa fa-calendar"></i> Tahun Masuk: <?=Yii::$app->user->identity->model->tahun_masuk?> </article>
 <article class="media event"><i class="fa fa-building"></i> Program Studi: <?=Yii::$app->user->identity->model->nama_prodi?> </article>
 <article class="media event"><i class="fa fa-home"></i> Alamat: <?=Yii::$app->user->identity->model->alamat?>  <?=Yii::$app->user->identity->model->nama_kabupaten?> <?=Yii::$app->user->identity->model->nama_provinsi?></article>
-<article class="media event"><?=html::a("Unggah Dokumen Prestasi",["/prestasi/index"],["class"=>'btn btn-success btn-flat']) ?></article>
+<article class="media event"><?=html::a("Unggah Dokumen",["/prestasi/index"],["class"=>'btn btn-success btn-flat']) ?></article>
 </h3>  
 
 

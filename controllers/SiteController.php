@@ -79,7 +79,7 @@ class SiteController extends Controller
         if (Yii::$app->user->identity->jenis_user === 'camaba') {
             $model = \app\models\Borang::find()->where(['kode' => Yii::$app->user->identity->username])->one();
             if (is_null($model)) {
-                Yii::$app->session->setFlash('error', 'Dokumen Prestasi Anda Belum Diunggah , Lengkapi Dokumen Untuk Pengajuan Bidikmisi ! ');
+                Yii::$app->session->setFlash('error', 'Anda Belum Mengunggah Dokumen , Lengkapi Dokumen Untuk Pengajuan Bidikmisi ! ');
             }
         }
 

@@ -292,32 +292,4 @@ class Camaba extends \yii\db\ActiveRecord
         return is_null($this->kabupaten) ? "" : ucfirst($this->kabupaten->nama);
     }
 
-    public function getPeker_ayah_lain(){
-        if (in_array($this->peker_ayah,['PNS', 'Pegawai Swasta' , 'Wiraswasta' , 'TNI/PORLI']) ){
-            return '';
-        } else {
-            return $this->peker_ayah;
-        }
-    }
-    
-    
-    public function getPeker_ibu_lain(){
-        if (in_array($this->peker_ibu,['PNS', 'Pegawai Swasta' , 'Wiraswasta' , 'TNI/PORLI']) ){
-            return '';
-        } else {
-            return $this->peker_ibu;
-        }
-    }
-
-    public function setPeker_ayah_lain($value){
-        $this->peker_ayah = $value;
-       
-    }
-    
-    
-    public function setPeker_ibu_lain($value){
-    
-         $this->peker_ibu = $value;
-        
-    }
 }

@@ -87,5 +87,5 @@ for ($i = 1; $i <= 10; $i++) {
    
 
     <div class="form-group">
-        <?= Html::submitButton('Simpan', ['class' => 'btn btn-primary']) ?>
+        <?= Html::submitButton('Simpan', ['class' => 'btn btn-success']) ?>
     </div>

@@ -222,6 +222,44 @@ class Borang extends \yii\db\ActiveRecord
             'verivikasi_prestasi_non_akademik5' => Yii::t('app', 'Verivikasi Prestasi Non Akademik5'),
             'tingkat_prestasi_non_akademik5' => Yii::t('app', 'Tingkat Prestasi Non Akademik5'),
             'status_finalisasi' => Yii::t('app', 'Status Finalisasi'),
+            'kepemilikan_rumah' => 'Apakah Status Kepemilikan Rumah Anda ?',
+            'sumber_air' => 'Apakah Sumber Air di Rumah Anda ?',
+            'sumber_listrik' => 'Apakah Sumber Kelistrikan di Rumah Anda ?',
+            'pembayaran_pbb' => 'Besaran Pembayaran Pajak Bumi dan Bangunan / Tahun',
+            'pembayaran_pdam' => 'Besaran Pembayaran PDAM / Bulan ',
+            'daya_pln' => 'Besaran Daya PLN di Rumah (VA)',
+            
+            
         ];
+    }
+
+    
+    public function getPekerjaan_ayah_lain(){
+        if (in_array($this->pekerjaan_ayah,['PNS', 'Pegawai Swasta' , 'Wiraswasta' , 'TNI/POLRI','Petani']) ){
+            return '';
+        } else {
+            return $this->pekerjaan_ayah;
+        }
+    }
+    
+    
+    public function getPekerjaan_ibu_lain(){
+        if (in_array($this->pekerjaan_ibu,['PNS', 'Pegawai Swasta' , 'Wiraswasta' , 'TNI/POLRI','Petani']) ){
+            return '';
+        } else {
+            return $this->pekerjaan_ibu;
+        }
+    }
+
+    public function setPekerjaan_ayah_lain($value){
+        $this->peker_ayah = $value;
+       
+    }
+    
+    
+    public function setPekerjaan_ibu_lain($value){
+    
+         $this->peker_ibu = $value;
+        
     }
 }
