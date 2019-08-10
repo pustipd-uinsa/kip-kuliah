@@ -6,8 +6,6 @@ use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
 use yii\bootstrap\Tabs;
 
-
-
 $form = ActiveForm::begin();
 $item = [
     [
@@ -46,7 +44,17 @@ $item = [
         ]),
 
     ],
-]
+   [
+        'label' => 'Upload Dokumen',
+        'content' =>     $this->render('_form_file', [
+            'model' => $model,
+            'form' => $form
+
+        ]),]
+
+
+
+    ]
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Borang */

@@ -7,15 +7,14 @@ use dmstr\widgets\Alert;
 use app\assets\MaterialPluginAsset;
 use app\assets\AppAsset;
 
-
 if (Yii::$app->controller->action->id === 'login') {
     /**
      * Do not use this code in your template. Remove it.
      * Instead, use the code  $this->layout = '//main-login'; in your controller.
      */
     echo $this->render(
-            'main-login',
-            ['content' => $content]
+        'main-login',
+        ['content' => $content]
         );
 } else {
     $menuItems =
@@ -30,8 +29,8 @@ if (Yii::$app->controller->action->id === 'login') {
                     ['label' => 'Role', 'icon' => 'users', 'url' => ['/mimin/role/'], 'visible' => !Yii::$app->user->isGuest],
                     ['label' => 'User', 'icon' => 'user-o', 'url' => ['/mimin/user/'], 'visible' => !Yii::$app->user->isGuest],
                    ], ],
-                
-                                  
+
+
                 ];
 
     if (!Yii::$app->user->isGuest) {
@@ -43,12 +42,12 @@ if (Yii::$app->controller->action->id === 'login') {
      * @var string
      * @var \yii\web\View $this
      */
-    $this->title = 'Pengajuan Beasiswa Bidikmisi 2019 UIN Sunan Ampel';
-  
+    $this->title = 'Pengajuan Beasiswa Bidikmisi UIN Sunan Ampel';
+
 
     AppAsset::register($this);
     $bundle = yiister\gentelella\assets\Asset::register($this); ?>
-    
+
 <?php $this->beginPage(); ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language; ?>">
@@ -129,7 +128,7 @@ if (Yii::$app->controller->action->id === 'login') {
 
                     <ul class="nav navbar-nav navbar-right">
                         <li class="">
-                            <?php if(!Yii::$app->user->isGuest) { ?>
+                            <?php if (!Yii::$app->user->isGuest) { ?>
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                 <?=Yii::$app->user->identity->username?>
                                 <span class=" fa fa-angle-down"></span>
@@ -138,9 +137,9 @@ if (Yii::$app->controller->action->id === 'login') {
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
                                 <li>
                                 <?=Html::a(
-                                    '<i class="fa fa-sign-out pull-right"></i> Log Out',
-                                    ['/site/logout'],
-                                    ['data-method' => 'post']
+                            '<i class="fa fa-sign-out pull-right"></i> Log Out',
+                            ['/site/logout'],
+                            ['data-method' => 'post']
                                 ); ?>
 
                                 </li>

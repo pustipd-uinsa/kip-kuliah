@@ -6,7 +6,7 @@ use yii\helpers\Url;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
-$this->title = 'Pengajuan Beasiswa Bidikmisi 2019 UIN Sunan Ampel';
+$this->title = 'Pengajuan Beasiswa Bidikmisi UIN Sunan Ampel';
 dmstr\web\AdminLteAsset::register($this);
 
 

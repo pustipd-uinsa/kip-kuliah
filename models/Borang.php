@@ -5,7 +5,6 @@ namespace app\models;
 use Yii;
 use yii\web\UploadedFile;
 
-
 /**
  * This is the model class for table "borang".
  *
@@ -71,19 +70,21 @@ class Borang extends \yii\db\ActiveRecord
     public $old_file;
 
 
-    public  function saveOld() {
+    public function saveOld()
+    {
         $files =
         [
-            'file_prestasi_akademik10_1', 'file_prestasi_akademik11_1', 'file_prestasi_akademik12_1',
-            'file_prestasi_akademik10_2', 'file_prestasi_akademik11_2', 'file_prestasi_akademik12_2',
-            'file_prestasi_non_akademik1', 'file_prestasi_non_akademik2', 'file_prestasi_non_akademik3',
-            'file_prestasi_non_akademik4', 'file_prestasi_non_akademik5'
+                    'file_prestasi_akademik10_1', 'file_prestasi_akademik11_1', 'file_prestasi_akademik12_1',
+                    'file_prestasi_akademik10_2', 'file_prestasi_akademik11_2', 'file_prestasi_akademik12_2',
+                    'file_prestasi_non_akademik1', 'file_prestasi_non_akademik2', 'file_prestasi_non_akademik3',
+                    'file_prestasi_non_akademik4', 'file_prestasi_non_akademik5',
+                    'file_penghasilan_ayah', 'file_penghasilan_ibu', 'file_penghasilan_sendiri', 'file_kartu_kks', 'file_bukti_pembayaran_pbb', 'file_bpkb_stnk', 'file_foto_atap_rumah',
+                     'file_foto_lantai_rumah', 'file_foto_kamar_mandi',
+                      'file_foto_kartu_keluarga'
         ];
-    foreach ($files as $file) {
-     
-        $this->old_file[$file] = $this->$file;
-    }
-
+        foreach ($files as $file) {
+            $this->old_file[$file] = $this->$file;
+        }
     }
 
     public static function tableName()
@@ -93,7 +94,6 @@ class Borang extends \yii\db\ActiveRecord
 
     public function beforeSave($insert)
     {
-
         if (parent::beforeSave($insert)) {
             // Place your custom code here
             $files =
@@ -101,10 +101,12 @@ class Borang extends \yii\db\ActiveRecord
                     'file_prestasi_akademik10_1', 'file_prestasi_akademik11_1', 'file_prestasi_akademik12_1',
                     'file_prestasi_akademik10_2', 'file_prestasi_akademik11_2', 'file_prestasi_akademik12_2',
                     'file_prestasi_non_akademik1', 'file_prestasi_non_akademik2', 'file_prestasi_non_akademik3',
-                    'file_prestasi_non_akademik4', 'file_prestasi_non_akademik5'
+                    'file_prestasi_non_akademik4', 'file_prestasi_non_akademik5',
+                    'file_penghasilan_ayah', 'file_penghasilan_ibu', 'file_penghasilan_sendiri', 'file_kartu_kks', 'file_bukti_pembayaran_pbb', 'file_bpkb_stnk', 'file_foto_atap_rumah',
+                     'file_foto_lantai_rumah', 'file_foto_kamar_mandi',
+                      'file_foto_kartu_keluarga'
                 ];
             foreach ($files as $file) {
-             
                 $this->upload($file);
             }
 
@@ -121,7 +123,7 @@ class Borang extends \yii\db\ActiveRecord
     {
         return [
             [['hafalan_alquran', 'validasi_prestasi_akademik10_1', 'verivikasi_prestasi_akademik10_1', 'validasi_prestasi_akademik11_1', 'verivikasi_prestasi_akademik11_1', 'validasi_prestasi_akademik12_1', 'verivikasi_prestasi_akademik12_1', 'validasi_prestasi_akademik10_2', 'verivikasi_prestasi_akademik10_2', 'validasi_prestasi_akademik11_2', 'verivikasi_prestasi_akademik11_2', 'validasi_prestasi_akademik12_2', 'verivikasi_prestasi_akademik12_2', 'validasi_prestasi_non_akademik1', 'verivikasi_prestasi_non_akademik1', 'tingkat_prestasi_non_akademik1', 'validasi_prestasi_non_akademik2', 'verivikasi_prestasi_non_akademik2', 'tingkat_prestasi_non_akademik2', 'validasi_prestasi_non_akademik3', 'verivikasi_prestasi_non_akademik3', 'tingkat_prestasi_non_akademik3', 'validasi_prestasi_non_akademik4', 'verivikasi_prestasi_non_akademik4', 'tingkat_prestasi_non_akademik4', 'validasi_prestasi_non_akademik5', 'verivikasi_prestasi_non_akademik5', 'tingkat_prestasi_non_akademik5', 'status_finalisasi', 'jumlah_anggota_keluarga', 'kepemilikan_rumah', 'sumber_listrik', 'sumber_air'], 'integer'],
-            [['nama_ayah', 'nama_ibu', 'pekerjaan_ayah', 'pekerjaan_ibu', 'penghasilan_ayah', 'penghasilan_ibu', 'penghasilan_sendiri', 'alamat', 'jumlah_anggota_keluarga', 'pembayaran_pbb', 'daya_pln', 'pembayaran_pdam', 'luas_tanah', 'luas_bangunan', 'kepemilikan_rumah', 'sumber_listrik', 'sumber_air'], 'required'],
+            [['nama_ayah', 'nama_ibu', 'pekerjaan_ayah', 'pekerjaan_ibu', 'penghasilan_ayah', 'penghasilan_ibu',  'alamat', 'jumlah_anggota_keluarga', 'pembayaran_pbb', 'daya_pln', 'pembayaran_pdam', 'luas_tanah', 'luas_bangunan', 'kepemilikan_rumah', 'sumber_listrik', 'sumber_air'], 'required'],
             [['penghasilan_ayah', 'penghasilan_ibu', 'penghasilan_sendiri', 'pembayaran_pbb', 'daya_pln', 'pembayaran_pdam', 'luas_tanah', 'luas_bangunan'], 'number'],
             [['alamat'], 'string'],
             [['kode'], 'string', 'max' => 20],
@@ -228,38 +230,40 @@ class Borang extends \yii\db\ActiveRecord
             'pembayaran_pbb' => 'Besaran Pembayaran Pajak Bumi dan Bangunan / Tahun',
             'pembayaran_pdam' => 'Besaran Pembayaran PDAM / Bulan ',
             'daya_pln' => 'Besaran Daya PLN di Rumah (VA)',
-            
-            
+            'file_foto_kartu_keluarga' => 'File Kartu Keluarga'
+
+
         ];
     }
 
-    
-    public function getPekerjaan_ayah_lain(){
-        if (in_array($this->pekerjaan_ayah,['PNS', 'Pegawai Swasta' , 'Wiraswasta' , 'TNI/POLRI','Petani']) ){
+
+    public function getPekerjaan_ayah_lain()
+    {
+        if (in_array($this->pekerjaan_ayah, ['PNS', 'Pegawai Swasta' , 'Wiraswasta' , 'TNI/POLRI','Petani'])) {
             return '';
         } else {
             return $this->pekerjaan_ayah;
         }
     }
-    
-    
-    public function getPekerjaan_ibu_lain(){
-        if (in_array($this->pekerjaan_ibu,['PNS', 'Pegawai Swasta' , 'Wiraswasta' , 'TNI/POLRI','Petani']) ){
+
+
+    public function getPekerjaan_ibu_lain()
+    {
+        if (in_array($this->pekerjaan_ibu, ['PNS', 'Pegawai Swasta' , 'Wiraswasta' , 'TNI/POLRI','Petani'])) {
             return '';
         } else {
             return $this->pekerjaan_ibu;
         }
     }
 
-    public function setPekerjaan_ayah_lain($value){
+    public function setPekerjaan_ayah_lain($value)
+    {
         $this->peker_ayah = $value;
-       
     }
-    
-    
-    public function setPekerjaan_ibu_lain($value){
-    
-         $this->peker_ibu = $value;
-        
+
+
+    public function setPekerjaan_ibu_lain($value)
+    {
+        $this->peker_ibu = $value;
     }
 }
