@@ -151,7 +151,7 @@ class Borang extends \yii\db\ActiveRecord
         //s  die($fieldName);
         $image = UploadedFile::getInstance($this, $fieldName);
         if (!empty($image) && $image->size !== 0) {
-            $fileNames = $fieldName . $this->kode . $fieldName . '.' . $image->extension;
+            $fileNames = $fieldName . $this->kode  . '.' . $image->extension;
 
             if ($image->saveAs($path . $fileNames)) {
                 $this->attributes = [$fieldName => $fileNames];
