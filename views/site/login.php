@@ -62,15 +62,16 @@ $fieldOptions2 = [
             <?php ActiveForm::end(); ?>
 
             <?= Html::a('Pendaftaran', ['signup'], ['class' => 'btn btn-info btn-block btn-flat', 'name' => 'signup-button']); ?>
-       
+
         </div>
         <!-- /.login-box-body -->
 
 
     </div><!-- /.login-box -->
 
-    <div class="alert alert-danger alert-raised alert-dismissible fade in" >
+    <div class="alert alert-success alert-raised alert-dismissible fade in" >
             <strong>Ingat !</strong>
-             Pendaftaran Beasiswa Bidikmisi Telah ditutup, Pengumuman Selanjutnya akan diumumkan pada website bidikmisi.uinsby.ac.id / www.uinsby.ac.id
+             Pendaftaran Beasiswa Bidikmisi akan di buka <?=\Yii::$app->formatter->asDate(\Yii::$app->params['tanggalDaftarAwal'], 'long')?> sampai <?=\Yii::$app->formatter->asDate(\Yii::$app->params['tanggalDaftarAkhir'], 'long')?>  ,
+             Pengumuman Selanjutnya akan diumumkan pada website bidikmisi.uinsby.ac.id / www.uinsby.ac.id
 		       <br>
          </div>

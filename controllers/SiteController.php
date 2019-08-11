@@ -75,7 +75,6 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-
         if (Yii::$app->user->identity->jenis_user === 'camaba') {
             $model = \app\models\Borang::find()->where(['kode' => Yii::$app->user->identity->username])->one();
             if (is_null($model)) {
@@ -96,6 +95,7 @@ class SiteController extends Controller
         if (!\Yii::$app->user->isGuest) {
             return $this->goHome();
         }
+
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post())  && $model->login()) {
@@ -128,8 +128,6 @@ class SiteController extends Controller
      */
     public function actionLogout()
     {
-
-
         Yii::$app->user->logout();
         return  $this->goHome();
     }
@@ -174,7 +172,6 @@ class SiteController extends Controller
      */
     public function actionSignup()
     {
-
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post())) {
             if ($user = $model->signup()) {
