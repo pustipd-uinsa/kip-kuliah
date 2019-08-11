@@ -56,7 +56,7 @@ use yii\helpers\Html;
  <?php
      $model = \app\models\Borang::find()->where(['kode' => Yii::$app->user->identity->username])->one();
             if (!is_null($model)) {
-                echo  html::a("Finalisasi Data", ["/index"], ["class"=>'btn btn-info btn-flat','data-confirm' => 'Pastikan Doukmen yang di unggah lengkap dan benar , setelah Finalisasi data tidak bisa diubah ']);
+                echo  html::a("Finalisasi Data", ["/prestasi/finalisasi"], ["class"=>'btn btn-info btn-flat','data-confirm' => 'Pastikan Doukmen yang di unggah lengkap dan benar , setelah Finalisasi data tidak bisa diubah ']);
             }
 
  ?></article>

@@ -28,6 +28,11 @@ class PrestasiController extends \yii\web\Controller
             $model->daya_pln = \Yii::$app->user->identity->model->pln;
         }
         $model->saveOld();
+        if(  $model->status_finalisasi == 1) {
+            Yii::$app->session->setFlash('error','Dokumen sudah di finalisasi data tidak dapat diubah !');
+                return $this->goHome();
+
+        }
         if ($model->load(\Yii::$app->request->post())) {
             if ($model->save()) {
                 return $this->goHome();
@@ -40,5 +45,12 @@ class PrestasiController extends \yii\web\Controller
         return $this->render('index', [
             'model' => $model
         ]);
+    }
+
+    public function actionFinalisasi(){
+        $model = Borang::find()->where(['kode' => \Yii::$app->user->identity->username])->one();
+        $model->status_finalisasi = 1;
+        $model->save();
+
     }
 }
