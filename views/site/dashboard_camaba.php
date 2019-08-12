@@ -16,7 +16,7 @@ use yii\helpers\Html;
         <div class="clearfix"></div>
     </div>
     <div class="x_content">
-        <div class="col-md-5 col-sm-5 col-xs-12">
+        <div class="col-md-5 col-sm-12 col-xs-12">
             <div class="product-image1">
                 <img src="http://ukt.uinsby.ac.id/assets/foto/<?= Yii::$app->user->identity->model->foto ?>" alt=" ..." height="521" width="370" class="img-circle">
             </div>
@@ -24,7 +24,7 @@ use yii\helpers\Html;
 
 
         </div>
-        <div class="col-md-7 col-sm-7 col-xs-12" style="border:0px solid #e5e5e5;">
+        <div class="col-md-7 col-sm-12 col-xs-12" style="border:0px solid #e5e5e5;">
         <div class="alert alert-info">
     <h4>Selamat datang !</h4>
     <!-- <b>BIDIKMISI</b> adalah bantuan biaya pendidikan yang hanya ditujukan untuk calon mahasiswa tidak mampu (miskin) -->

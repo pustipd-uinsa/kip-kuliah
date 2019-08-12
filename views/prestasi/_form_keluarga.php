@@ -3,24 +3,61 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
+
+$js="
+
+$(document).ready(function()
+{
+    if ($('#borang-pekerjaan_ayah_lain').val() =='' ) {
+        $('#borang-pekerjaan_ayah_lain').hide();
+    }   
+    if ($('#borang-pekerjaan_ibu_lain').val() =='' ) {
+        $('#borang-pekerjaan_ibu_lain').hide();
+    }   
+})
+
+
+";
+$this->registerJS($js);
+
 /* @var $this yii\web\View */
 /* @var $model app\models\Camaba */
 /* @var $form ActiveForm */
+
+$jsAyah = " if  ($(\"input[type='radio'][name='Borang[pekerjaan_ayah]']:checked\").val() != 'Lainnya')
+{             
+$('#borang-pekerjaan_ayah_lain').hide();
+}
+else {
+        $('#borang-pekerjaan_ayah_lain').show();
+
+}        
+";
+
+$jsIbu = " if  ($(\"input[type='radio'][name='Borang[pekerjaan_ibu]']:checked\").val() != 'Lainnya')
+{             
+$('#borang-pekerjaan_ibu_lain').hide();
+}
+else {
+        $('#borang-pekerjaan_ibu_lain').show();
+
+}        
+";
 ?>
 
 <div class="row">
         <div class="col-md-6">
                 <?= $form->field($model, 'nama_ayah') ?>
-                <?= $form->field($model, 'pekerjaan_ayah')->radioList(['PNS' => 'PNS', 'Pegawai Swasta' => 'Pegawai Swasta', 'Wiraswasta' => 'Wiraswasta', 'TNI/POLRI' => 'TNI/POLRI', 'Lainnya' => 'Lainnya'], ['separator' => ' <br>']) ?>
-                <?= $form->field($model, 'pekerjaan_ayah_lain')->label('Lainnya') ?>
+                <?= $form->field($model, 'pekerjaan_ayah')->radioList(['PNS' => 'PNS', 'Pegawai Swasta' => 'Pegawai Swasta', 'Wiraswasta' => 'Wiraswasta', 'TNI/POLRI' => 'TNI/POLRI', 'Lainnya' => 'Lainnya'], ['separator' => ' <br>','onclick'=>$jsAyah]) ?>
+                <?= $form->field($model, 'pekerjaan_ayah_lain')->label(false) ?>
                 <?= $form->field($model, 'penghasilan_ayah') ?>
 
         </div>
         <div class="col-md-6">
 
                 <?= $form->field($model, 'nama_ibu') ?>
-                <?= $form->field($model, 'pekerjaan_ibu')->radioList(['PNS' => 'PNS', 'Pegawai Swasta' => 'Pegawai Swasta', 'Wiraswasta' => 'Wiraswasta', 'TNI/POLRI' => 'TNI/POLRI', 'Lainnya' => 'Lainnya'], ['separator' => ' <br>']) ?>
-                <?= $form->field($model, 'pekerjaan_ibu_lain')->label('Lainnya') ?>
+                <?= $form->field($model, 'pekerjaan_ibu')->radioList(['PNS' => 'PNS', 'Pegawai Swasta' => 'Pegawai Swasta', 'Wiraswasta' => 'Wiraswasta', 'TNI/POLRI' => 'TNI/POLRI', 'Lainnya' => 'Lainnya'], ['separator' => ' <br>','onclick'=>$jsIbu]) ?>
+                <?= $form->field($model, 'pekerjaan_ibu_lain')->label(false) ?>
                 <?= $form->field($model, 'penghasilan_ibu') ?>
 
 

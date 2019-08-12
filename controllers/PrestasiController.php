@@ -29,7 +29,7 @@ class PrestasiController extends \yii\web\Controller
         }
         $model->saveOld();
         if(  $model->status_finalisasi == 1) {
-            Yii::$app->session->setFlash('error','Dokumen sudah di finalisasi data tidak dapat diubah !');
+            \Yii::$app->session->setFlash('error','Dokumen sudah di finalisasi data tidak dapat diubah !');
                 return $this->goHome();
 
         }
@@ -51,6 +51,7 @@ class PrestasiController extends \yii\web\Controller
         $model = Borang::find()->where(['kode' => \Yii::$app->user->identity->username])->one();
         $model->status_finalisasi = 1;
         $model->save();
+        return $this->goHome();
 
     }
 }
