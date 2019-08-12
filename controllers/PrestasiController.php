@@ -57,4 +57,14 @@ class PrestasiController extends \yii\web\Controller
         return $this->goHome();
 
     }
+    public function actionBatalFinalisasi(){
+        
+        $model = Borang::find()->where(['kode' => \Yii::$app->user->identity->username])->one();
+        $model->saveOld();
+   
+        $model->status_finalisasi = 0;
+        $model->save();
+        return $this->goHome();
+
+    }
 }

@@ -29,7 +29,8 @@ if (Yii::$app->controller->action->id === 'login') {
                     ['label' => 'Role', 'icon' => 'users', 'url' => ['/mimin/role/'], 'visible' => !Yii::$app->user->isGuest],
                     ['label' => 'User', 'icon' => 'user-o', 'url' => ['/mimin/user/'], 'visible' => !Yii::$app->user->isGuest],
                    ], ],
-
+                   ['label' => 'Verifikasi Dokumen', 'icon' => 'search', 'url' => ['/verivikasi/index/'], 'visible' => !Yii::$app->user->isGuest],
+        
 
                 ];
 
