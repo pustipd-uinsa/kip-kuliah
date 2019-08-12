@@ -49,7 +49,7 @@ $form = ActiveForm::begin()
     <article class="media event"><i class="fa fa-id-card"></i> No. Pendaftaran: <?= $model->kode ?> </article>
     <article class="media event"><i class="fa fa-building"></i> Program Studi: <?= $model->mahasiswa->nama_prodi ?> </article>
 </h4>
-<table class="table table-stripped table-border table-hover">
+<table class="table table-condensed table-striped table-hover table-bordered">
     <thead>
         <th>Data</th>
         <th>Nilai</th>
