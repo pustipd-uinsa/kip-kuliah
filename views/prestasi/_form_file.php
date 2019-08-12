@@ -22,7 +22,7 @@ use yii\helpers\Url;
             <?= $form->field($model, 'file_penghasilan_ibu')->fileInput() ?>
         </div>
         <div class="col-md-6">
-            <?= html::img(Url::to(["/document/". $model->file_penghasilan_ibu]), ['width'=>130,'height'=>'200']) ?>
+      <?= html::img(Url::to(["/document/". $model->file_penghasilan_ibu]), ['width'=>130,'height'=>'200']) ?>
         </div>
 
     </div>

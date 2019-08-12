@@ -48,7 +48,10 @@ class PrestasiController extends \yii\web\Controller
     }
 
     public function actionFinalisasi(){
+        
         $model = Borang::find()->where(['kode' => \Yii::$app->user->identity->username])->one();
+        $model->saveOld();
+   
         $model->status_finalisasi = 1;
         $model->save();
         return $this->goHome();

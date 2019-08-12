@@ -253,6 +253,10 @@ class Borang extends \yii\db\ActiveRecord
         ];
     }
 
+    public function getMahasiswa(){
+        return $this->hasOne(Camaba::className(),['kode'=>'kode']);
+    }
+
 
   
 }

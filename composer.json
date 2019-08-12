@@ -37,7 +37,8 @@
         "mdmsoft/yii2-ar-behaviors": "~1.0",
         "mdmsoft/yii2-widgets": "^1.2",
         "ramosisw/yii2-material-dashboard": "dev-master",
-        "yiister/yii2-gentelella": "~1.0"
+        "yiister/yii2-gentelella": "~1.0",
+   
       
 
 
