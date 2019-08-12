@@ -55,7 +55,7 @@ class VerivikasiController extends Controller
             'model' => $this->findModel($id),
         ]);
     }
-    public function actionGambar($id)
+    public function actionGambar($id='')
     {
         return $this->renderAjax('gambar', [
             'gambar' =>    $id,

@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\bootstrap\Modal;
 use yii\widgets\Pjax;
-
+use yii\widgets\ActiveForm;
 
 $this->registerCss('
 /* Important part */
@@ -20,10 +20,10 @@ $this->registerCss('
       width: 100%;
      max-width:1200px;
 
-     
+
     }
   }
-  
+
 ');
 
 
@@ -42,7 +42,7 @@ $('#modal1').insertAfter($('body'));
 JS;
 $this->registerJs($js1);
 
-
+$form = ActiveForm::begin()
 ?>
 <h3><?= $model->mahasiswa->nama; ?></h3>
 <h4>
@@ -59,17 +59,94 @@ $this->registerJs($js1);
     </thead>
     <tbody>
         <tr>
-            <td>Prestasi Akademik Kelas 10 (Ganjil)</td>
+            <td>Prestasi Akademik Kelas 10 (Gasal)</td>
             <td>Rangking <?= $model->prestasi_akademik10_1 ?></td>
             <td><?= Html::a(
-                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
-                    Url::to(['gambar', 'id' => $model->file_prestasi_akademik10_1]),
-                    [
+    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+    Url::to(['gambar', 'id' => $model->file_prestasi_akademik10_1]),
+    [
                         'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_prestasi_akademik10_1,
                         'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
                     ]
                 ); ?></td>
-            <td></td>
+            <td> <?=$form->field($model, 'verivikasi_prestasi_akademik10_1')->radioList(['0'=>'Tidak Sesuai','1' =>'Sesuai' ])->label(false) ?></td>
+
+
+        </tr>
+        <tr>
+            <td>Prestasi Akademik Kelas 10 (Genap)</td>
+            <td>Rangking <?= $model->prestasi_akademik10_2 ?></td>
+            <td><?= Html::a(
+                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                    Url::to(['gambar', 'id' => $model->file_prestasi_akademik10_2]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_prestasi_akademik10_2,
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                    ]
+                ); ?></td>
+            <td> <?=$form->field($model, 'verivikasi_prestasi_akademik10_2')->radioList(['0'=>'Tidak Sesuai','1' =>'Sesuai' ])->label(false) ?></td>
+
+
+        </tr>
+
+        <tr>
+            <td>Prestasi Akademik Kelas 12 (Gasal)</td>
+            <td>Rangking <?= $model->prestasi_akademik11_1 ?></td>
+            <td><?= Html::a(
+                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                    Url::to(['gambar', 'id' => $model->file_prestasi_akademik11_1]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_prestasi_akademik11_1,
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                    ]
+                ); ?></td>
+            <td> <?=$form->field($model, 'verivikasi_prestasi_akademik11_1')->radioList(['0'=>'Tidak Sesuai','1' =>'Sesuai' ])->label(false) ?></td>
+
+
+        </tr>
+        <tr>
+            <td>Prestasi Akademik Kelas 11 (Genap)</td>
+            <td>Rangking <?= $model->prestasi_akademik11_2 ?></td>
+            <td><?= Html::a(
+                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                    Url::to(['gambar', 'id' => $model->file_prestasi_akademik11_2]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_prestasi_akademik11_2,
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                    ]
+                ); ?></td>
+            <td> <?=$form->field($model, 'verivikasi_prestasi_akademik11_2')->radioList(['0'=>'Tidak Sesuai','1' =>'Sesuai' ])->label(false) ?></td>
+
+
+        </tr>
+
+       <tr>
+            <td>Prestasi Akademik Kelas 12 (Gasal)</td>
+            <td>Rangking <?= $model->prestasi_akademik12_1 ?></td>
+            <td><?= Html::a(
+                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                    Url::to(['gambar', 'id' => $model->file_prestasi_akademik12_1]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_prestasi_akademik12_1,
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                    ]
+                ); ?></td>
+            <td> <?=$form->field($model, 'verivikasi_prestasi_akademik12_1')->radioList(['0'=>'Tidak Sesuai','1' =>'Sesuai' ])->label(false) ?></td>
+
+
+        </tr>
+        <tr>
+            <td>Prestasi Akademik Kelas 12 (Genap)</td>
+            <td>Rangking <?= $model->prestasi_akademik12_2 ?></td>
+            <td><?= Html::a(
+                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                    Url::to(['gambar', 'id' => $model->file_prestasi_akademik12_2]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_prestasi_akademik12_2,
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                    ]
+                ); ?></td>
+            <td> <?=$form->field($model, 'verivikasi_prestasi_akademik12_2')->radioList(['0'=>'Tidak Sesuai','1' =>'Sesuai' ])->label(false) ?></td>
 
 
         </tr>
@@ -78,7 +155,7 @@ $this->registerJs($js1);
 
 
 </table>
-
+<?php Activeform::end(); ?>
 <?php
 Modal::begin([
     'id' => 'modal1',
