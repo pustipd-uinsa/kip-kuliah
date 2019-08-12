@@ -91,7 +91,7 @@ class Borang extends \yii\db\ActiveRecord
         if (!in_array($this->pekerjaan_ayah, ['PNS', 'Pegawai Swasta' , 'Wiraswasta' , 'TNI/POLRI','Petani'])) {
             $this->pekerjaan_ayah_lain=$this->pekerjaan_ayah;
         }
-        
+
         if (!in_array($this->pekerjaan_ibu, ['PNS', 'Pegawai Swasta' , 'Wiraswasta' , 'TNI/POLRI','Petani'])) {
             $this->pekerjaan_ibu_lain=$this->pekerjaan_ibu;
         }
@@ -257,6 +257,10 @@ class Borang extends \yii\db\ActiveRecord
         return $this->hasOne(Camaba::className(),['kode'=>'kode']);
     }
 
+    public function tingkatPrestasi($i){
+        $data = [null=>'',1=>'Kabupaten / Kotamadya',2=>'Propinsi',3=>'Nasional' ,4=>'Internasional'];
+        return $data[$i];
+    }
 
-  
+
 }

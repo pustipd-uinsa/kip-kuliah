@@ -150,11 +150,94 @@ $form = ActiveForm::begin()
 
 
         </tr>
+        <tr>
+            <td>Prestasi Non Akademik  1</td>
+            <td> <?= "Nama Prestasi :" .$model->prestasi_non_akademik1 ." <br> Tingkat : ".$model->tingkatPrestasi($model->tingkat_prestasi_non_akademik1)  ?></td>
+            <td><?= Html::a(
+                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                    Url::to(['gambar', 'id' => $model->file_prestasi_non_akademik1]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_prestasi_non_akademik1,
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                    ]
+                ); ?></td>
+            <td> <?=$form->field($model, 'verivikasi_prestasi_non_akademik1')->radioList(['0'=>'Tidak Sesuai','1' =>'Sesuai' ])->label(false) ?></td>
+
+
+        </tr>
+
+        <tr>
+            <td>Prestasi Non Akademik 2 </td>
+            <td> <?= "Nama Prestasi :" .$model->prestasi_non_akademik2 ." <br> Tingkat : ".$model->tingkatPrestasi($model->tingkat_prestasi_non_akademik2)  ?></td>
+            <td><?= Html::a(
+                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                    Url::to(['gambar', 'id' => $model->file_prestasi_non_akademik2]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_prestasi_non_akademik2,
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                    ]
+                ); ?></td>
+            <td> <?=$form->field($model, 'verivikasi_prestasi_non_akademik2')->radioList(['0'=>'Tidak Sesuai','1' =>'Sesuai' ])->label(false) ?></td>
+
+
+        </tr>
+
+
+        <tr>
+            <td>Prestasi Non Akademik 2 </td>
+            <td> <?= "Nama Prestasi :" .$model->prestasi_non_akademik3 ." <br> Tingkat : ".$model->tingkatPrestasi($model->tingkat_prestasi_non_akademik3)  ?></td>
+            <td><?= Html::a(
+                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                    Url::to(['gambar', 'id' => $model->file_prestasi_non_akademik3]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_prestasi_non_akademik3,
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                    ]
+                ); ?></td>
+            <td> <?=$form->field($model, 'verivikasi_prestasi_non_akademik3')->radioList(['0'=>'Tidak Sesuai','1' =>'Sesuai' ])->label(false) ?></td>
+
+
+        </tr>
+
+        <tr>
+            <td>Prestasi Non Akademik 2 </td>
+            <td> <?= "Nama Prestasi :" .$model->prestasi_non_akademik4 ." <br> Tingkat : ".$model->tingkatPrestasi($model->tingkat_prestasi_non_akademik4)  ?></td>
+            <td><?= Html::a(
+                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                    Url::to(['gambar', 'id' => $model->file_prestasi_non_akademik4]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_prestasi_non_akademik4,
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                    ]
+                ); ?></td>
+            <td> <?=$form->field($model, 'verivikasi_prestasi_non_akademik4')->radioList(['0'=>'Tidak Sesuai','1' =>'Sesuai' ])->label(false) ?></td>
+
+
+        </tr>
+
+
+        <tr>
+            <td>Prestasi Non Akademik 2 </td>
+            <td> <?= "Nama Prestasi :" .$model->prestasi_non_akademik5 ." <br> Tingkat : ".$model->tingkatPrestasi($model->tingkat_prestasi_non_akademik5)  ?></td>
+            <td><?= Html::a(
+                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                    Url::to(['gambar', 'id' => $model->file_prestasi_non_akademik5]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_prestasi_non_akademik5,
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                    ]
+                ); ?></td>
+            <td> <?=$form->field($model, 'verivikasi_prestasi_non_akademik5')->radioList(['0'=>'Tidak Sesuai','1' =>'Sesuai' ])->label(false) ?></td>
+
+
+        </tr>
+
 
     </tbody>
 
 
 </table>
+
 <?php Activeform::end(); ?>
 <?php
 Modal::begin([
@@ -172,3 +255,27 @@ Pjax::begin(
 Pjax::end();
 ?>
 <?php Modal::end(); ?>
+
+<?php
+
+$js=" var radios = document.querySelectorAll('input[type=radio]');
+
+function changeHandler(event) {
+   var str = $(this).attr('name');
+   var fieldname = str.replace('Borang[','');
+  var fieldname1 = fieldname.replace(']', '');
+   var value = $(this).attr('value');
+
+  console.log(fieldname1+' ');
+ $.post( \"".Url::to(['set-verifikasi','id'=>$model->id])."&fieldname=\"+fieldname1+\"&value=\"+value, function( data ) {
+        console.log(data.data)
+    });
+
+}
+
+Array.prototype.forEach.call(radios, function(radio) {
+   radio.addEventListener('change', changeHandler);
+}); ";
+
+$this->registerJS($js);
+?>

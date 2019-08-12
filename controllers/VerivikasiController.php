@@ -59,7 +59,16 @@ class VerivikasiController extends Controller
     {
         return $this->renderAjax('gambar', [
             'gambar' =>    $id,
+
         ]);
+    }
+    public function actionSetVerifikasi($id, $fieldname, $value)
+    {
+        $model = $this->findModel($id);
+        $model->saveOld();
+        $model->$fieldname = $value;
+
+        $model->save(false);
     }
 
     protected function findModel($id)
