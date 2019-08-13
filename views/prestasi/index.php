@@ -1,5 +1,8 @@
 <?php
 /* @var $this yii\web\View */
+$this->title = Yii::t('app', 'Input Dokumen Bidikmisi');
+
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="x_panel">
     <div class="x_title">

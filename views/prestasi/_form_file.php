@@ -36,7 +36,24 @@ use yii\helpers\Url;
         </div>
 
     </div>
+    <div class="row">
+        <div class="col-md-3">
+            <?= $form->field($model, 'file_bukti_pembayaran_pln')->fileInput() ?>
+        </div>
+        <div class="col-md-6">
+            <?= html::img(Url::to(["/document/". $model->file_bukti_pembayaran_pln]), ['width'=>130,'height'=>'200']) ?>
+        </div>
 
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <?= $form->field($model, 'file_bukti_pembayaran_pdam')->fileInput() ?>
+        </div>
+        <div class="col-md-6">
+            <?= html::img(Url::to(["/document/". $model->file_bukti_pembayaran_pdam]), ['width'=>130,'height'=>'200']) ?>
+        </div>
+
+    </div>
   <div class="row">
         <div class="col-md-3">
             <?= $form->field($model, 'file_bukti_pembayaran_pbb')->fileInput() ?>
@@ -92,7 +109,7 @@ use yii\helpers\Url;
             <?= $form->field($model, 'file_foto_kartu_keluarga')->fileInput() ?>
         </div>
         <div class="col-md-6">
-            <?= html::img(Url::to(["/document/". $model->file_foto_kartu_keluarga]), ['width'=>130,'hfile_foto_kartu_keluargaeight'=>'200']) ?>
+            <?= html::img(Url::to(["/document/". $model->file_foto_kartu_keluarga]), ['width'=>130,'height'=>'200']) ?>
         </div>
 
     </div>

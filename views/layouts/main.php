@@ -6,6 +6,7 @@ use yii\helpers\Html;
 use dmstr\widgets\Alert;
 use app\assets\MaterialPluginAsset;
 use app\assets\AppAsset;
+use yii\widgets\Breadcrumbs;
 
 if (Yii::$app->controller->action->id === 'login') {
     /**
@@ -174,6 +175,12 @@ if (Yii::$app->controller->action->id === 'login') {
                     </div>
                 </div>
             <?php endif; ?>
+            <?=
+                Breadcrumbs::widget(
+                  [
+                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                  ]
+                ) ?>
             <div class="clearfix"></div>
 
             <?=Alert::widget()?>

@@ -75,25 +75,25 @@ class Borang extends \yii\db\ActiveRecord
     public function saveOld()
     {
         $files =
-        [
-                    'file_prestasi_akademik10_1', 'file_prestasi_akademik11_1', 'file_prestasi_akademik12_1',
-                    'file_prestasi_akademik10_2', 'file_prestasi_akademik11_2', 'file_prestasi_akademik12_2',
-                    'file_prestasi_non_akademik1', 'file_prestasi_non_akademik2', 'file_prestasi_non_akademik3',
-                    'file_prestasi_non_akademik4', 'file_prestasi_non_akademik5',
-                    'file_penghasilan_ayah', 'file_penghasilan_ibu', 'file_penghasilan_sendiri', 'file_kartu_kks', 'file_bukti_pembayaran_pbb', 'file_bpkb_stnk', 'file_foto_atap_rumah',
-                     'file_foto_lantai_rumah', 'file_foto_kamar_mandi',
-                      'file_foto_kartu_keluarga'
-        ];
+            [
+                'file_prestasi_akademik10_1', 'file_prestasi_akademik11_1', 'file_prestasi_akademik12_1',
+                'file_prestasi_akademik10_2', 'file_prestasi_akademik11_2', 'file_prestasi_akademik12_2',
+                'file_prestasi_non_akademik1', 'file_prestasi_non_akademik2', 'file_prestasi_non_akademik3',
+                'file_prestasi_non_akademik4', 'file_prestasi_non_akademik5',
+                'file_penghasilan_ayah', 'file_penghasilan_ibu', 'file_penghasilan_sendiri', 'file_kartu_kks', 'file_bukti_pembayaran_pbb', 'file_bpkb_stnk', 'file_foto_atap_rumah',
+                'file_foto_lantai_rumah', 'file_foto_kamar_mandi',
+                'file_foto_kartu_keluarga'
+            ];
         foreach ($files as $file) {
             $this->old_file[$file] = $this->$file;
         }
 
-        if (!in_array($this->pekerjaan_ayah, ['PNS', 'Pegawai Swasta' , 'Wiraswasta' , 'TNI/POLRI','Petani'])) {
-            $this->pekerjaan_ayah_lain=$this->pekerjaan_ayah;
+        if (!in_array($this->pekerjaan_ayah, ['PNS', 'Pegawai Swasta', 'Wiraswasta', 'TNI/POLRI', 'Petani'])) {
+            $this->pekerjaan_ayah_lain = $this->pekerjaan_ayah;
         }
 
-        if (!in_array($this->pekerjaan_ibu, ['PNS', 'Pegawai Swasta' , 'Wiraswasta' , 'TNI/POLRI','Petani'])) {
-            $this->pekerjaan_ibu_lain=$this->pekerjaan_ibu;
+        if (!in_array($this->pekerjaan_ibu, ['PNS', 'Pegawai Swasta', 'Wiraswasta', 'TNI/POLRI', 'Petani'])) {
+            $this->pekerjaan_ibu_lain = $this->pekerjaan_ibu;
         }
     }
 
@@ -113,17 +113,17 @@ class Borang extends \yii\db\ActiveRecord
                     'file_prestasi_non_akademik1', 'file_prestasi_non_akademik2', 'file_prestasi_non_akademik3',
                     'file_prestasi_non_akademik4', 'file_prestasi_non_akademik5',
                     'file_penghasilan_ayah', 'file_penghasilan_ibu', 'file_penghasilan_sendiri', 'file_kartu_kks', 'file_bukti_pembayaran_pbb', 'file_bpkb_stnk', 'file_foto_atap_rumah',
-                     'file_foto_lantai_rumah', 'file_foto_kamar_mandi',
-                      'file_foto_kartu_keluarga'
+                    'file_foto_lantai_rumah', 'file_foto_kamar_mandi',
+                    'file_foto_kartu_keluarga'
                 ];
             foreach ($files as $file) {
                 $this->upload($file);
             }
 
-            if ($this->pekerjaan_ayah_lain !=='' && (!in_array($this->pekerjaan_ayah, ['PNS', 'Pegawai Swasta' , 'Wiraswasta' , 'TNI/POLRI','Petani']))) {
+            if ($this->pekerjaan_ayah_lain !== '' && (!in_array($this->pekerjaan_ayah, ['PNS', 'Pegawai Swasta', 'Wiraswasta', 'TNI/POLRI', 'Petani']))) {
                 $this->pekerjaan_ayah = $this->pekerjaan_ayah_lain;
             }
-            if ($this->pekerjaan_ibu_lain !=='' && (!in_array($this->pekerjaan_ibu, ['PNS', 'Pegawai Swasta' , 'Wiraswasta' , 'TNI/POLRI','Petani']))) {
+            if ($this->pekerjaan_ibu_lain !== '' && (!in_array($this->pekerjaan_ibu, ['PNS', 'Pegawai Swasta', 'Wiraswasta', 'TNI/POLRI', 'Petani']))) {
                 $this->pekerjaan_ibu = $this->pekerjaan_ibu_lain;
             }
 
@@ -139,10 +139,21 @@ class Borang extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['hafalan_alquran', 'validasi_prestasi_akademik10_1', 'verivikasi_prestasi_akademik10_1', 'validasi_prestasi_akademik11_1', 'verivikasi_prestasi_akademik11_1', 'validasi_prestasi_akademik12_1', 'verivikasi_prestasi_akademik12_1', 'validasi_prestasi_akademik10_2', 'verivikasi_prestasi_akademik10_2', 'validasi_prestasi_akademik11_2', 'verivikasi_prestasi_akademik11_2', 'validasi_prestasi_akademik12_2', 'verivikasi_prestasi_akademik12_2', 'validasi_prestasi_non_akademik1', 'verivikasi_prestasi_non_akademik1', 'tingkat_prestasi_non_akademik1', 'validasi_prestasi_non_akademik2', 'verivikasi_prestasi_non_akademik2', 'tingkat_prestasi_non_akademik2', 'validasi_prestasi_non_akademik3', 'verivikasi_prestasi_non_akademik3', 'tingkat_prestasi_non_akademik3', 'validasi_prestasi_non_akademik4', 'verivikasi_prestasi_non_akademik4', 'tingkat_prestasi_non_akademik4', 'validasi_prestasi_non_akademik5', 'verivikasi_prestasi_non_akademik5', 'tingkat_prestasi_non_akademik5', 'status_finalisasi', 'jumlah_anggota_keluarga', 'kepemilikan_rumah', 'sumber_listrik', 'sumber_air'], 'integer'],
+            [[
+                'hafalan_alquran', 'validasi_prestasi_akademik10_1', 'verivikasi_prestasi_akademik10_1', 'validasi_prestasi_akademik11_1', 'verivikasi_prestasi_akademik11_1', 'validasi_prestasi_akademik12_1', 'verivikasi_prestasi_akademik12_1', 'validasi_prestasi_akademik10_2', 'verivikasi_prestasi_akademik10_2', 'validasi_prestasi_akademik11_2', 'verivikasi_prestasi_akademik11_2', 'validasi_prestasi_akademik12_2', 'verivikasi_prestasi_akademik12_2', 'validasi_prestasi_non_akademik1', 'verivikasi_prestasi_non_akademik1', 'tingkat_prestasi_non_akademik1', 'validasi_prestasi_non_akademik2', 'verivikasi_prestasi_non_akademik2', 'tingkat_prestasi_non_akademik2', 'validasi_prestasi_non_akademik3', 'verivikasi_prestasi_non_akademik3', 'tingkat_prestasi_non_akademik3', 'validasi_prestasi_non_akademik4', 'verivikasi_prestasi_non_akademik4', 'tingkat_prestasi_non_akademik4', 'validasi_prestasi_non_akademik5', 'verivikasi_prestasi_non_akademik5', 'tingkat_prestasi_non_akademik5', 'status_finalisasi',
+
+                'verivikasi_pembayaran_pbb', 'validasi_pembayaran_pbb',
+                'verivikasi_pembayaran_pln', 'validasi_pembayaran_pln',
+                'verivikasi_pembayaran_pdam', 'validasi_pembayaran_pdam',
+                'verivikasi_kks', 'validasi_kks',
+                'verivikasi_penghasilan_ayah', 'validasi_penghasilan_ayah',
+                'verivikasi_penghasilan_ibu', 'validasi_penghasilan_ibu',
+                'verivikasi_anggota_keluarga', 'validasi_anggota_keluarga',
+                'jumlah_anggota_keluarga', 'kepemilikan_rumah', 'sumber_listrik', 'sumber_air'
+            ], 'integer'],
             [['nama_ayah', 'nama_ibu', 'pekerjaan_ayah', 'pekerjaan_ibu', 'penghasilan_ayah', 'penghasilan_ibu',  'alamat', 'jumlah_anggota_keluarga', 'pembayaran_pbb', 'daya_pln', 'pembayaran_pdam', 'luas_tanah', 'luas_bangunan', 'kepemilikan_rumah', 'sumber_listrik', 'sumber_air'], 'required'],
             [['penghasilan_ayah', 'penghasilan_ibu', 'penghasilan_sendiri', 'pembayaran_pbb', 'daya_pln', 'pembayaran_pdam', 'luas_tanah', 'luas_bangunan'], 'number'],
-            [['alamat','pekerjaan_ibu_lain','pekerjaan_ayah_lain'], 'string'],
+            [['alamat', 'pekerjaan_ibu_lain', 'pekerjaan_ayah_lain', 'komentar_verifikator', 'komentar_validator'], 'string'],
             [['kode'], 'string', 'max' => 20],
 
             [
@@ -152,8 +163,10 @@ class Borang extends \yii\db\ActiveRecord
                     'file_prestasi_non_akademik1', 'file_prestasi_non_akademik2', 'file_prestasi_non_akademik3',
                     'file_prestasi_non_akademik4', 'file_prestasi_non_akademik5',
                     'file_penghasilan_ayah', 'file_penghasilan_ibu', 'file_penghasilan_sendiri', 'file_kartu_kks', 'file_bukti_pembayaran_pbb', 'file_bpkb_stnk', 'file_foto_atap_rumah',
-                     'file_foto_lantai_rumah', 'file_foto_kamar_mandi',
-                      'file_foto_kartu_keluarga'
+                    'file_foto_lantai_rumah', 'file_foto_kamar_mandi',
+
+                    'file_foto_kartu_keluarga', 'file_bukti_pembayaran_pln', 'file_bukti_pembayaran_pdam',
+
                 ], 'file',
                 'skipOnEmpty' => true, 'extensions' => 'jpeg,jpg,png', 'maxSize' => 1048576
             ],
@@ -253,14 +266,36 @@ class Borang extends \yii\db\ActiveRecord
         ];
     }
 
-    public function getMahasiswa(){
-        return $this->hasOne(Camaba::className(),['kode'=>'kode']);
+    public function getMahasiswa()
+    {
+        return $this->hasOne(Camaba::className(), ['kode' => 'kode']);
     }
 
-    public function tingkatPrestasi($i){
-        $data = [null=>'',1=>'Kabupaten / Kotamadya',2=>'Propinsi',3=>'Nasional' ,4=>'Internasional'];
+    public function tingkatPrestasi($i)
+    {
+        $data = [null => '', 1 => 'Kabupaten / Kotamadya', 2 => 'Propinsi', 3 => 'Nasional', 4 => 'Internasional'];
         return $data[$i];
     }
-
-
+    public function kepemilikanRumah($i)
+    {
+        $data = [
+            '1' => 'Rumah Sendiri', '2' => 'Menyewa / Mengontrak',
+            '3' => 'Menumpang', '4' => 'Tidak Punya'
+        ];
+        return $data[$i];
+    }
+    public function sumberAir($i)
+    {
+        $data = [
+            '1' => 'PDAM', '2' => 'Kemasan', '3' => 'Sumur', '4' => 'Sungai/Mata Air Gunung'
+        ];
+        return $data[$i];
+    }
+    public function sumberListrik($i)
+    {
+        $data = [
+            '0' => 'Tidak Ada', '1' => 'PLN', '2' => 'Genset Mandiri', '3' => 'PLN dan Genset'
+        ];
+        return $data[$i];
+    }
 }
