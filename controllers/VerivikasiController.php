@@ -51,11 +51,17 @@ class VerivikasiController extends Controller
      */
     public function actionVerifikasi($id)
     {
+        $model = $this->findModel($id);
+        $model->saveOld();
+        if ($model->load(Yii::$app->request->post())) {
+            $model->save();
+            return $this->redirect('index');
+        }
         return $this->render('verifikasi', [
-            'model' => $this->findModel($id),
+            'model' => $model,
         ]);
     }
-    public function actionGambar($id='')
+    public function actionGambar($id = '')
     {
         return $this->renderAjax('gambar', [
             'gambar' =>    $id,

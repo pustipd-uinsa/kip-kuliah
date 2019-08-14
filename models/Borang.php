@@ -142,13 +142,13 @@ class Borang extends \yii\db\ActiveRecord
             [[
                 'hafalan_alquran', 'validasi_prestasi_akademik10_1', 'verivikasi_prestasi_akademik10_1', 'validasi_prestasi_akademik11_1', 'verivikasi_prestasi_akademik11_1', 'validasi_prestasi_akademik12_1', 'verivikasi_prestasi_akademik12_1', 'validasi_prestasi_akademik10_2', 'verivikasi_prestasi_akademik10_2', 'validasi_prestasi_akademik11_2', 'verivikasi_prestasi_akademik11_2', 'validasi_prestasi_akademik12_2', 'verivikasi_prestasi_akademik12_2', 'validasi_prestasi_non_akademik1', 'verivikasi_prestasi_non_akademik1', 'tingkat_prestasi_non_akademik1', 'validasi_prestasi_non_akademik2', 'verivikasi_prestasi_non_akademik2', 'tingkat_prestasi_non_akademik2', 'validasi_prestasi_non_akademik3', 'verivikasi_prestasi_non_akademik3', 'tingkat_prestasi_non_akademik3', 'validasi_prestasi_non_akademik4', 'verivikasi_prestasi_non_akademik4', 'tingkat_prestasi_non_akademik4', 'validasi_prestasi_non_akademik5', 'verivikasi_prestasi_non_akademik5', 'tingkat_prestasi_non_akademik5', 'status_finalisasi',
 
-                'verivikasi_pembayaran_pbb', 'validasi_pembayaran_pbb',
-                'verivikasi_pembayaran_pln', 'validasi_pembayaran_pln',
-                'verivikasi_pembayaran_pdam', 'validasi_pembayaran_pdam',
-                'verivikasi_kks', 'validasi_kks',
-                'verivikasi_penghasilan_ayah', 'validasi_penghasilan_ayah',
-                'verivikasi_penghasilan_ibu', 'validasi_penghasilan_ibu',
-                'verivikasi_anggota_keluarga', 'validasi_anggota_keluarga',
+                'verifikasi_pembayaran_pbb', 'validasi_pembayaran_pbb',
+                'verifikasi_pembayaran_pln', 'validasi_pembayaran_pln',
+                'verifikasi_pembayaran_pdam', 'validasi_pembayaran_pdam',
+                'verifikasi_kks', 'validasi_kks',
+                'verifikasi_penghasilan_ayah', 'validasi_penghasilan_ayah',
+                'verifikasi_penghasilan_ibu', 'validasi_penghasilan_ibu',
+                'verifikasi_anggota_keluarga', 'validasi_anggota_keluarga',
                 'jumlah_anggota_keluarga', 'kepemilikan_rumah', 'sumber_listrik', 'sumber_air','status_verifikasi','status_validasi'
             ], 'integer'],
             [['nama_ayah', 'nama_ibu', 'pekerjaan_ayah', 'pekerjaan_ibu', 'penghasilan_ayah', 'penghasilan_ibu',  'alamat', 'jumlah_anggota_keluarga', 'pembayaran_pbb', 'daya_pln', 'pembayaran_pdam', 'luas_tanah', 'luas_bangunan', 'kepemilikan_rumah', 'sumber_listrik', 'sumber_air'], 'required'],

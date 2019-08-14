@@ -401,6 +401,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 </table>
 
+<?= Html::submitButton('Simpan',['class'=>'btn btn-success']);  ?>
 <?php Activeform::end(); ?>
 <?php
 Modal::begin([
@@ -446,8 +447,9 @@ Array.prototype.forEach.call(radios, function(radio) {
 
 $(\"#borang-komentar_verifikator\").on(\"keydown\", function(e){
     if(e.which == 13){
-      // your code
-      return false;
+    var value = (\"#borang-komentar_verifikator\").val();
+
+    
     }
   });
 
