@@ -299,6 +299,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
         </tr>
+
+    
        
         <tr>
             <td>Kepemilikan Rumah </td>
@@ -385,6 +387,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
         </tr>
+
+        <tr>
+            <td><b> Status Verifikasi </b></td>
+            <td> </td>
+            <td><?=$form->field($model, 'komentar_verifikator')->textarea(['rows' => '6'])->label('catatan') ?></td>
+            <td> <?=$form->field($model, 'status_verifikasi')->radioList(['0'=>'Tidak Diterima','1' =>'Diterima' ])->label(false) ?></td>
+
+
+        </tr>
     </tbody>
 
 
@@ -423,11 +434,25 @@ function changeHandler(event) {
         console.log(data.data)
     });
 
+
+
+
+
 }
 
 Array.prototype.forEach.call(radios, function(radio) {
    radio.addEventListener('change', changeHandler);
-}); ";
+});
+
+$(\"#borang-komentar_verifikator\").on(\"keydown\", function(e){
+    if(e.which == 13){
+      // your code
+      return false;
+    }
+  });
+
+
+";
 
 $this->registerJS($js);
 ?>

@@ -149,7 +149,7 @@ class Borang extends \yii\db\ActiveRecord
                 'verivikasi_penghasilan_ayah', 'validasi_penghasilan_ayah',
                 'verivikasi_penghasilan_ibu', 'validasi_penghasilan_ibu',
                 'verivikasi_anggota_keluarga', 'validasi_anggota_keluarga',
-                'jumlah_anggota_keluarga', 'kepemilikan_rumah', 'sumber_listrik', 'sumber_air'
+                'jumlah_anggota_keluarga', 'kepemilikan_rumah', 'sumber_listrik', 'sumber_air','status_verifikasi','status_validasi'
             ], 'integer'],
             [['nama_ayah', 'nama_ibu', 'pekerjaan_ayah', 'pekerjaan_ibu', 'penghasilan_ayah', 'penghasilan_ibu',  'alamat', 'jumlah_anggota_keluarga', 'pembayaran_pbb', 'daya_pln', 'pembayaran_pdam', 'luas_tanah', 'luas_bangunan', 'kepemilikan_rumah', 'sumber_listrik', 'sumber_air'], 'required'],
             [['penghasilan_ayah', 'penghasilan_ibu', 'penghasilan_sendiri', 'pembayaran_pbb', 'daya_pln', 'pembayaran_pdam', 'luas_tanah', 'luas_bangunan'], 'number'],
