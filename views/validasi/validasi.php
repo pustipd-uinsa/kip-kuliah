@@ -239,8 +239,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <tr>
             <td>Pekerjaan Ayah </td>
-            <td> <?= " Pekerjaan :" .$model->pekerjaan_ayah ." <br> Penghasilan : ".\Yii::$app->formatter->asDecimal($model->penghasilan_ayah)  ?></td>
-            <td><?= Html::a(
+            <td> <?= ' Pekerjaan :' . $model->pekerjaan_ayah .
+            ($model->pekerjaan_ayah!=='Wiraswasta' ?  ' <br> Penghasilan : ' . \Yii::$app->formatter->asDecimal($model->penghasilan_ayah)  :
+                ' <br> Omzet Harian : ' . \Yii::$app->formatter->asDecimal($model->omzet_harian_ayah) )
+            
+            ?></td>
+                     <td><?= Html::a(
                     Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
                     Url::to(['gambar', 'id' => $model->file_penghasilan_ayah]),
                     [
@@ -256,8 +260,13 @@ $this->params['breadcrumbs'][] = $this->title;
         
         <tr>
             <td>Pekerjaan ibu </td>
-            <td> <?= " Pekerjaan :" .$model->pekerjaan_ibu ." <br> Penghasilan : ".\Yii::$app->formatter->asDecimal($model->penghasilan_ibu)  ?></td>
-            <td><?= Html::a(
+            <td> <?= ' Pekerjaan :' . $model->pekerjaan_ibu .
+            ($model->pekerjaan_ibu!=='Wiraswasta' ?  ' <br> Penghasilan : ' . \Yii::$app->formatter->asDecimal($model->penghasilan_ibu)  :
+                ' <br> Omzet Harian : ' . \Yii::$app->formatter->asDecimal($model->omzet_harian_ibu) )
+            
+            
+            ?></td>
+                     <td><?= Html::a(
                     Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
                     Url::to(['gambar', 'id' => $model->file_penghasilan_ibu]),
                     [

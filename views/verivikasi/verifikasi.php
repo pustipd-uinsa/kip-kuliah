@@ -67,13 +67,13 @@ $this->params['breadcrumbs'][] = $this->title;
             <td>Prestasi Akademik Kelas 10 (Gasal)</td>
             <td>Rangking <?= $model->prestasi_akademik10_1 ?></td>
             <td><?= Html::a(
-    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
-    Url::to(['gambar', 'id' => $model->file_prestasi_akademik10_1]),
-    [
+                Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                Url::to(['gambar', 'id' => $model->file_prestasi_akademik10_1]),
+                [
                         'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_prestasi_akademik10_1,
-                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => 'modal'
                     ]
-                ); ?></td>
+            ); ?></td>
             <td> <?=$form->field($model, 'verivikasi_prestasi_akademik10_1')->radioList(['0'=>'Tidak Sesuai','1' =>'Sesuai' ])->label(false) ?></td>
 
 
@@ -82,13 +82,13 @@ $this->params['breadcrumbs'][] = $this->title;
             <td>Prestasi Akademik Kelas 10 (Genap)</td>
             <td>Rangking <?= $model->prestasi_akademik10_2 ?></td>
             <td><?= Html::a(
-                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
-                    Url::to(['gambar', 'id' => $model->file_prestasi_akademik10_2]),
-                    [
+                Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                Url::to(['gambar', 'id' => $model->file_prestasi_akademik10_2]),
+                [
                         'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_prestasi_akademik10_2,
-                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => 'modal'
                     ]
-                ); ?></td>
+            ); ?></td>
             <td> <?=$form->field($model, 'verivikasi_prestasi_akademik10_2')->radioList(['0'=>'Tidak Sesuai','1' =>'Sesuai' ])->label(false) ?></td>
 
 
@@ -98,13 +98,13 @@ $this->params['breadcrumbs'][] = $this->title;
             <td>Prestasi Akademik Kelas 12 (Gasal)</td>
             <td>Rangking <?= $model->prestasi_akademik11_1 ?></td>
             <td><?= Html::a(
-                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
-                    Url::to(['gambar', 'id' => $model->file_prestasi_akademik11_1]),
-                    [
+                Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                Url::to(['gambar', 'id' => $model->file_prestasi_akademik11_1]),
+                [
                         'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_prestasi_akademik11_1,
-                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => 'modal'
                     ]
-                ); ?></td>
+            ); ?></td>
             <td> <?=$form->field($model, 'verivikasi_prestasi_akademik11_1')->radioList(['0'=>'Tidak Sesuai','1' =>'Sesuai' ])->label(false) ?></td>
 
 
@@ -113,13 +113,13 @@ $this->params['breadcrumbs'][] = $this->title;
             <td>Prestasi Akademik Kelas 11 (Genap)</td>
             <td>Rangking <?= $model->prestasi_akademik11_2 ?></td>
             <td><?= Html::a(
-                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
-                    Url::to(['gambar', 'id' => $model->file_prestasi_akademik11_2]),
-                    [
+                Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                Url::to(['gambar', 'id' => $model->file_prestasi_akademik11_2]),
+                [
                         'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_prestasi_akademik11_2,
-                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => 'modal'
                     ]
-                ); ?></td>
+            ); ?></td>
             <td> <?=$form->field($model, 'verivikasi_prestasi_akademik11_2')->radioList(['0'=>'Tidak Sesuai','1' =>'Sesuai' ])->label(false) ?></td>
 
 
@@ -129,13 +129,13 @@ $this->params['breadcrumbs'][] = $this->title;
             <td>Prestasi Akademik Kelas 12 (Gasal)</td>
             <td>Rangking <?= $model->prestasi_akademik12_1 ?></td>
             <td><?= Html::a(
-                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
-                    Url::to(['gambar', 'id' => $model->file_prestasi_akademik12_1]),
-                    [
+                Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                Url::to(['gambar', 'id' => $model->file_prestasi_akademik12_1]),
+                [
                         'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_prestasi_akademik12_1,
-                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => 'modal'
                     ]
-                ); ?></td>
+            ); ?></td>
             <td> <?=$form->field($model, 'verivikasi_prestasi_akademik12_1')->radioList(['0'=>'Tidak Sesuai','1' =>'Sesuai' ])->label(false) ?></td>
 
 
@@ -144,28 +144,28 @@ $this->params['breadcrumbs'][] = $this->title;
             <td>Prestasi Akademik Kelas 12 (Genap)</td>
             <td>Rangking <?= $model->prestasi_akademik12_2 ?></td>
             <td><?= Html::a(
-                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
-                    Url::to(['gambar', 'id' => $model->file_prestasi_akademik12_2]),
-                    [
+                Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                Url::to(['gambar', 'id' => $model->file_prestasi_akademik12_2]),
+                [
                         'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_prestasi_akademik12_2,
-                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => 'modal'
                     ]
-                ); ?></td>
+            ); ?></td>
             <td> <?=$form->field($model, 'verivikasi_prestasi_akademik12_2')->radioList(['0'=>'Tidak Sesuai','1' =>'Sesuai' ])->label(false) ?></td>
 
 
         </tr>
         <tr>
             <td>Prestasi Non Akademik  1</td>
-            <td> <?= "Nama Prestasi :" .$model->prestasi_non_akademik1 ." <br> Tingkat : ".$model->tingkatPrestasi($model->tingkat_prestasi_non_akademik1)  ?></td>
+            <td> <?= 'Nama Prestasi :' . $model->prestasi_non_akademik1 . ' <br> Tingkat : ' . $model->tingkatPrestasi($model->tingkat_prestasi_non_akademik1)  ?></td>
             <td><?= Html::a(
-                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
-                    Url::to(['gambar', 'id' => $model->file_prestasi_non_akademik1]),
-                    [
+                Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                Url::to(['gambar', 'id' => $model->file_prestasi_non_akademik1]),
+                [
                         'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_prestasi_non_akademik1,
-                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => 'modal'
                     ]
-                ); ?></td>
+            ); ?></td>
             <td> <?=$form->field($model, 'verivikasi_prestasi_non_akademik1')->radioList(['0'=>'Tidak Sesuai','1' =>'Sesuai' ])->label(false) ?></td>
 
 
@@ -173,15 +173,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <tr>
             <td>Prestasi Non Akademik 2 </td>
-            <td> <?= "Nama Prestasi :" .$model->prestasi_non_akademik2 ." <br> Tingkat : ".$model->tingkatPrestasi($model->tingkat_prestasi_non_akademik2)  ?></td>
+            <td> <?= 'Nama Prestasi :' . $model->prestasi_non_akademik2 . ' <br> Tingkat : ' . $model->tingkatPrestasi($model->tingkat_prestasi_non_akademik2)  ?></td>
             <td><?= Html::a(
-                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
-                    Url::to(['gambar', 'id' => $model->file_prestasi_non_akademik2]),
-                    [
+                Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                Url::to(['gambar', 'id' => $model->file_prestasi_non_akademik2]),
+                [
                         'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_prestasi_non_akademik2,
-                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => 'modal'
                     ]
-                ); ?></td>
+            ); ?></td>
             <td> <?=$form->field($model, 'verivikasi_prestasi_non_akademik2')->radioList(['0'=>'Tidak Sesuai','1' =>'Sesuai' ])->label(false) ?></td>
 
 
@@ -190,15 +190,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <tr>
             <td>Prestasi Non Akademik 3 </td>
-            <td> <?= "Nama Prestasi :" .$model->prestasi_non_akademik3 ." <br> Tingkat : ".$model->tingkatPrestasi($model->tingkat_prestasi_non_akademik3)  ?></td>
+            <td> <?= 'Nama Prestasi :' . $model->prestasi_non_akademik3 . ' <br> Tingkat : ' . $model->tingkatPrestasi($model->tingkat_prestasi_non_akademik3)  ?></td>
             <td><?= Html::a(
-                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
-                    Url::to(['gambar', 'id' => $model->file_prestasi_non_akademik3]),
-                    [
+                Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                Url::to(['gambar', 'id' => $model->file_prestasi_non_akademik3]),
+                [
                         'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_prestasi_non_akademik3,
-                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => 'modal'
                     ]
-                ); ?></td>
+            ); ?></td>
             <td> <?=$form->field($model, 'verivikasi_prestasi_non_akademik3')->radioList(['0'=>'Tidak Sesuai','1' =>'Sesuai' ])->label(false) ?></td>
 
 
@@ -206,15 +206,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <tr>
             <td>Prestasi Non Akademik 4 </td>
-            <td> <?= "Nama Prestasi :" .$model->prestasi_non_akademik4 ." <br> Tingkat : ".$model->tingkatPrestasi($model->tingkat_prestasi_non_akademik4)  ?></td>
+            <td> <?= 'Nama Prestasi :' . $model->prestasi_non_akademik4 . ' <br> Tingkat : ' . $model->tingkatPrestasi($model->tingkat_prestasi_non_akademik4)  ?></td>
             <td><?= Html::a(
-                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
-                    Url::to(['gambar', 'id' => $model->file_prestasi_non_akademik4]),
-                    [
+                Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                Url::to(['gambar', 'id' => $model->file_prestasi_non_akademik4]),
+                [
                         'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_prestasi_non_akademik4,
-                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => 'modal'
                     ]
-                ); ?></td>
+            ); ?></td>
             <td> <?=$form->field($model, 'verivikasi_prestasi_non_akademik4')->radioList(['0'=>'Tidak Sesuai','1' =>'Sesuai' ])->label(false) ?></td>
 
 
@@ -223,15 +223,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <tr>
             <td>Prestasi Non Akademik 5 </td>
-            <td> <?= "Nama Prestasi :" .$model->prestasi_non_akademik5 ." <br> Tingkat : ".$model->tingkatPrestasi($model->tingkat_prestasi_non_akademik5)  ?></td>
+            <td> <?= 'Nama Prestasi :' . $model->prestasi_non_akademik5 . ' <br> Tingkat : ' . $model->tingkatPrestasi($model->tingkat_prestasi_non_akademik5)  ?></td>
             <td><?= Html::a(
-                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
-                    Url::to(['gambar', 'id' => $model->file_prestasi_non_akademik5]),
-                    [
+                Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                Url::to(['gambar', 'id' => $model->file_prestasi_non_akademik5]),
+                [
                         'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_prestasi_non_akademik5,
-                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => 'modal'
                     ]
-                ); ?></td>
+            ); ?></td>
             <td> <?=$form->field($model, 'verivikasi_prestasi_non_akademik5')->radioList(['0'=>'Tidak Sesuai','1' =>'Sesuai' ])->label(false) ?></td>
 
 
@@ -239,15 +239,19 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <tr>
             <td>Pekerjaan Ayah </td>
-            <td> <?= " Pekerjaan :" .$model->pekerjaan_ayah ." <br> Penghasilan : ".\Yii::$app->formatter->asDecimal($model->penghasilan_ayah)  ?></td>
+            <td> <?= ' Pekerjaan :' . $model->pekerjaan_ayah .
+            ($model->pekerjaan_ayah!=='Wiraswasta' ?  ' <br> Penghasilan : ' . \Yii::$app->formatter->asDecimal($model->penghasilan_ayah)  :
+                ' <br> Omzet Harian : ' . \Yii::$app->formatter->asDecimal($model->omzet_harian_ayah) )
+            
+            ?></td>
             <td><?= Html::a(
-                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
-                    Url::to(['gambar', 'id' => $model->file_penghasilan_ayah]),
-                    [
+                Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                Url::to(['gambar', 'id' => $model->file_penghasilan_ayah]),
+                [
                         'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_penghasilan_ayah,
-                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => 'modal'
                     ]
-                ); ?></td>
+            ); ?></td>
             <td> <?=$form->field($model, 'verifikasi_penghasilan_ayah')->radioList(['0'=>'Tidak Sesuai','1' =>'Sesuai' ])->label(false) ?></td>
 
 
@@ -256,30 +260,35 @@ $this->params['breadcrumbs'][] = $this->title;
         
         <tr>
             <td>Pekerjaan ibu </td>
-            <td> <?= " Pekerjaan :" .$model->pekerjaan_ibu ." <br> Penghasilan : ".\Yii::$app->formatter->asDecimal($model->penghasilan_ibu)  ?></td>
+            <td> <?= ' Pekerjaan :' . $model->pekerjaan_ibu .
+            ($model->pekerjaan_ibu!=='Wiraswasta' ?  ' <br> Penghasilan : ' . \Yii::$app->formatter->asDecimal($model->penghasilan_ibu)  :
+                ' <br> Omzet Harian : ' . \Yii::$app->formatter->asDecimal($model->omzet_harian_ibu) )
+            
+            
+            ?></td>
             <td><?= Html::a(
-                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
-                    Url::to(['gambar', 'id' => $model->file_penghasilan_ibu]),
-                    [
+                Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                Url::to(['gambar', 'id' => $model->file_penghasilan_ibu]),
+                [
                         'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_penghasilan_ibu,
-                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => 'modal'
                     ]
-                ); ?></td>
+            ); ?></td>
             <td> <?=$form->field($model, 'verifikasi_penghasilan_ibu')->radioList(['0'=>'Tidak Sesuai','1' =>'Sesuai' ])->label(false) ?></td>
 
 
         </tr>
         <tr>
             <td>Anggota Keluarga </td>
-            <td> <?= " Anggota Keluarga :" .$model->jumlah_anggota_keluarga  ?></td>
+            <td> <?= ' Anggota Keluarga :' . $model->jumlah_anggota_keluarga  ?></td>
             <td><?= Html::a(
-                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
-                    Url::to(['gambar', 'id' => $model->file_foto_kartu_keluarga]),
-                    [
+                Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                Url::to(['gambar', 'id' => $model->file_foto_kartu_keluarga]),
+                [
                         'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_foto_kartu_keluarga,
-                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => 'modal'
                     ]
-                ); ?></td>
+            ); ?></td>
             <td> <?=$form->field($model, 'verifikasi_anggota_keluarga')->radioList(['0'=>'Tidak Sesuai','1' =>'Sesuai' ])->label(false) ?></td>
 
 
@@ -288,13 +297,13 @@ $this->params['breadcrumbs'][] = $this->title;
             <td>Kartu Keluarga Sejahtera</td>
             <td> </td>
             <td><?= Html::a(
-                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
-                    Url::to(['gambar', 'id' => $model->file_kartu_kks]),
-                    [
+                Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                Url::to(['gambar', 'id' => $model->file_kartu_kks]),
+                [
                         'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_kartu_kks,
-                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => 'modal'
                     ]
-                ); ?></td>
+            ); ?></td>
             <td> <?=$form->field($model, 'verifikasi_kks')->radioList(['0'=>'Tidak Sesuai','1' =>'Sesuai' ])->label(false) ?></td>
 
 
@@ -308,11 +317,11 @@ $this->params['breadcrumbs'][] = $this->title;
             <td>
                 Alamat : <?=$model->alamat?> <br>
                 Status :
-                <?= " " .$model->kepemilikanRumah($model->kepemilikan_rumah) ." <br> Luas Tanah : ".\Yii::$app->formatter->asDecimal($model->luas_tanah)
+                <?= ' ' . $model->kepemilikanRumah($model->kepemilikan_rumah) . ' <br> Luas Tanah : ' . \Yii::$app->formatter->asDecimal($model->luas_tanah)
             
-            ."<br> Luas Bangunan : ".\Yii::$app->formatter->asDecimal($model->luas_bangunan) .
-            "<br> Besar PBB : ".\Yii::$app->formatter->asDecimal($model->pembayaran_pbb)
-            ?></td>
+                . '<br> Luas Bangunan : ' . \Yii::$app->formatter->asDecimal($model->luas_bangunan) .
+                '<br> Besar PBB : ' . \Yii::$app->formatter->asDecimal($model->pembayaran_pbb)
+                ?></td>
             <td> 
                 Bukti Pembayaran PBB :
                 <?= Html::a(
@@ -320,7 +329,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     Url::to(['gambar', 'id' => $model->file_bukti_pembayaran_pbb]),
                     [
                         'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_bukti_pembayaran_pbb,
-                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => 'modal'
                     ]
                 ); ?> <br>
                     Foto Atap :
@@ -329,7 +338,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     Url::to(['gambar', 'id' => $model->file_foto_atap_rumah]),
                     [
                         'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_foto_atap_rumah,
-                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => 'modal'
                     ]
                 ); ?> <br>    Foto Lantai :
                 <?= Html::a(
@@ -337,17 +346,17 @@ $this->params['breadcrumbs'][] = $this->title;
                     Url::to(['gambar', 'id' => $model->file_foto_lantai_rumah]),
                     [
                         'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_foto_lantai_rumah,
-                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => 'modal'
                     ]
                 ); ?> <br> Foto Kamar Mandi
-                     <?= Html::a(
-                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
-                    Url::to(['gambar', 'id' => $model->file_foto_kamar_mandi]),
-                    [
-                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_foto_kamar_mandi,
-                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
-                    ]
-                ); ?> <br>
+                        <?= Html::a(
+                            Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                            Url::to(['gambar', 'id' => $model->file_foto_kamar_mandi]),
+                            [
+                            'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_foto_kamar_mandi,
+                            'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => 'modal'
+                            ]
+                        ); ?> <br>
             
             </td>
             <td> <?=$form->field($model, 'verifikasi_pembayaran_pbb')->radioList(['0'=>'Tidak Sesuai','1' =>'Sesuai' ])->label(false) ?></td>
@@ -360,13 +369,13 @@ $this->params['breadcrumbs'][] = $this->title;
             <td>Sumber Air  </td>
             <td> <?= $model->sumberAir($model->sumber_air)?></td>
             <td><?= Html::a(
-                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
-                    Url::to(['gambar', 'id' => $model->file_bukti_pembayaran_pdam]),
-                    [
+                Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                Url::to(['gambar', 'id' => $model->file_bukti_pembayaran_pdam]),
+                [
                         'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_bukti_pembayaran_pdam,
-                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => 'modal'
                     ]
-                ); ?></td>
+            ); ?></td>
             <td> <?=$form->field($model, 'verifikasi_pembayaran_pdam')->radioList(['0'=>'Tidak Sesuai','1' =>'Sesuai' ])->label(false) ?></td>
 
 
@@ -376,13 +385,13 @@ $this->params['breadcrumbs'][] = $this->title;
             <td>Sumber listrik  </td>
             <td> <?= $model->sumberListrik($model->sumber_listrik)?></td>
             <td><?= Html::a(
-                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
-                    Url::to(['gambar', 'id' => $model->file_bukti_pembayaran_pln]),
-                    [
+                Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                Url::to(['gambar', 'id' => $model->file_bukti_pembayaran_pln]),
+                [
                         'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_bukti_pembayaran_pln,
-                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => 'modal'
                     ]
-                ); ?></td>
+            ); ?></td>
             <td> <?=$form->field($model, 'verifikasi_pembayaran_pln')->radioList(['0'=>'Tidak Sesuai','1' =>'Sesuai' ])->label(false) ?></td>
 
 
@@ -401,7 +410,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 </table>
 
-<?= Html::submitButton('Simpan',['class'=>'btn btn-success']);  ?>
+<?= Html::submitButton('Simpan', ['class'=>'btn btn-success']);  ?>
 <?php Activeform::end(); ?>
 <?php
 Modal::begin([
@@ -431,7 +440,7 @@ function changeHandler(event) {
    var value = $(this).attr('value');
 
   console.log(fieldname1+' ');
- $.post( \"".Url::to(['set-verifikasi','id'=>$model->id])."&fieldname=\"+fieldname1+\"&value=\"+value, function( data ) {
+ $.post( \"" . Url::to(['set-verifikasi','id'=>$model->id]) . "&fieldname=\"+fieldname1+\"&value=\"+value, function( data ) {
         console.log(data.data)
     });
 
