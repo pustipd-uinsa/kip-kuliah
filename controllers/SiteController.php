@@ -180,6 +180,12 @@ class SiteController extends Controller
                 }
             }
         }
+       if (date('Y-m-d') <= Yii::$app->params['tanggalDaftarAwal'] || date('Y-m-d') >= Yii::$app->params['tanggalDaftarAkhir']) {
+         
+         Yii::$app->session->setFlash('error', 'Pendaftaran Masih Ditutup');
+                    return $this->goHome();
+          
+         }
 
         return $this->render('signup', [
             'model' => $model,
