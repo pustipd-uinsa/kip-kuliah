@@ -46,16 +46,18 @@ class SignupForm extends Model
         $model = Camaba::find()->where(['kode' => $this->username, 'tgl_lhr' => $this->tanggal . '-' . $this->bulan . '-' . $this->tahun])->one();
         if (!$model) {
             $this->addError('username', 'No Pendaftaran Tidak Ditemukan');
-            
-        } 
+        }
     }
     public function checkNim($attribute, $params)
     {
         $model = Mahasiswa::find()->where(['nim' => $this->nim])->one();
         if (!$model) {
             $this->addError('NIM', 'NIM Tidak Ditemukan');
-            
-        } 
+        }
+        $model = User::find()->where(['email' => $this->nim . '@student.uinsby.ac.id'])->one();
+        if ($model) {
+            $this->addError('NIM', 'NIM Sudah Pernah Mendaftar');
+        }
     }
     public function attributeLabels()
     {
@@ -75,8 +77,8 @@ class SignupForm extends Model
         if ($this->validate()) {
             $user = new User();
             $user->username = $this->username;
-            $user->email = $this->nim.'@student.uinsby.ac.id';
-            $user->setPassword($this->tanggal.'-'.$this->bulan.'-'.$this->tahun);
+            $user->email = $this->nim . '@student.uinsby.ac.id';
+            $user->setPassword($this->tanggal . '-' . $this->bulan . '-' . $this->tahun);
             $user->generateAuthKey();
             if ($user->save()) {
                 $authAssignment = new AuthAssignment();
