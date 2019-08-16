@@ -40,6 +40,10 @@ use yii\helpers\Html;
 
  </ul>
 </div>
+<div class="alert alert-danger">
+        <h4>Perhatian</h4>
+    <p>Lakukan Finalisasi Data Setelah Mengunggah Dokumen , Dokumen yang diproses adalah yang di finalisasi. </p>
+</div>
 <h3 class="prod_title">Data Mahasiswa Baru</h3>
  <h2><?=Yii::$app->user->identity->model->nama;?></h2>
 <h3>
