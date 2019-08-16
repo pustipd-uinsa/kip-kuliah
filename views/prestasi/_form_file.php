@@ -104,6 +104,36 @@ use yii\helpers\Url;
 
     </div>
 
+    <div class="row">
+        <div class="col-md-3">
+            <?= $form->field($model, 'file_foto_depan_rumah')->fileInput() ?>
+        </div>
+        <div class="col-md-6">
+            <?= html::img(Url::to(["/document/". $model->file_foto_depan_rumah]), ['width'=>130,'height'=>'200']) ?>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <?= $form->field($model, 'file_foto_ruang_tamu')->fileInput() ?>
+        </div>
+        <div class="col-md-6">
+            <?= html::img(Url::to(["/document/". $model->file_foto_ruang_tamu]), ['width'=>130,'height'=>'200']) ?>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <?= $form->field($model, 'file_foto_dapur')->fileInput() ?>
+        </div>
+        <div class="col-md-6">
+            <?= html::img(Url::to(["/document/". $model->file_foto_dapur]), ['width'=>130,'height'=>'200']) ?>
+        </div>
+
+    </div>
+
      <div class="row">
         <div class="col-md-3">
             <?= $form->field($model, 'file_foto_kartu_keluarga')->fileInput() ?>

@@ -76,13 +76,15 @@ class Borang extends \yii\db\ActiveRecord
     {
         $files =
             [
+
                 'file_prestasi_akademik10_1', 'file_prestasi_akademik11_1', 'file_prestasi_akademik12_1',
                 'file_prestasi_akademik10_2', 'file_prestasi_akademik11_2', 'file_prestasi_akademik12_2',
                 'file_prestasi_non_akademik1', 'file_prestasi_non_akademik2', 'file_prestasi_non_akademik3',
                 'file_prestasi_non_akademik4', 'file_prestasi_non_akademik5',
                 'file_penghasilan_ayah', 'file_penghasilan_ibu', 'file_penghasilan_sendiri', 'file_kartu_kks', 'file_bukti_pembayaran_pbb', 'file_bpkb_stnk', 'file_foto_atap_rumah',
-                'file_foto_lantai_rumah', 'file_foto_kamar_mandi',
-                'file_foto_kartu_keluarga'
+                'file_foto_lantai_rumah', 'file_foto_kamar_mandi','file_foto_depan_rumah','file_foto_ruang_tamu','file_foto_dapur',
+
+                'file_foto_kartu_keluarga', 'file_bukti_pembayaran_pln', 'file_bukti_pembayaran_pdam',
             ];
         foreach ($files as $file) {
             $this->old_file[$file] = $this->$file;
@@ -108,13 +110,15 @@ class Borang extends \yii\db\ActiveRecord
             // Place your custom code here
             $files =
                 [
+                
                     'file_prestasi_akademik10_1', 'file_prestasi_akademik11_1', 'file_prestasi_akademik12_1',
                     'file_prestasi_akademik10_2', 'file_prestasi_akademik11_2', 'file_prestasi_akademik12_2',
                     'file_prestasi_non_akademik1', 'file_prestasi_non_akademik2', 'file_prestasi_non_akademik3',
                     'file_prestasi_non_akademik4', 'file_prestasi_non_akademik5',
                     'file_penghasilan_ayah', 'file_penghasilan_ibu', 'file_penghasilan_sendiri', 'file_kartu_kks', 'file_bukti_pembayaran_pbb', 'file_bpkb_stnk', 'file_foto_atap_rumah',
-                    'file_foto_lantai_rumah', 'file_foto_kamar_mandi',
-                    'file_foto_kartu_keluarga'
+                    'file_foto_lantai_rumah', 'file_foto_kamar_mandi','file_foto_depan_rumah','file_foto_ruang_tamu','file_foto_dapur',
+
+                    'file_foto_kartu_keluarga', 'file_bukti_pembayaran_pln', 'file_bukti_pembayaran_pdam',
                 ];
             foreach ($files as $file) {
                 $this->upload($file);
@@ -163,7 +167,7 @@ class Borang extends \yii\db\ActiveRecord
                     'file_prestasi_non_akademik1', 'file_prestasi_non_akademik2', 'file_prestasi_non_akademik3',
                     'file_prestasi_non_akademik4', 'file_prestasi_non_akademik5',
                     'file_penghasilan_ayah', 'file_penghasilan_ibu', 'file_penghasilan_sendiri', 'file_kartu_kks', 'file_bukti_pembayaran_pbb', 'file_bpkb_stnk', 'file_foto_atap_rumah',
-                    'file_foto_lantai_rumah', 'file_foto_kamar_mandi',
+                    'file_foto_lantai_rumah', 'file_foto_kamar_mandi','file_foto_depan_rumah','file_foto_ruang_tamu','file_foto_dapur',
 
                     'file_foto_kartu_keluarga', 'file_bukti_pembayaran_pln', 'file_bukti_pembayaran_pdam',
 

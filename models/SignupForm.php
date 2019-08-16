@@ -14,7 +14,7 @@ class SignupForm extends Model
 {
     public $username;
 
-    public $email;
+    public $nim;
     public $password;
     public $tanggal;
     public $bulan;
@@ -32,14 +32,8 @@ class SignupForm extends Model
             ['username', 'unique', 'targetClass' => '\app\models\User', 'message' => 'No Pendaftaran ini Sudah Terdaftar'],
             ['username', 'string', 'min' => 2, 'max' => 255],
             ['username', 'checkUkt'],
-
-            ['email', 'filter', 'filter' => 'trim'],
-            ['email', 'required'],
-            ['email', 'email'],
-            ['email', 'string', 'max' => 255],
-            ['email', 'unique', 'targetClass' => '\app\models\User', 'message' => 'No Pendaftaran ini Sudah Terdaftar'],
-
-
+            ['nim', 'checkNim'],
+        
    
             [['tanggal', 'bulan', 'tahun'], 'required'],
      
@@ -55,7 +49,14 @@ class SignupForm extends Model
             
         } 
     }
-
+    public function checkNim($attribute, $params)
+    {
+        $model = Mahasiswa::find()->where(['nim' => $this->nim])->one();
+        if (!$model) {
+            $this->addError('NIM', 'NIM Tidak Ditemukan');
+            
+        } 
+    }
     public function attributeLabels()
     {
         return [
@@ -74,7 +75,7 @@ class SignupForm extends Model
         if ($this->validate()) {
             $user = new User();
             $user->username = $this->username;
-            $user->email = $this->email;
+            $user->email = $this->nim.'@student.uinsby.ac.id';
             $user->setPassword($this->tanggal.'-'.$this->bulan.'-'.$this->tahun);
             $user->generateAuthKey();
             if ($user->save()) {

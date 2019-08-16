@@ -357,6 +357,34 @@ $this->params['breadcrumbs'][] = $this->title;
                             'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => 'modal'
                             ]
                         ); ?> <br>
+                         
+                    Foto Depan Rumah :
+                <?= Html::a(
+                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                    Url::to(['gambar', 'id' => $model->file_foto_depan_rumah]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_foto_depan_rumah,
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => 'modal'
+                    ]
+                ); ?> <br>
+                 Foto Ruang Tamu :
+                <?= Html::a(
+                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                    Url::to(['gambar', 'id' => $model->file_foto_ruang_tamu]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_foto_ruang_tamu,
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => 'modal'
+                    ]
+                ); ?> <br>
+                 Foto Dapur :
+                <?= Html::a(
+                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                    Url::to(['gambar', 'id' => $model->file_foto_dapur]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_foto_dapur,
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => 'modal'
+                    ]
+                ); ?>
             
             </td>
             <td> <?=$form->field($model, 'verifikasi_pembayaran_pbb')->radioList(['0'=>'Tidak Sesuai','1' =>'Sesuai' ])->label(false) ?></td>
@@ -401,8 +429,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <td><b> Status Verifikasi </b></td>
             <td> </td>
             <td><?=$form->field($model, 'komentar_verifikator')->textarea(['rows' => '6'])->label('catatan') ?></td>
-            <td> <?=$form->field($model, 'status_verifikasi')->radioList(['0'=>'Tidak Diterima','1' =>'Diterima' ])->label(false) ?></td>
-
+      
 
         </tr>
     </tbody>

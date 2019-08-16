@@ -41,7 +41,7 @@ class BorangSearch extends Borang
      *
      * @return ActiveDataProvider
      */
-    public function search($params)
+    public function search($params,$status_verifikasi = null)
     {
         $query = Borang::find();
 
@@ -63,6 +63,9 @@ class BorangSearch extends Borang
             $query->orWhere( ['like', 'nama_ibu', $this->search ]);
         }
         $query->andWhere(['status_finalisasi' => '1']);   
+        if(!is_null($status_verifikasi)) {
+            $query->andWhere(['status_verifikasi' => 1]);
+        }
 
 
         if (!$this->validate()) {

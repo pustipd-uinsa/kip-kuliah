@@ -36,7 +36,7 @@ class ValidasiController extends Controller
     public function actionIndex()
     {
         $searchModel = new BorangSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams,1);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
