@@ -34,7 +34,7 @@ use yii\helpers\Html;
     <br>
 <ul>
 <li> Data Yang ditulis dan dilampirkan harus benar dan lengkap, jika tidak maka kemungkinan dapat digugurkan </li>
- <li> Untuk melihat upload Sukses cek unggah dokumen jika berubah menjadi gambar maka SUKSES jika tidak upload lagi</li>
+ <li> Lengkapi data yang diwajibkan dan upload dokumen yang di persyaratkan <br> Untuk melihat upload Sukses cek unggah dokumen jika berubah menjadi gambar maka SUKSES jika tidak upload lagi</li>
 
  <li> Untuk pengaduan silahkan mengirim pertanyaan di email helpdesk@uinsby.ac.id </li>
 
