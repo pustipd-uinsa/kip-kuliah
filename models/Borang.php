@@ -172,7 +172,7 @@ class Borang extends \yii\db\ActiveRecord
                     'file_foto_kartu_keluarga', 'file_bukti_pembayaran_pln', 'file_bukti_pembayaran_pdam',
 
                 ], 'file',
-                'skipOnEmpty' => true, 'extensions' => 'jpeg,jpg,png', 'maxSize' => 1048576
+                'skipOnEmpty' => true, 'extensions' => 'jpeg,jpg,png', 'maxSize' => 104857600
             ],
             [['prestasi_akademik10_1',  'prestasi_akademik11_1',  'prestasi_akademik12_1',  'prestasi_akademik10_2',  'prestasi_akademik11_2',  'prestasi_akademik12_2',  'prestasi_non_akademik1',  'prestasi_non_akademik2',  'prestasi_non_akademik3',  'prestasi_non_akademik4',  'prestasi_non_akademik5',], 'string', 'max' => 100],
         ];
