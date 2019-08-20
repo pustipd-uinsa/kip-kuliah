@@ -79,7 +79,14 @@ class SiteController extends Controller
             $model = \app\models\Borang::find()->where(['kode' => Yii::$app->user->identity->username])->one();
             if (is_null($model)) {
                 Yii::$app->session->setFlash('error', 'Anda Belum Mengunggah Dokumen , Lengkapi Dokumen Untuk Pengajuan Bidikmisi ! ');
+            } else {
+                if($model->status_finalisasi !==1) {
+                    Yii::$app->session->setFlash('error', 'Anda Belum Memfinalisasi Data , Finalisasi Data Untuk Pengajuan Bidikmisi ! ');
+                    
+                }
             }
+
+
         }
 
         return $this->render('index');
