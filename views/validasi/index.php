@@ -6,7 +6,7 @@ use yii\helpers\Html;
 use yii\bootstrap\Modal;
 use yii\helpers\Url;
 
-use yii\grid\GridView;
+use kartik\grid\GridView;
 use yii\widgets\Pjax;
 
 $this->registerCss('
@@ -50,7 +50,7 @@ JS;
 $this->registerJs($js1);
 
 $gridColumns = [
-    ['class' => 'yii\grid\SerialColumn'],
+    ['class' => 'kartik\grid\SerialColumn'],
     'kode',
     'mahasiswa.nama',
     'mahasiswa.nama_prodi',
@@ -65,7 +65,7 @@ $gridColumns = [
     'alamat:ntext',
 
     [
-        'class' => 'yii\grid\ActionColumn', 'options' => [
+        'class' => 'kartik\grid\ActionColumn', 'options' => [
             'width' => '120px',
         ],
         'contentOptions' => ['class' => 'td-actions text-right'],
@@ -119,14 +119,27 @@ $this->params['breadcrumbs'][] = $this->title;
                         <?php echo $this->render('_search', ['model' => $searchModel]); ?>
 
                         <?= GridView::widget([
-                            'dataProvider' => $dataProvider,
-                            'filterModel' => $searchModel,
-                            'columns' => $gridColumns,
-
-                        ]);
-                        ?>
-
-                    </div>
+                        'dataProvider' => $dataProvider,
+       // 'filterModel' => $searchModel,
+                        'columns' => $gridColumns,
+                        'tableOptions' => ['class' => 'table  table-bordered table-hover'],
+                        'striped' => false,
+                        'pjax' => true,
+                        'bordered' => true,
+                        'striped' => false,
+                        'condensed' => false,
+                        'panel' => [
+                        'type' => GridView::TYPE_SUCCESS,
+    
+                        ],
+                        'toolbar' => [
+                        '{export}',
+                        '{toggleData}',
+                        ],
+                        'resizableColumns' => true,
+    ]);
+?>
+</div>
                 </div>
             </div>
         </div>

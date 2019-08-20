@@ -62,9 +62,10 @@ class BorangSearch extends Borang
             $query->andFilterWhere(['or',['like', 'kode',$this->search],['like', 'nama_ayah',$this->search] ]);
             $query->orWhere( ['like', 'nama_ibu', $this->search ]);
         }
-        $query->andWhere(['status_finalisasi' => '1']);   
         if(!is_null($status_verifikasi)) {
             $query->andWhere(['status_verifikasi' => 1]);
+            $query->andWhere(['status_finalisasi' => '1']);   
+      
         }
 
 
