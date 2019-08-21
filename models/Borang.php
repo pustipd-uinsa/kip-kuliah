@@ -93,10 +93,14 @@ class Borang extends \yii\db\ActiveRecord
 
         if (!in_array($this->pekerjaan_ayah, ['PNS', 'Pegawai Swasta', 'Wiraswasta', 'TNI/POLRI', 'Petani'])) {
             $this->pekerjaan_ayah_lain = $this->pekerjaan_ayah;
+           $this->pekerjaan_ayah = 'Lainnya';
+           
         }
 
         if (!in_array($this->pekerjaan_ibu, ['PNS', 'Pegawai Swasta', 'Wiraswasta', 'TNI/POLRI', 'Petani'])) {
             $this->pekerjaan_ibu_lain = $this->pekerjaan_ibu;
+           $this->pekerjaan_ibu = 'Lainnya';
+
         }
     }
 

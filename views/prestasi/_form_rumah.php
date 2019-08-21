@@ -32,8 +32,7 @@ use yii\widgets\ActiveForm;
 <div class="row">
     <div class="col-md-3">
 
-        <?= $form->field($model, 'sumber_air')->radioList(['1' => 'PDAM', '2' => 'Kemasan', '
-3' => 'Sumur', '4' => 'Sungai/Mata Air Gunung'], ['separator' => ' <br>']) ?>
+        <?= $form->field($model, 'sumber_air')->radioList(['1' => 'PDAM', '2' => 'Kemasan', '3' => 'Sumur', '4' => 'Sungai/Mata Air Gunung'], ['separator' => ' <br>']) ?>
     </div>
     <div class="col-md-4">
 
@@ -46,8 +45,7 @@ use yii\widgets\ActiveForm;
 <div class="row">
     <div class="col-md-3">
 
-<?= $form->field($model, 'sumber_listrik')->radioList([ '0' => 'Tidak Ada','1' => 'PLN', '2' => 'Genset Mandiri', '
-3' => 'PLN dan Genset'], ['separator' => ' <br>']) ?>
+<?= $form->field($model, 'sumber_listrik')->radioList([ '0' => 'Tidak Ada','1' => 'PLN', '2' => 'Genset Mandiri', '3' => 'PLN dan Genset'], ['separator' => ' <br>']) ?>
     </div>
     <div class="col-md-4">
     <?= $form->field($model, 'daya_pln') ?> <br>
