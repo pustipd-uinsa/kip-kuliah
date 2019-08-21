@@ -61,6 +61,9 @@ $gridColumns = [
     'pekerjaan_ibu',
     'penghasilan_ayah:decimal',
     'penghasilan_ibu:decimal',
+    'omzet_harian_ayah:decimal',
+    'omzet_harian_ibu:decimal',
+
     // 'penghasilan_sendiri',
     'alamat:ntext',
 

@@ -20,6 +20,35 @@ foreach ($model as $detail) {
 }
 
 
+
+$model = Borang::find()->select(['jalur' =>new \yii\db\Expression("case when status_finalisasi =1 then 'Sudah Finalisasi' else 'Belum Finalisasi' end"),'total'=>'count(*)'])
+
+
+->groupBy(new \yii\db\Expression("case when status_finalisasi =1 then 'Sudah Finalisasi' else 'Belum Finalisasi' end"))
+->all();
+
+foreach ($model as $detail) {
+    $data3[]=[$detail->jalur,(int)$detail->total];
+}
+
+$model = Borang::find()->select(['jalur' =>'coalesce(ukt_2019.kabupaten.nama,"")','total'=>'count(*)'])
+->leftJoin(
+    'ukt_2019.mhs',
+    'borang.kode = ukt_2019.mhs.kode'
+)
+->leftJoin(
+    'ukt_2019.kabupaten',
+    'ukt_2019.kabupaten.id = ukt_2019.mhs.kab'
+)
+->groupBy('ukt_2019.kabupaten.nama')
+->all();
+
+foreach ($model as $detail) {
+    $data4[]=[$detail->jalur,(int)$detail->total];
+}
+
+
+
 $model = Borang::find()->select(['jalur' =>'ukt_2019.prodi.nama','total'=>'count(*)'])
 ->leftJoin(
     'ukt_2019.mhs',
@@ -37,9 +66,99 @@ foreach ($model as $detail) {
 }
 
 ?>
+<div class="row">
+<div class="col-md-6">
+<div class="x_panel">
+<div class="x_title">
+<h4>Komposisi Finalisasi Dokumen Mahasiswa Bidikmisi</h4>
+<ul class="nav navbar-right panel_toolbox">
+
+<div class="clearfix"></div>
+</div>
+<div class="x_content">
+
+<?php
 
 
-<div class="col-md-6 col-sm-6 col-xs-12">
+echo Highcharts::widget([
+    'options' => [
+        'title' => [
+            'text' => 'Finalisasi Dokumen',
+        ],
+           'plotOptions' => [
+            'pie' => [
+                'cursor' => 'pointer',
+            ],
+        ],
+        'showInLegend' => true,
+        
+
+        'series' => [
+            [ // new opening bracket
+                'type' => 'pie',
+                'name' => 'Finalisasi Mahasiswa',
+                'data' =>
+                   $data3
+                ,
+            ] // new closing bracket
+        ],
+    ],
+]);
+ ?>
+
+</div>
+</div>
+</div>
+
+
+<div class="col-md-6">
+<div class="x_panel">
+<div class="x_title">
+<h4>Komposisi  Kota Asal Mahasiswa Bidikmisi</h4>
+<ul class="nav navbar-right panel_toolbox">
+
+<div class="clearfix"></div>
+</div>
+<div class="x_content">
+
+<?php
+
+
+echo Highcharts::widget([
+    'options' => [
+        'title' => [
+            'text' => 'Kota Asal',
+        ],
+           'plotOptions' => [
+            'pie' => [
+                'cursor' => 'pointer',
+            ],
+        ],
+        'showInLegend' => true,
+        
+
+        'series' => [
+            [ // new opening bracket
+                'type' => 'pie',
+                'name' => 'Kota Asal Mahasiswa',
+                'data' =>
+                   $data4
+                ,
+            ] // new closing bracket
+        ],
+    ],
+]);
+ ?>
+
+</div>
+</div>
+</div>
+
+
+</div>
+
+<div class="row">
+<div class="col-md-6">
 <div class="x_panel">
 <div class="x_title">
 <h4>Komposisi Jalur Mahasiswa Bidikmisi</h4>
@@ -83,7 +202,7 @@ echo Highcharts::widget([
 </div>
 
 
-<div class="col-md-6 col-sm-6 col-xs-12">
+<div class="col-md-6">
 <div class="x_panel">
 <div class="x_title">
 <h4>Komposisi Prodi Mahasiswa Bidikmisi</h4>
@@ -126,3 +245,4 @@ echo Highcharts::widget([
 </div>
 </div>
 
+</div>
