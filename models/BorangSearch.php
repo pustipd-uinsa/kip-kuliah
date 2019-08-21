@@ -67,6 +67,8 @@ class BorangSearch extends Borang
             $query->andWhere(['status_finalisasi' => '1']);   
       
         }
+       
+      $query->orderBy('status_finalisasi desc');
 
 
         if (!$this->validate()) {
@@ -75,6 +77,7 @@ class BorangSearch extends Borang
             return $dataProvider;
         }
 
+            
       
 
         return $dataProvider;
