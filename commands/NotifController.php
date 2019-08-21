@@ -15,14 +15,19 @@ class NotifController extends Controller
     {
         $listBelumFinalisasi = Borang::find()->where(['status_finalisasi'=>0])->all();
         foreach ($listBelumFinalisasi as $mahasiswa) {
-            $user = User::find()->where(['username' => $mahasiswa->kode])->one();
-            \Yii::$app->mailer->compose(['html' => 'notif-html', 'text' => 'notif-text'], ['nama' => $mahasiswa->mahasiswa->nama])
-            ->setFrom([\Yii::$app->params['supportEmail'] => \Yii::$app->name . ' '])
-            ->setTo($user->email)
-            ->setSubject(' Finalisasi Bidikmisi UIN Sunan Ampel Surabaya ')
-            ->send();
+            try {
+                $user = User::find()->where(['username' => $mahasiswa->kode])->one();
+                \Yii::$app->mailer->compose(['html' => 'notif-html', 'text' => 'notif-text'], ['nama' => $mahasiswa->mahasiswa->nama])
+                ->setFrom([\Yii::$app->params['supportEmail'] => \Yii::$app->name . ' '])
+                ->setTo($user->email)
+                ->setSubject(' Finalisasi Bidikmisi UIN Sunan Ampel Surabaya ')
+                ->send();
+            } catch  (Exception $e) {
+                //display custom message
+                echo $mahasiswa->mahasiswa->nama . '-' . $user->email . "\n" . $e->errorMessage();
+              }
 
-            echo $mahasiswa->mahasiswa->nama . '-' . $user->email ."\n";
+            echo $mahasiswa->mahasiswa->nama . '-' . $user->email . "\n";
         }
     }
 }

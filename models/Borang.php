@@ -1,5 +1,4 @@
 <?php
-
 namespace app\models;
 
 use Yii;
@@ -70,6 +69,8 @@ class Borang extends \yii\db\ActiveRecord
     public $old_file;
     public $pekerjaan_ayah_lain;
     public $pekerjaan_ibu_lain;
+    public $jalur;
+    public $total;
 
 
     public function saveOld()

@@ -22,7 +22,11 @@ use hscstudio\mimin\components\Mimin;
             <?php
             if (Yii::$app->user->identity->jenis_user === 'camaba') {
                echo $this->render('dashboard_camaba');
+            } else {
+               echo $this->render('dashboard');
+               
             }
+
 
 
             ?>

@@ -38,6 +38,7 @@
         "mdmsoft/yii2-widgets": "^1.2",
         "ramosisw/yii2-material-dashboard": "dev-master",
         "yiister/yii2-gentelella": "~1.0",
+        "miloschuman/yii2-highcharts-widget": "dev-master"
    
       
 
