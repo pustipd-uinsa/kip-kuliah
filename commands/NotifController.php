@@ -19,7 +19,7 @@ class NotifController extends Controller
             \Yii::$app->mailer->compose(['html' => 'notif-html', 'text' => 'notif-text'], ['nama' => $mahasiswa->mahasiswa->nama])
             ->setFrom([\Yii::$app->params['supportEmail'] => \Yii::$app->name . ' '])
             ->setTo($user->email)
-            ->setSubject('Password reset for ' . \Yii::$app->name)
+            ->setSubject(' Finalisasi Bidikmisi UIN Sunan Ampel Surabaya ')
             ->send();
 
             echo $mahasiswa->mahasiswa->nama . '-' . $user->email ."\n";
