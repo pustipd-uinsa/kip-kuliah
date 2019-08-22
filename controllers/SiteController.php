@@ -84,7 +84,7 @@ class SiteController extends Controller
                     Yii::$app->session->setFlash('error', 'Anda Belum Memfinalisasi Data , Finalisasi Data Untuk Pengajuan Bidikmisi ! ');
                     
                 } else {
-                    Yii::$app->session->setFlash('success', 'Anda Sudah Memfinalisasi Data , Tunggu Pengumuman Selanjuutnya ');
+                    Yii::$app->session->setFlash('success', 'Anda Sudah Memfinalisasi Data , Tunggu Pengumuman Selanjutnya ');
                     
                 }
             }
