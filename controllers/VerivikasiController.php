@@ -8,6 +8,7 @@ use app\models\BorangSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\Url;
 
 /**
  * VerivikasiController implements the CRUD actions for Borang model.
@@ -63,10 +64,18 @@ class VerivikasiController extends Controller
     }
     public function actionGambar($id = '')
     {
-        return $this->renderAjax('gambar', [
-            'gambar' =>    $id,
+        $info = pathinfo($id);
+        if ($id != '') {
+        
+            if ($info['extension'] === 'pdf') {
+               return Yii::$app->response->xSendFile(Url::to(["/document/". $id]));
+            } else {
+                  return $this->renderAjax('gambar', [
+                'gambar' =>    $id,
 
-        ]);
+                  ]);
+            }
+        }
     }
     public function actionSetVerifikasi($id, $fieldname, $value)
     {

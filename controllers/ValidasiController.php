@@ -36,7 +36,7 @@ class ValidasiController extends Controller
     public function actionIndex()
     {
         $searchModel = new BorangSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams,1);
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams, 1);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -63,10 +63,18 @@ class ValidasiController extends Controller
     }
     public function actionGambar($id = '')
     {
-        return $this->renderAjax('gambar', [
-            'gambar' =>    $id,
+        $info = pathinfo($id);
+        if ($id != '') {
+            if ($info['extension'] == 'pdf') {
+               return Yii::$app->response->xSendFile(Url::to(["/document/". $id]));
+            } else {
+                  return $this->renderAjax('gambar', [
+                'gambar' =>    $id,
 
-        ]);
+                  ]);
+            }
+        }
+    
     }
     public function actionSetValidasi($id, $fieldname, $value)
     {
