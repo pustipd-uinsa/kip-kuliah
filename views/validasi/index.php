@@ -51,22 +51,6 @@ $this->registerJs($js1);
 
 $gridColumns = [
     ['class' => 'kartik\grid\SerialColumn'],
-    'kode',
-    'mahasiswa.nama',
-    'mahasiswa.nama_prodi',
-
-    'nama_ayah',
-    'nama_ibu',
-    'pekerjaan_ayah',
-    'pekerjaan_ibu',
-    'penghasilan_ayah:decimal',
-    'penghasilan_ibu:decimal',
-    'omzet_harian_ayah:decimal',
-    'omzet_harian_ibu:decimal',
-
-    // 'penghasilan_sendiri',
-    'alamat:ntext',
-
     [
         'class' => 'kartik\grid\ActionColumn', 'options' => [
             'width' => '120px',
@@ -88,7 +72,24 @@ $gridColumns = [
                     );
             }
         ]
-    ]
+        ],
+    'kode',
+    'mahasiswa.nama',
+    'mahasiswa.nama_prodi',
+
+    'nama_ayah',
+    'nama_ibu',
+    'pekerjaan_ayah',
+    'pekerjaan_ibu',
+    'penghasilan_ayah:decimal',
+    'penghasilan_ibu:decimal',
+    'omzet_harian_ayah:decimal',
+    'omzet_harian_ibu:decimal',
+
+    // 'penghasilan_sendiri',
+    'alamat:ntext',
+
+   
 ];
 
 

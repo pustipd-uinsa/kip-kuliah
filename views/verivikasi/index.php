@@ -51,6 +51,29 @@ $this->registerJs($js1);
 
 $gridColumns = [
     ['class' => 'kartik\grid\SerialColumn'],
+    [
+        'class' => 'kartik\grid\ActionColumn', 'options' => [
+            'width' => '120px',
+        ],
+        'contentOptions' => ['class' => 'td-actions text-right'],
+        'headerOptions' => ['class' => 'text-right'],
+        'template' => '{verifikasi}',
+        'buttons' => [
+            'verifikasi' => function ($url, $model) {
+                if ($model->status_finalisasi===1) {
+                    return
+                    Html::a(
+                        Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                        Url::to(['verifikasi', 'id' => $model->id]),
+                        [
+                            'class' => 'popupModal', 'id' => 'href' . $model->id,
+                            'title' => 'Verifikasi', 'class' => 'btn btn-info btn-round',
+                        ]
+                    );
+                }
+            }
+        ]
+        ],
     'kode',
     'mahasiswa.nama',
     'mahasiswa.tgl_lhr',
@@ -81,29 +104,7 @@ $gridColumns = [
 
     ],
 
-    [
-        'class' => 'kartik\grid\ActionColumn', 'options' => [
-            'width' => '120px',
-        ],
-        'contentOptions' => ['class' => 'td-actions text-right'],
-        'headerOptions' => ['class' => 'text-right'],
-        'template' => '{verifikasi}',
-        'buttons' => [
-            'verifikasi' => function ($url, $model) {
-                if ($model->status_finalisasi===1) {
-                    return
-                    Html::a(
-                        Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
-                        Url::to(['verifikasi', 'id' => $model->id]),
-                        [
-                            'class' => 'popupModal', 'id' => 'href' . $model->id,
-                            'title' => 'Verifikasi', 'class' => 'btn btn-info btn-round',
-                        ]
-                    );
-                }
-            }
-        ]
-    ]
+   
 ];
 
 
