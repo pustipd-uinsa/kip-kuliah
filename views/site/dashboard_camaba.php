@@ -38,12 +38,11 @@ use yii\helpers\Html;
 
  <li> Untuk pengaduan silahkan mengirim pertanyaan di email helpdesk@uinsby.ac.id </li>
 
+ <p>Lakukan Finalisasi Data Setelah Mengunggah Dokumen , Dokumen yang diproses adalah yang di finalisasi. </p>
+
  </ul>
 </div>
-<div class="alert alert-danger">
-        <h4>Perhatian</h4>
-    <p>Lakukan Finalisasi Data Setelah Mengunggah Dokumen , Dokumen yang diproses adalah yang di finalisasi. </p>
-</div>
+
 <h3 class="prod_title">Data Mahasiswa Baru</h3>
  <h2><?=Yii::$app->user->identity->model->nama;?></h2>
 <h3>
