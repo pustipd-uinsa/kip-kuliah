@@ -162,7 +162,12 @@ $this->params['breadcrumbs'][] = $this->title;
         </tr>
         <tr>
             <td>Prestasi Non Akademik  1</td>
-            <td> <?= 'Nama Prestasi :' . $model->prestasi_non_akademik1 . ' <br> Tingkat : ' . $model->tingkatPrestasi($model->tingkat_prestasi_non_akademik1)  ?></td>
+            <td> <?= 'Nama Prestasi :' . $model->prestasi_non_akademik1 . ' <br> ' ?>
+            <?= $form->field($model, 'tingkat_prestasi_non_akademik1')->dropDownList([1=>'Kabupaten / Kotamadya',2=>'Propinsi',3=>'Nasional' ,4=>'Internasional'], [
+
+'prompt'=>'- Pilih Tingkat Prestasi -'
+]); ?>
+</td>
             <td><?= Html::a(
                 Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
                 Url::to(['gambar', 'id' => $model->file_prestasi_non_akademik1]),
@@ -178,8 +183,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <tr>
             <td>Prestasi Non Akademik 2 </td>
-            <td> <?= 'Nama Prestasi :' . $model->prestasi_non_akademik2 . ' <br> Tingkat : ' . $model->tingkatPrestasi($model->tingkat_prestasi_non_akademik2)  ?></td>
-            <td><?= Html::a(
+            <td> <?= 'Nama Prestasi :' . $model->prestasi_non_akademik2 . ' <br> ' ?>
+            <?= $form->field($model, 'tingkat_prestasi_non_akademik2')->dropDownList([1=>'Kabupaten / Kotamadya',2=>'Propinsi',3=>'Nasional' ,4=>'Internasional'], [
+
+'prompt'=>'- Pilih Tingkat Prestasi -'
+]); ?>
+        <td><?= Html::a(
                 Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
                 Url::to(['gambar', 'id' => $model->file_prestasi_non_akademik2]),
                 [
@@ -195,8 +204,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <tr>
             <td>Prestasi Non Akademik 3 </td>
-            <td> <?= 'Nama Prestasi :' . $model->prestasi_non_akademik3 . ' <br> Tingkat : ' . $model->tingkatPrestasi($model->tingkat_prestasi_non_akademik3)  ?></td>
-            <td><?= Html::a(
+            <td> <?= 'Nama Prestasi :' . $model->prestasi_non_akademik3 . ' <br> ' ?>
+            <?= $form->field($model, 'tingkat_prestasi_non_akademik3')->dropDownList([1=>'Kabupaten / Kotamadya',2=>'Propinsi',3=>'Nasional' ,4=>'Internasional'], [
+
+'prompt'=>'- Pilih Tingkat Prestasi -'
+]); ?>
+   <td><?= Html::a(
                 Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
                 Url::to(['gambar', 'id' => $model->file_prestasi_non_akademik3]),
                 [
@@ -211,8 +224,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <tr>
             <td>Prestasi Non Akademik 4 </td>
-            <td> <?= 'Nama Prestasi :' . $model->prestasi_non_akademik4 . ' <br> Tingkat : ' . $model->tingkatPrestasi($model->tingkat_prestasi_non_akademik4)  ?></td>
-            <td><?= Html::a(
+            <td> <?= 'Nama Prestasi :' . $model->prestasi_non_akademik4 . ' <br> ' ?>
+            <?= $form->field($model, 'tingkat_prestasi_non_akademik4')->dropDownList([1=>'Kabupaten / Kotamadya',2=>'Propinsi',3=>'Nasional' ,4=>'Internasional'], [
+
+'prompt'=>'- Pilih Tingkat Prestasi -'
+]); ?>
+          <td><?= Html::a(
                 Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
                 Url::to(['gambar', 'id' => $model->file_prestasi_non_akademik4]),
                 [
@@ -228,8 +245,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <tr>
             <td>Prestasi Non Akademik 5 </td>
-            <td> <?= 'Nama Prestasi :' . $model->prestasi_non_akademik5 . ' <br> Tingkat : ' . $model->tingkatPrestasi($model->tingkat_prestasi_non_akademik5)  ?></td>
-            <td><?= Html::a(
+            <td> <?= 'Nama Prestasi :' . $model->prestasi_non_akademik5 . ' <br> ' ?>
+            <?= $form->field($model, 'tingkat_prestasi_non_akademik5')->dropDownList([1=>'Kabupaten / Kotamadya',2=>'Propinsi',3=>'Nasional' ,4=>'Internasional'], [
+
+'prompt'=>'- Pilih Tingkat Prestasi -'
+]); ?>
+       <td><?= Html::a(
                 Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
                 Url::to(['gambar', 'id' => $model->file_prestasi_non_akademik5]),
                 [
