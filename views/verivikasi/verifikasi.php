@@ -5,6 +5,7 @@ use yii\helpers\Url;
 use yii\bootstrap\Modal;
 use yii\widgets\Pjax;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
 
 $this->registerCss('
 /* Important part */
@@ -41,6 +42,10 @@ $('#modal1').insertAfter($('body'));
 
 JS;
 $this->registerJs($js1);
+$peringkat = [];
+for ($i = 1; $i <= 10; $i++) {
+    $peringkat[] = ['id' => $i, 'value' => 'Rangking ' . $i];
+}
 
 $form = ActiveForm::begin();
 $this->title = Yii::t('app', 'Verifikasi Dokumen Bidikmisi');
@@ -65,7 +70,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <tbody>
         <tr>
             <td>Prestasi Akademik Kelas 10 (Gasal)</td>
-            <td>Rangking <?= $model->prestasi_akademik10_1 ?></td>
+            <td>Rangking      <?= $form->field($model, 'prestasi_akademik10_1')->dropDownList(ArrayHelper::map($peringkat, 'id', 'value'), ['prompt'=>'- Pilih Prestasi Akademik -'])->label(false);?></td>
             <td><?= Html::a(
                 Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
                 Url::to(['gambar', 'id' => $model->file_prestasi_akademik10_1]),
@@ -80,7 +85,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </tr>
         <tr>
             <td>Prestasi Akademik Kelas 10 (Genap)</td>
-            <td>Rangking <?= $model->prestasi_akademik10_2 ?></td>
+            <td>Rangking      <?= $form->field($model, 'prestasi_akademik10_2')->dropDownList(ArrayHelper::map($peringkat, 'id', 'value'), ['prompt'=>'- Pilih Prestasi Akademik -'])->label(false);?></td>
             <td><?= Html::a(
                 Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
                 Url::to(['gambar', 'id' => $model->file_prestasi_akademik10_2]),
@@ -96,22 +101,22 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <tr>
             <td>Prestasi Akademik Kelas 12 (Gasal)</td>
-            <td>Rangking <?= $model->prestasi_akademik11_1 ?></td>
-            <td><?= Html::a(
-                Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
-                Url::to(['gambar', 'id' => $model->file_prestasi_akademik11_1]),
-                [
+            <td>Rangking      <?= $form->field($model, 'prestasi_akademik11_1')->dropDownList(ArrayHelper::map($peringkat, 'id', 'value'), ['prompt'=>'- Pilih Prestasi Akademik -'])->label(false);?></td>
+           <td><?= Html::a(
+               Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+               Url::to(['gambar', 'id' => $model->file_prestasi_akademik11_1]),
+               [
                         'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->file_prestasi_akademik11_1,
                         'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => 'modal'
                     ]
-            ); ?></td>
+           ); ?></td>
             <td> <?=$form->field($model, 'verivikasi_prestasi_akademik11_1')->radioList(['0'=>'Tidak Sesuai','1' =>'Sesuai' ])->label(false) ?></td>
 
 
         </tr>
         <tr>
             <td>Prestasi Akademik Kelas 11 (Genap)</td>
-            <td>Rangking <?= $model->prestasi_akademik11_2 ?></td>
+            <td>Rangking      <?= $form->field($model, 'prestasi_akademik11_2')->dropDownList(ArrayHelper::map($peringkat, 'id', 'value'), ['prompt'=>'- Pilih Prestasi Akademik -'])->label(false);?></td>
             <td><?= Html::a(
                 Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
                 Url::to(['gambar', 'id' => $model->file_prestasi_akademik11_2]),
@@ -127,7 +132,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
        <tr>
             <td>Prestasi Akademik Kelas 12 (Gasal)</td>
-            <td>Rangking <?= $model->prestasi_akademik12_1 ?></td>
+            <td>Rangking      <?= $form->field($model, 'prestasi_akademik12_1')->dropDownList(ArrayHelper::map($peringkat, 'id', 'value'), ['prompt'=>'- Pilih Prestasi Akademik -'])->label(false);?></td>
             <td><?= Html::a(
                 Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
                 Url::to(['gambar', 'id' => $model->file_prestasi_akademik12_1]),
@@ -142,7 +147,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </tr>
         <tr>
             <td>Prestasi Akademik Kelas 12 (Genap)</td>
-            <td>Rangking <?= $model->prestasi_akademik12_2 ?></td>
+            <td>Rangking      <?= $form->field($model, 'prestasi_akademik12_2')->dropDownList(ArrayHelper::map($peringkat, 'id', 'value'), ['prompt'=>'- Pilih Prestasi Akademik -'])->label(false);?></td>
             <td><?= Html::a(
                 Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
                 Url::to(['gambar', 'id' => $model->file_prestasi_akademik12_2]),
@@ -239,11 +244,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <tr>
             <td>Pekerjaan Ayah </td>
-            <td> <?= ' Pekerjaan :' . $model->pekerjaan_ayah .
-            ($model->pekerjaan_ayah!=='Wiraswasta' ?  ' <br> Penghasilan : ' . \Yii::$app->formatter->asDecimal($model->penghasilan_ayah)  :
-                ' <br> Omzet Harian : ' . \Yii::$app->formatter->asDecimal($model->omzet_harian_ayah) )
-            
-            ?></td>
+            <td> <?= ' Pekerjaan :' . $model->pekerjaan_ayah ."<br>" ?>
+          <?=  ($model->pekerjaan_ayah!=='Wiraswasta') ? 
+            $form->field($model, 'penghasilan_ayah') :
+                $form->field($model, 'omzet_harian_ayah')  ?></td>
             <td><?= Html::a(
                 Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
                 Url::to(['gambar', 'id' => $model->file_penghasilan_ayah]),
@@ -260,12 +264,11 @@ $this->params['breadcrumbs'][] = $this->title;
         
         <tr>
             <td>Pekerjaan ibu </td>
-            <td> <?= ' Pekerjaan :' . $model->pekerjaan_ibu .
-            ($model->pekerjaan_ibu!=='Wiraswasta' ?  ' <br> Penghasilan : ' . \Yii::$app->formatter->asDecimal($model->penghasilan_ibu)  :
-                ' <br> Omzet Harian : ' . \Yii::$app->formatter->asDecimal($model->omzet_harian_ibu) )
-            
-            
-            ?></td>
+       <td> <?= ' Pekerjaan :' . $model->pekerjaan_ibu ."<br>" ?>
+          <?=  ($model->pekerjaan_ibu!=='Wiraswasta') ? 
+            $form->field($model, 'penghasilan_ibu') :
+                $form->field($model, 'omzet_harian_ibu')  ?></td>
+      </td>
             <td><?= Html::a(
                 Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
                 Url::to(['gambar', 'id' => $model->file_penghasilan_ibu]),
@@ -280,7 +283,8 @@ $this->params['breadcrumbs'][] = $this->title;
         </tr>
         <tr>
             <td>Anggota Keluarga </td>
-            <td> <?= ' Anggota Keluarga :' . $model->jumlah_anggota_keluarga  ?></td>
+            <td>           <?= $form->field($model, 'jumlah_anggota_keluarga')->textInput() ?>
+           </td>
             <td><?= Html::a(
                 Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
                 Url::to(['gambar', 'id' => $model->file_foto_kartu_keluarga]),
