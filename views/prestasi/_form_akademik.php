@@ -23,7 +23,11 @@ for ($i = 1; $i <= 10; $i++) {
             <?= $form->field($model, 'file_prestasi_akademik10_1')->fileInput() ?>
         </div>
         <div class="col-md-3">
+          
             <?= html::img(Url::to(["/document/". $model->file_prestasi_akademik10_1]),['width'=>130,'height'=>'200']) ?>
+          <object width="130" height="200" data=<?=Url::to(["/document/". $model->file_prestasi_akademik10_1]) ?>>
+            
+          </object>
         </div>
 
     </div>
@@ -39,7 +43,9 @@ for ($i = 1; $i <= 10; $i++) {
         </div>
         <div class="col-md-3">
             <?= html::img(Url::to(["/document/". $model->file_prestasi_akademik10_2]),['width'=>130,'height'=>'200']) ?>
-        </div>
+          <object width="130" height="200" data=<?=Url::to(["/document/". $model->file_prestasi_akademik10_2]) ?>>
+              </object>
+      </div>
 
     </div>
     <div class="row">
@@ -54,6 +60,8 @@ for ($i = 1; $i <= 10; $i++) {
         </div>
         <div class="col-md-3">
             <?= html::img(Url::to(["/document/". $model->file_prestasi_akademik11_1]),['width'=>130,'height'=>'200']) ?>
+             <object width="130" height="200" data=<?=Url::to(["/document/". $model->file_prestasi_akademik11_1]) ?>>
+              </object>
         </div>
 
     </div>
@@ -70,6 +78,8 @@ for ($i = 1; $i <= 10; $i++) {
         </div>
         <div class="col-md-3">
             <?= html::img(Url::to(["/document/". $model->file_prestasi_akademik11_2]),['width'=>130,'height'=>'200']) ?>
+                <object width="130" height="200" data=<?=Url::to(["/document/". $model->file_prestasi_akademik11_2]) ?>>
+              </object>
         </div>
     </div>
     <div class="row">
@@ -84,6 +94,8 @@ for ($i = 1; $i <= 10; $i++) {
         </div>
         <div class="col-md-3">
             <?= html::img(Url::to(["/document/". $model->file_prestasi_akademik12_1]),['width'=>130,'height'=>'200']) ?>
+                <object width="130" height="200" data=<?=Url::to(["/document/". $model->file_prestasi_akademik12_1]) ?>>
+              </object>
         </div>
     </div>
     <div class="row">
@@ -98,6 +110,8 @@ for ($i = 1; $i <= 10; $i++) {
         </div>
         <div class="col-md-3">
             <?= html::img(Url::to(["/document/". $model->file_prestasi_akademik12_2]),['width'=>130,'height'=>'200']) ?>
+                <object width="130" height="200" data=<?=Url::to(["/document/". $model->file_prestasi_akademik12_2]) ?>>
+              </object>
         </div>
     </div>
 

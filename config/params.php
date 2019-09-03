@@ -6,6 +6,6 @@ return [
 	'supportEmail' => 'support@example.com',
     'user.passwordResetTokenExpire' => 3600,
     'tanggalDaftarAwal' =>'2019-08-19',
-    'tanggalDaftarAkhir' =>'2019-08-26',
+    'tanggalDaftarAkhir' =>'2019-09-01',
      
 ];

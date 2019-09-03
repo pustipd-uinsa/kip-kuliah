@@ -127,6 +127,9 @@ $this->params['breadcrumbs'][] = $this->title;
        // 'filterModel' => $searchModel,
                         'columns' => $gridColumns,
                         'tableOptions' => ['class' => 'table  table-bordered table-hover'],
+                         'pager' => [
+                              'maxButtonCount'=>40,    // Set maximum number of page buttons that can be displayed
+        ],
                         'striped' => false,
                         'pjax' => true,
                         'bordered' => true,

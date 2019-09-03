@@ -119,6 +119,7 @@ $config = [
             'decimalSeparator' => ',',
             'thousandSeparator' => '.',
             'currencyCode' => 'Rp',
+          'nullDisplay' => '',
        ],
 
         

@@ -43,7 +43,8 @@ class BorangSearch extends Borang
      */
     public function search($params,$status_verifikasi = null)
     {
-        $query = Borang::find();
+        $query = Borang::find()
+          ->innerJoin('ukt_2019.mhs','ukt_2019.mhs.kode=borang.kode');
 
         // add conditions that should always apply here
 
@@ -59,11 +60,11 @@ class BorangSearch extends Borang
         $this->load($params);
         
         if ($this->search !==null) {
-            $query->andFilterWhere(['or',['like', 'kode',$this->search],['like', 'nama_ayah',$this->search] ]);
-            $query->orWhere( ['like', 'nama_ibu', $this->search ]);
+            $query->andFilterWhere(['or',['like', 'borang.kode',$this->search],['like', 'nama',$this->search] ]);
+
         }
         if(!is_null($status_verifikasi)) {
-            $query->andWhere(['status_verifikasi' => 1]);
+            $query->andWhere(['status_verifikasi' => $status_verifikasi]);
             $query->andWhere(['status_finalisasi' => '1']);   
       
         }

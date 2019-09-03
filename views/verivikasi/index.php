@@ -60,11 +60,11 @@ $gridColumns = [
         'template' => '{verifikasi}',
         'buttons' => [
             'verifikasi' => function ($url, $model) {
-                if ($model->status_finalisasi===1) {
+                if ($model->status_finalisasi===1 && $model->status_verifikasi == 0 ) {
                     return
                     Html::a(
                         Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
-                        Url::to(['verifikasi', 'id' => $model->id]),
+                        Url::to(['verifikasi', 'id' => $model->id,'page' => isset($_GET['page'])?$_GET['page']:1 ]),
                         [
                             'class' => 'popupModal', 'id' => 'href' . $model->id,
                             'title' => 'Verifikasi', 'class' => 'btn btn-info btn-round',
@@ -91,7 +91,8 @@ $gridColumns = [
 
     // 'penghasilan_sendiri',
     'alamat:ntext',
-    [
+  'komentar_verifikator',
+  [
         'attribute' => 'Finalisasi',
         'format' =>'raw',
         'value' => function ($model) {
@@ -147,6 +148,9 @@ $this->params['breadcrumbs'][] = $this->title;
         'pjax' => true,
         'bordered' => true,
         'striped' => false,
+     'pager' => [
+                              'maxButtonCount'=>40,    // Set maximum number of page buttons that can be displayed
+        ],
         'condensed' => false,
         'panel' => [
             'type' => GridView::TYPE_SUCCESS,

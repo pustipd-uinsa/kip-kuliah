@@ -4,4 +4,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 
 ?>
-     <?= html::img(Url::to(["/document/". $gambar]), ['width'=>'800','height'=>'600']) ?>
+ 
+
+   <object width="800" height="600" data=<?=Url::to(["/document/". $gambar]) ?>>
+        

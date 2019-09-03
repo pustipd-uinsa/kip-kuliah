@@ -100,7 +100,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </tr>
 
         <tr>
-            <td>Prestasi Akademik Kelas 12 (Gasal)</td>
+            <td>Prestasi Akademik Kelas 11 (Gasal)</td>
             <td>Rangking      <?= $form->field($model, 'prestasi_akademik11_1')->dropDownList(ArrayHelper::map($peringkat, 'id', 'value'), ['prompt'=>'- Pilih Prestasi Akademik -'])->label(false);?></td>
            <td><?= Html::a(
                Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
@@ -454,6 +454,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <td><b> Status Verifikasi </b></td>
             <td> </td>
             <td><?=$form->field($model, 'komentar_verifikator')->textarea(['rows' => '6'])->label('catatan') ?></td>
+          <td><?=$form->field($model, 'status_verifikasi')->radioList(['0'=>'Tidak Sesuai','1' =>'Sesuai' ])->label(false) ?> </td>
       
 
         </tr>

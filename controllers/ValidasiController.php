@@ -64,17 +64,10 @@ class ValidasiController extends Controller
     }
     public function actionGambar($id = '')
     {
-        $info = pathinfo($id);
-        if ($id != '') {
-            if ($info['extension'] == 'pdf') {
-               return Yii::$app->response->xSendFile(Url::to(["/document/". $id]));
-            } else {
+  
                   return $this->renderAjax('gambar', [
-                'gambar' =>    $id,
+                'gambar' =>    $id,]);
 
-                  ]);
-            }
-        }
     
     }
     public function actionSetValidasi($id, $fieldname, $value)

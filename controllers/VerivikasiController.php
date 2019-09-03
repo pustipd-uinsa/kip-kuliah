@@ -50,13 +50,13 @@ class VerivikasiController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionVerifikasi($id)
+    public function actionVerifikasi($id,$page=1)
     {
         $model = $this->findModel($id);
         $model->saveOld();
         if ($model->load(Yii::$app->request->post())) {
             $model->save();
-            return $this->redirect('index');
+            return $this->redirect(['index','page'=>$page]);
         }
         return $this->render('verifikasi', [
             'model' => $model,
@@ -64,18 +64,14 @@ class VerivikasiController extends Controller
     }
     public function actionGambar($id = '')
     {
-        $info = pathinfo($id);
-        if ($id != '') {
         
-            if ($info['extension'] === 'pdf') {
-               return Yii::$app->response->xSendFile(Url::to(["/document/". $id]));
-            } else {
+           
                   return $this->renderAjax('gambar', [
                 'gambar' =>    $id,
 
                   ]);
-            }
-        }
+            
+        
     }
     public function actionSetVerifikasi($id, $fieldname, $value)
     {
