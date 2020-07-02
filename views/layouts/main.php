@@ -31,6 +31,7 @@ if (Yii::$app->controller->action->id === 'login') {
                     ['label' => 'User', 'icon' => 'user-o', 'url' => ['/mimin/user/'], 'visible' => !Yii::$app->user->isGuest],
                    ], ],
                    ['label' => 'Verifikasi Dokumen', 'icon' => 'search', 'url' => ['/verivikasi/index/'], 'visible' => !Yii::$app->user->isGuest],
+                   ['label' => 'Laporan Verifikasi', 'icon' => 'book', 'url' => ['/laporan-verifikasi/index/'], 'visible' => !Yii::$app->user->isGuest],
                    ['label' => 'Validasi Lapangan', 'icon' => 'binoculars', 'url' => ['/validasi/index/'], 'visible' => !Yii::$app->user->isGuest],
         
 

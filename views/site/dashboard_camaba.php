@@ -58,7 +58,8 @@ use yii\helpers\Html;
 
  <?php
      $model = \app\models\Borang::find()->where(['kode' => Yii::$app->user->identity->username])->one();
-            if (!is_null($model)) {
+            if (!is_null($model) && (date('Y-m-d') >= Yii::$app->params['tanggalDaftarAwal'] && date('Y-m-d') <= Yii::$app->params['tanggalDaftarAkhir']) 
+            ) {
                 echo  html::a("Finalisasi Data", ["/prestasi/finalisasi"], ["class"=>'btn btn-info btn-flat','data-confirm' => 'Pastikan Dokumen yang di unggah lengkap dan benar , setelah Finalisasi data tidak bisa diubah ']);
                 echo  html::a("Buka Finalisasi", ["/prestasi/batal-finalisasi"], ["class"=>'btn btn-danger btn-flat','data-confirm' => 'Pastikan Finalisasi ulang setelah perbaikan data , Data yang diproses adalah data yang di finalisasi ']);
      

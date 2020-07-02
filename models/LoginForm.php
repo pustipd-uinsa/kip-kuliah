@@ -71,13 +71,8 @@ class LoginForm extends Model
     public function login()
     {
         if ($this->validate()) {
-            if (date('Y-m-d') < Yii::$app->params['tanggalDaftarAwal'] || date('Y-m-d') > Yii::$app->params['tanggalDaftarAkhir']) {
-               //   Yii::$app->session->setFlash('error', 'Pendaftaran Masih Ditutup');
-               // return false;
                 return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
-            } else {
-                return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
-            }
+            
         } else {
             return false;
         }

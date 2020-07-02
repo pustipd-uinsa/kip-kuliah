@@ -75,3 +75,7 @@ $fieldOptions2 = [
              Pengumuman Selanjutnya akan diumumkan pada website bidikmisi.uinsby.ac.id / www.uinsby.ac.id
 		       <br>
          </div>
+    <div class="alert alert-info alert-raised alert-dismissible fade in" >
+           <p><a href="https://w3.uinsby.ac.id/wp-content/uploads/2019/09/Pengumuman-Beasiswa-Bidikmisi-siap-unggah.pdf">Pengumuman Lolos Seleksi Tahap I</a></p>	       <br>
+         </div>
+  

@@ -77,18 +77,47 @@ $gridColumns = [
     'kode',
     'mahasiswa.nama',
     'mahasiswa.tgl_lhr',
+
     
     'mahasiswa.nama_prodi',
-
+    'prestasi_akademik10_1',
+    'prestasi_akademik10_2',
+    'prestasi_akademik11_1',
+    'prestasi_akademik11_2',
+    'prestasi_akademik12_1',
+    'prestasi_akademik12_2',
+    'prestasi_non_akademik1',
+    'prestasi_non_akademik2',
+    'prestasi_non_akademik3',
+    'prestasi_non_akademik4',
+    'prestasi_non_akademik5',
+    
     'nama_ayah',
     'nama_ibu',
     'pekerjaan_ayah',
     'pekerjaan_ibu',
     'penghasilan_ayah:decimal',
     'penghasilan_ibu:decimal',
-    'omzet_harian_ayah:decimal',
-    'omzet_harian_ibu:decimal',
-
+    [
+      'attribute' =>   'Kepemilikan Rumah',
+      'value' => function($model) {
+          return  $model->kepemilikanRumah($model->kepemilikan_rumah) ;
+      }
+    ],
+    'luas_tanah',
+    'luas_bangunan',
+    [
+        'attribute' =>   'Sumber Air',
+        'value' => function($model) {
+            return   $model->sumberAir($model->sumber_air) ;
+        }
+      ],
+      [
+        'attribute' =>   'Sumber Listrik',
+        'value' => function($model) {
+            return   $model->sumberListrik($model->sumber_listrik) ;
+        }
+      ],
     // 'penghasilan_sendiri',
     'alamat:ntext',
   'komentar_verifikator',
