@@ -31,8 +31,6 @@ if (Yii::$app->controller->action->id === 'login') {
                     ['label' => 'User', 'icon' => 'user-o', 'url' => ['/mimin/user/'], 'visible' => !Yii::$app->user->isGuest],
                    ], ],
                    ['label' => 'Verifikasi Dokumen', 'icon' => 'search', 'url' => ['/verivikasi/index/'], 'visible' => !Yii::$app->user->isGuest],
-                   ['label' => 'Laporan Verifikasi', 'icon' => 'book', 'url' => ['/laporan-verifikasi/index/'], 'visible' => !Yii::$app->user->isGuest],
-                   ['label' => 'Validasi Lapangan', 'icon' => 'binoculars', 'url' => ['/validasi/index/'], 'visible' => !Yii::$app->user->isGuest],
         
 
                 ];
@@ -46,7 +44,7 @@ if (Yii::$app->controller->action->id === 'login') {
      * @var string
      * @var \yii\web\View $this
      */
-    $this->title = 'Pengajuan Beasiswa Bidikmisi UIN Sunan Ampel';
+    $this->title = 'Permohonan Keringanan UKT 2020  UIN Sunan Ampel';
 
 
     AppAsset::register($this);
@@ -90,7 +88,7 @@ if (Yii::$app->controller->action->id === 'login') {
             <div class="left_col scroll-view">
 
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href='<?=Url::to(['/'])?>' class="site_title"> <span>BIDIKMISI UINSA <br> 2019</span></a>
+                    <a href='<?=Url::to(['/'])?>' class="site_title" > <span>PERMOHONAN KERINGANAN UKT UINSA  2020</span></a>
                 </div>
                 <div class="clearfix"></div>
 

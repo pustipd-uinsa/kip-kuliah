@@ -214,7 +214,9 @@ $config = [
         'db_siakad' => require(__DIR__.'/db_siakad.php'),
         'db_simpeg' => require(__DIR__.'/db_simpeg.php'),
         'db_ukt' => require(__DIR__.'/db_ukt.php'),
-        /*
+        'db_h2h' => require(__DIR__.'/db_h2h.php'),
+ 
+      /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,

@@ -36,6 +36,8 @@ class VerivikasiController extends Controller
      */
     public function actionIndex()
     {
+     
+      
         $searchModel = new BorangSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -73,6 +75,18 @@ class VerivikasiController extends Controller
             
         
     }
+      public function actionKeterangan($ket = '')
+    {
+        
+           
+                  return $this->renderAjax('keterangan', [
+                'keterangan' =>    $ket,
+
+                  ]);
+            
+        
+    }
+
     public function actionSetVerifikasi($id, $fieldname, $value)
     {
         $model = $this->findModel($id);

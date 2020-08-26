@@ -14,7 +14,6 @@ class SignupForm extends Model
 {
     public $username;
 
-    public $nim;
     public $password;
     public $tanggal;
     public $bulan;
@@ -31,8 +30,7 @@ class SignupForm extends Model
             ['username', 'required'],
             ['username', 'unique', 'targetClass' => '\app\models\User', 'message' => 'No Pendaftaran ini Sudah Terdaftar'],
             ['username', 'string', 'min' => 2, 'max' => 255],
-            ['username', 'checkUkt'],
-            ['nim', 'checkNim'],
+            ['username', 'checkNim'],
         
    
             [['tanggal', 'bulan', 'tahun'], 'required'],
@@ -50,11 +48,18 @@ class SignupForm extends Model
     }
     public function checkNim($attribute, $params)
     {
-        $model = Mahasiswa::find()->where(['nim' => $this->nim])->one();
-        if (!$model) {
-            $this->addError('NIM', 'NIM Tidak Ditemukan');
+      
+        $model = MhsBanding::find()->where(['nim' => $this->username ])->one();
+        if ($model) {
+            $this->addError('username', 'NIM Sudah Pernah Mengajukan Penurunan UKT dan disetujui');
         }
-        $model = User::find()->where(['email' => $this->nim . '@student.uinsby.ac.id'])->one();
+        $model = Mahasiswa::find()->where(['nim' => $this->username , 'tgllahir' => $this->tahun . '-' . $this->bulan . '-' . $this->tanggal])->one();
+        if (!$model) {
+            $this->addError('username', 'NIM dan Tanggal Lahir Tidak Cocok');
+        }
+        
+      
+        $model = User::find()->where(['email' => $this->username . '@student.uinsby.ac.id'])->one();
         if ($model) {
             $this->addError('NIM', 'NIM Sudah Pernah Mendaftar');
         }
@@ -63,7 +68,7 @@ class SignupForm extends Model
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'username' => Yii::t('app', 'No. Pendaftaran'),
+            'username' => Yii::t('app', 'NIM'),
             'password' => Yii::t('app', 'Password'),
         ];
     }
@@ -77,13 +82,13 @@ class SignupForm extends Model
         if ($this->validate()) {
             $user = new User();
             $user->username = $this->username;
-            $user->email = $this->nim . '@student.uinsby.ac.id';
+            $user->email = $this->username . '@student.uinsby.ac.id';
             $user->setPassword($this->tanggal . '-' . $this->bulan . '-' . $this->tahun);
             $user->generateAuthKey();
             if ($user->save()) {
                 $authAssignment = new AuthAssignment();
                 $authAssignment->user_id = $user->id;
-                $authAssignment->item_name = 'camaba';
+                $authAssignment->item_name = 'mahasiswa';
                 $authAssignment->created_at = 1;
                 $authAssignment->save();
 

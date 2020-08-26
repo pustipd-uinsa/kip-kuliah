@@ -8,71 +8,20 @@ class m190806_065632_borang extends Migration
     {
         $this->createTable('borang', [
             'id' => $this->primaryKey(),
-            'kode' => $this->string(20),
-            'hafalan_alquran' => $this->integer(),
-
-            'prestasi_akademik10_1' => $this->string(100),
-            'file_prestasi_akademik10_1' => $this->string(100),
-            'validasi_prestasi_akademik10_1' => $this->integer()->notNull()->defaultValue(0),
-            'verivikasi_prestasi_akademik10_1' => $this->integer()->notNull()->defaultValue(0),
-           
-            'prestasi_akademik11_1' => $this->string(100),
-            'file_prestasi_akademik11_1' => $this->string(100),
-            'validasi_prestasi_akademik11_1' => $this->integer()->notNull()->defaultValue(0),
-            'verivikasi_prestasi_akademik11_1' => $this->integer()->notNull()->defaultValue(0),
-           
-            'prestasi_akademik12_1' => $this->string(100),
-            'file_prestasi_akademik12_1' => $this->string(100),
-            'validasi_prestasi_akademik12_1' => $this->integer()->notNull()->defaultValue(0),
-            'verivikasi_prestasi_akademik12_1' => $this->integer()->notNull()->defaultValue(0),
-           
-            'prestasi_akademik10_2' => $this->string(100),
-            'file_prestasi_akademik10_2' => $this->string(100),
-            'validasi_prestasi_akademik10_2' => $this->integer()->notNull()->defaultValue(0),
-            'verivikasi_prestasi_akademik10_2' => $this->integer()->notNull()->defaultValue(0),
-           
-            'prestasi_akademik11_2' => $this->string(100),
-            'file_prestasi_akademik11_2' => $this->string(100),
-            'validasi_prestasi_akademik11_2' => $this->integer()->notNull()->defaultValue(0),
-            'verivikasi_prestasi_akademik11_2' => $this->integer()->notNull()->defaultValue(0),
-           
-            'prestasi_akademik12_2' => $this->string(100),
-            'file_prestasi_akademik12_2' => $this->string(100),
-            'validasi_prestasi_akademik12_2' => $this->integer()->notNull()->defaultValue(0),
-            'verivikasi_prestasi_akademik12_2' => $this->integer()->notNull()->defaultValue(0),
-
-            'prestasi_non_akademik1' => $this->string(100),
-            'file_prestasi_non_akademik1' => $this->string(100),
-            'validasi_prestasi_non_akademik1' => $this->integer()->notNull()->defaultValue(0),
-            'verivikasi_prestasi_non_akademik1' => $this->integer()->notNull()->defaultValue(0),
-            'tingkat_prestasi_non_akademik1' => $this->integer(),
-            
-            'prestasi_non_akademik2' => $this->string(100),
-            'file_prestasi_non_akademik2' => $this->string(100),
-            'validasi_prestasi_non_akademik2' => $this->integer()->notNull()->defaultValue(0),
-            'verivikasi_prestasi_non_akademik2' => $this->integer()->notNull()->defaultValue(0),
-            'tingkat_prestasi_non_akademik2' => $this->integer(),
-
-            'prestasi_non_akademik3' => $this->string(100),
-            'file_prestasi_non_akademik3' => $this->string(100),
-            'validasi_prestasi_non_akademik3' => $this->integer()->notNull()->defaultValue(0),
-            'verivikasi_prestasi_non_akademik3' => $this->integer()->notNull()->defaultValue(0),
-            'tingkat_prestasi_non_akademik3' => $this->integer(),
-
-
-            'prestasi_non_akademik4' => $this->string(100),
-            'file_prestasi_non_akademik4' => $this->string(100),
-            'validasi_prestasi_non_akademik4' => $this->integer()->notNull()->defaultValue(0),
-            'verivikasi_prestasi_non_akademik4' => $this->integer()->notNull()->defaultValue(0),
-            'tingkat_prestasi_non_akademik4' => $this->integer(),
-
-
-            'prestasi_non_akademik5' => $this->string(100),
-            'file_prestasi_non_akademik5' => $this->string(100),
-            'validasi_prestasi_non_akademik5' => $this->integer()->notNull()->defaultValue(0),
-            'verivikasi_prestasi_non_akademik5' => $this->integer()->notNull()->defaultValue(0),
-            'tingkat_prestasi_non_akademik5' => $this->integer(),
-            'status_finalisasi' =>$this->integer()->notNull()->defaultValue(0)
+            'nim' => $this->string(20),
+            'jenis_keringanan' => $this->integer(),
+'upload_meninggal' =>'TEXT NULL',
+	'upload_pemutusan' =>'TEXT NULL',
+	'upload_kerugian' =>'TEXT NULL',
+	'upload_penutupan' =>'TEXT NULL',
+	'upload_penurunan' =>'TEXT NULL',
+	'upload_lain' =>'TEXT NULL',
+	'upload_transkrip' =>'TEXT NULL',
+	'upload_kesanggupan' =>'TEXT NULL',
+	'upload_permohonan' =>'TEXT NULL',
+	'upload_kk' =>'TEXT NULL',
+	'upload_ktm' =>'TEXT NULL',
+  'status_finalisasi' =>$this->integer()->notNull()->defaultValue(0)
 
           ]);
     }

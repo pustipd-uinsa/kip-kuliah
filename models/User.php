@@ -202,8 +202,8 @@ class User extends ActiveRecord implements IdentityInterface
     {
         if (!is_null($this->authAssignment->item_name)) {
 
-            if ($this->authAssignment->item_name == 'camaba') {
-                return Camaba::findOne(['kode' => $this->username]);
+            if ($this->authAssignment->item_name == 'mahasiswa') {
+                return Mahasiswa::findOne(['nim' => $this->username]);
             } elseif ($this->authAssignment->item_name == 'verivikator') {
                 return Karyawan::findOne(['nip' => $this->username]);
             }

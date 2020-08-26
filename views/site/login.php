@@ -29,16 +29,18 @@ $fieldOptions2 = [
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <p class="login-box-msg">Pengajuan Bidikmisi 2019 UIN Sunan Ampel</p>
-
+        <p class="login-box-msg">Permohonan Keringanan UKT Semester Gasal 2020/2021
+Masa pengajuan dokumen diperpanjang sampai tanggal 20 Juli 2020</p>
+      
+      
+<!--
         <?php $form = ActiveForm::begin(['id' => 'login-form', 'enableClientValidation' => false]); ?>
 
 
         <?= $form->errorSummary($model); ?>
-        <!-- ADDED HERE -->
         <?= $form
             ->field($model, 'username', $fieldOptions1)
-            ->label('No. Pendaftaran')
+            ->label('NIM')
             ->textInput(); ?>
 
         <?= $form
@@ -64,18 +66,36 @@ $fieldOptions2 = [
             <?= Html::a('Pendaftaran', ['signup'], ['class' => 'btn btn-info btn-block btn-flat', 'name' => 'signup-button']); ?>
 
         </div>
-        <!-- /.login-box-body -->
-
+   
+-->
 
     </div><!-- /.login-box -->
-
+  
+     <div class="alert alert-info alert-raised alert-dismissible fade in" >
+  
+   <p style="text-align:center;">
+    Daftar Pemohon Keringanan UKT yang disetujui <a href="http://ukt.uinsby.ac.id/pengumumanhasil.pdf" target="_blank">link</a>      </p>
+  </div>
+ 
     <div class="alert alert-success alert-raised alert-dismissible fade in" >
-            <strong>Ingat !</strong>
-             Pendaftaran Beasiswa Bidikmisi akan di buka <?=\Yii::$app->formatter->asDate(\Yii::$app->params['tanggalDaftarAwal'], 'long')?> sampai <?=\Yii::$app->formatter->asDate(\Yii::$app->params['tanggalDaftarAkhir'], 'long')?>  ,
-             Pengumuman Selanjutnya akan diumumkan pada website bidikmisi.uinsby.ac.id / www.uinsby.ac.id
-		       <br>
-         </div>
+  
+  <p style="text-align:center;">a.	Keputusan Menteri Agama RI Nomor 515 Tahun 2020 tentang Keringangan Uang Kuliah Tunggal pada Perguruan Tinggi Keagamaan Negeri Atas Dampak Bencana Wabah Covid-19 <a href="https://setkab.go.id/wp-content/uploads/2020/06/KMA-NO-515-Tahun-2020-Tentang-Keringanan-UKT-pada-PTKN-atas-Dampak-Bencana-Wabah-Covid-19.pdf">link</a></p>
+<p style="text-align:center;">b.	Keputusan Rektor UIN Sunan Ampel Surabaya Nomor 583 Tahun 2020 tentang Keringanan Uang Kuliah Tunggal pada UIN Sunan Ampel Surabaya Atas Dampak Bencana Wabah Covid-19 <a href="http://ukt.uinsby.ac.id/skRektor.pdf">link</a></p>
+
+  </div>
+
     <div class="alert alert-info alert-raised alert-dismissible fade in" >
-           <p><a href="https://w3.uinsby.ac.id/wp-content/uploads/2019/09/Pengumuman-Beasiswa-Bidikmisi-siap-unggah.pdf">Pengumuman Lolos Seleksi Tahap I</a></p>	       <br>
+  
+   <p style="text-align:center;">
+    Petunjuk teknis permohonan mendapatkan keringanan uang kuliah tunggal semester gasal tahun akademik 2020/2021 <a href="http://ukt.uinsby.ac.id/juknis.pdf" target="_blank">link</a>      </p>
+  </div>
+  <div class="alert alert-error alert-raised alert-dismissible fade in" >
+          mahasiswa yang sudah mendapatkan persetujuan keringanan tidak berhak untuk mengajukan keringanan kembali. Daftar mahasiswa yang mendapatkan keringanan UKT dapat dilihat disini
+    <a href=<?=Url::to(["/rekapUKt.xlsx"])?>>link</a>
          </div>
+  
+
+  
+  
+  
   

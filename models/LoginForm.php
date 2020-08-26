@@ -37,7 +37,7 @@ class LoginForm extends Model
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'username' => Yii::t('app', 'No. Pendaftaran'),
+            'username' => Yii::t('app', 'NIM'),
             'password' => Yii::t('app', 'Tanggal Lahir dd-mm-yyyy'),
         ];
     }
@@ -55,9 +55,9 @@ class LoginForm extends Model
             $user = $this->getUser();
             if (!$user || !$user->validatePassword($this->password)) {
                 if (!$user) {
-                    $this->addError($attribute, 'No.Pendaftaran Tidak Ditemukan');
+                    $this->addError('username', 'NIM Belum Terdaftar Silahkan Mendaftar Terlebih Dahulu ');
                 } else {
-                    $this->addError($attribute, 'Kombinasi No.Pendaftaran dan Password Salah');
+                    $this->addError($attribute, 'Kombinasi NIM dan Password Salah');
                 }
             }
         }
@@ -71,6 +71,8 @@ class LoginForm extends Model
     public function login()
     {
         if ($this->validate()) {
+           
+          
                 return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
             
         } else {

@@ -75,13 +75,13 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        if (Yii::$app->user->identity->jenis_user === 'camaba') {
-            $model = \app\models\Borang::find()->where(['kode' => Yii::$app->user->identity->username])->one();
+        if (Yii::$app->user->identity->jenis_user === 'mahasiswa') {
+            $model = \app\models\Borang::find()->where(['nim' => Yii::$app->user->identity->username])->one();
             if (is_null($model)) {
-                Yii::$app->session->setFlash('error', 'Anda Belum Mengunggah Dokumen , Lengkapi Dokumen Untuk Pengajuan Bidikmisi ! ');
+                Yii::$app->session->setFlash('error', 'Anda Belum Mengunggah Dokumen , Lengkapi Dokumen Untuk Pengajuan Keringanan UKT ! ');
             } else {
                 if($model->status_finalisasi !==1) {
-                    Yii::$app->session->setFlash('error', 'Anda Belum Memfinalisasi Data , Finalisasi Data Untuk Pengajuan Bidikmisi ! ');
+                    Yii::$app->session->setFlash('error', 'Anda Belum Memfinalisasi Data , Finalisasi Data Untuk Pengajuan Keringanan UKT ! ');
                     
                 } else {
                     Yii::$app->session->setFlash('success', 'Anda Sudah Memfinalisasi Data , Tunggu Pengumuman Selanjutnya ');
@@ -190,12 +190,6 @@ class SiteController extends Controller
                 }
             }
         }
-       if (date('Y-m-d') < Yii::$app->params['tanggalDaftarAwal'] || date('Y-m-d') > Yii::$app->params['tanggalDaftarAkhir']) {
-         
-         Yii::$app->session->setFlash('error', 'Pendaftaran Masih Ditutup');
-                    return $this->goHome();
-          
-         }
 
         return $this->render('signup', [
             'model' => $model,

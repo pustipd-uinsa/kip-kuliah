@@ -19,8 +19,8 @@ $this->registerCss('
     overflow-y: auto;
 }');
 $js = <<<JS
-$('#modal').insertAfter($('body'));
-  $("#modal").on("shown.bs.modal",function(event){
+$('#modal1').insertAfter($('body'));
+  $("#modal1").on("shown.bs.modal",function(event){
        var button = $(event.relatedTarget);
        var href = button.attr("href");
        $.pjax.reload("#pjax-modal",{
@@ -51,77 +51,20 @@ $this->registerJs($js1);
 
 $gridColumns = [
     ['class' => 'kartik\grid\SerialColumn'],
+ 
+    'nim',
+   'mahasiswa.nama',
+  'mahasiswa.nama_prodi',
+  'mahasiswa.tgllahir',
+  'mahasiswa.namaayah',
+  'mahasiswa.namaibu',
+   [
+        'attribute' => 'UKT',
+     'format' => 'decimal',
+      'value' =>'mahasiswa.bill.billamount'
+  ],
+  
     [
-        'class' => 'kartik\grid\ActionColumn', 'options' => [
-            'width' => '120px',
-        ],
-        'contentOptions' => ['class' => 'td-actions text-right'],
-        'headerOptions' => ['class' => 'text-right'],
-        'template' => '{verifikasi}',
-        'buttons' => [
-            'verifikasi' => function ($url, $model) {
-                if ($model->status_finalisasi===1 && $model->status_verifikasi == 0 ) {
-                    return
-                    Html::a(
-                        Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
-                        Url::to(['verifikasi', 'id' => $model->id,'page' => isset($_GET['page'])?$_GET['page']:1 ]),
-                        [
-                            'class' => 'popupModal', 'id' => 'href' . $model->id,
-                            'title' => 'Verifikasi', 'class' => 'btn btn-info btn-round',
-                        ]
-                    );
-                }
-            }
-        ]
-        ],
-    'kode',
-    'mahasiswa.nama',
-    'mahasiswa.tgl_lhr',
-
-    
-    'mahasiswa.nama_prodi',
-    'prestasi_akademik10_1',
-    'prestasi_akademik10_2',
-    'prestasi_akademik11_1',
-    'prestasi_akademik11_2',
-    'prestasi_akademik12_1',
-    'prestasi_akademik12_2',
-    'prestasi_non_akademik1',
-    'prestasi_non_akademik2',
-    'prestasi_non_akademik3',
-    'prestasi_non_akademik4',
-    'prestasi_non_akademik5',
-    
-    'nama_ayah',
-    'nama_ibu',
-    'pekerjaan_ayah',
-    'pekerjaan_ibu',
-    'penghasilan_ayah:decimal',
-    'penghasilan_ibu:decimal',
-    [
-      'attribute' =>   'Kepemilikan Rumah',
-      'value' => function($model) {
-          return  $model->kepemilikanRumah($model->kepemilikan_rumah) ;
-      }
-    ],
-    'luas_tanah',
-    'luas_bangunan',
-    [
-        'attribute' =>   'Sumber Air',
-        'value' => function($model) {
-            return   $model->sumberAir($model->sumber_air) ;
-        }
-      ],
-      [
-        'attribute' =>   'Sumber Listrik',
-        'value' => function($model) {
-            return   $model->sumberListrik($model->sumber_listrik) ;
-        }
-      ],
-    // 'penghasilan_sendiri',
-    'alamat:ntext',
-  'komentar_verifikator',
-  [
         'attribute' => 'Finalisasi',
         'format' =>'raw',
         'value' => function ($model) {
@@ -134,6 +77,275 @@ $gridColumns = [
 
     ],
 
+
+  [
+        'attribute' => 'jenis_keringanan',
+        'format' =>'raw',
+        'value' => function ($model) {
+            if ($model->jenis_keringanan==1) {
+                return "<span class = 'text-primary'> 
+   Keringanan 15% </span>";
+            } elseif ($model->jenis_keringanan==2) {
+                return"<span class = 'text-primary'> 
+   Keringanan 75% </span>";
+            } elseif ($model->jenis_keringanan==3) {
+                return"<span class = 'text-primary'> 
+  Perpanjangan Pembayaran UKT </span>";
+              
+              
+              
+            } else {
+                return"<span class = 'text-primary'> 
+   Keringanan 100% </span>";
+              
+            }
+        }
+
+    ],  
+  
+ [
+   'attribute' => 'upload_kk',
+   'format' =>'raw',
+   'value' => function($model) {
+       return Html::a(
+                    $model->upload_kk==''?"":  'http://ukt.uinsby.ac.id/document/'. $model->upload_kk,
+                    Url::to(['gambar', 'id' => $model->upload_kk]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_kk,
+                        'title' => 'Buka File',  'data-dismiss' => "modal"
+                    ]
+                );   
+   }
+ ],
+  
+   [
+   'attribute' => 'upload_ktm',
+   'format' =>'raw',
+   'value' => function($model) {
+       return Html::a(
+                   $model->upload_ktm==''?"":  'http://ukt.uinsby.ac.id/document/'. $model->upload_ktm
+              ,
+                    Url::to(['gambar', 'id' => $model->upload_ktm]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_ktm,
+                        'title' => 'Buka File',  'data-dismiss' => "modal"
+                    ]
+                );   
+   }
+ ],
+  
+     [
+   'attribute' => 'upload_lain',
+   'format' =>'raw',
+   'value' => function($model) {
+       return Html::a(
+                     $model->upload_lain==''?"":  'http://ukt.uinsby.ac.id/document/'. $model->upload_lain,
+              
+                    Url::to(['gambar', 'id' => $model->upload_lain]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_lain,
+                        'title' => 'Buka File',  'data-dismiss' => "modal"
+                    ]
+                );   
+   }
+ ],
+  [
+    'attribute' => 'upload_meninggal',
+   'format' =>'raw',
+   'value' => function($model) {
+       return $model->jenis_keringanan==1? Html::a(
+                    $model->upload_meninggal==''?"":    'http://ukt.uinsby.ac.id/document/'. $model->upload_meninggal,
+              
+                    Url::to(['gambar', 'id' => $model->upload_meninggal]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_meninggal,
+                        'title' => 'Buka File',  'data-dismiss' => "modal"
+                    ]
+                ):"";   
+   }
+ ],
+    [
+    'attribute' => 'upload_pemutusan',
+   'format' =>'raw',
+   'value' => function($model) {
+       return $model->jenis_keringanan==1? Html::a(
+                      $model->upload_pemutusan==''?"":    'http://ukt.uinsby.ac.id/document/'. $model->upload_pemutusan,
+              
+                    Url::to(['gambar', 'id' => $model->upload_pemutusan]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_pemutusan,
+                        'title' => 'Buka File',  'data-dismiss' => "modal"
+                    ]
+                ):"";   
+   }
+ ],
+    [
+    'attribute' => 'upload_kerugian',
+   'format' =>'raw',
+   'value' => function($model) {
+       return $model->jenis_keringanan==1? Html::a(
+                 $model->upload_kerugian==''?"":       'http://ukt.uinsby.ac.id/document/'. $model->upload_kerugian,
+              
+                    Url::to(['gambar', 'id' => $model->upload_kerugian]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_kerugian,
+                        'title' => 'Buka File',  'data-dismiss' => "modal"
+                    ]
+                ):"";   
+   }
+ ],
+    [
+    'attribute' => 'upload_penutupan',
+   'format' =>'raw',
+   'value' => function($model) {
+       return $model->jenis_keringanan==1? Html::a(
+                     $model->upload_penutupan==''?"":     'http://ukt.uinsby.ac.id/document/'. $model->upload_penutupan,
+              
+                    Url::to(['gambar', 'id' => $model->upload_penutupan]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_penutupan,
+                        'title' => 'Buka File',  'data-dismiss' => "modal"
+                    ]
+                ):"";   
+   }
+ ],
+      [
+    'attribute' => 'upload_penurunan',
+   'format' =>'raw',
+   'value' => function($model) {
+       return $model->jenis_keringanan==1? Html::a(
+                        $model->upload_penurunan==''?"": 'http://ukt.uinsby.ac.id/document/'. $model->upload_penurunan,
+              
+                    Url::to(['gambar', 'id' => $model->upload_penurunan]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_penurunan,
+                        'title' => 'Buka File',  'data-dismiss' => "modal"
+                    ]
+                ):"";   
+   }
+ ],
+  
+        [
+    'attribute' => 'ket_masalah_lain',
+   'format' =>'raw',
+   'value' => function($model) {
+       return $model->jenis_keringanan==1? Html::a(
+                  $model->ket_masalah_lain,
+                    Url::to(['keterangan', 'ket' => $model->ket_masalah_lain]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->ket_masalah_lain,
+                        'title' => 'Keterangan',  'data-dismiss' => "modal"
+                    ]
+                ):"";   
+   }
+ ],
+      [
+    'attribute' => 'upload_bukti_lain',
+   'format' =>'raw',
+   'value' => function($model) {
+       return $model->jenis_keringanan==1? Html::a(
+                   $model->upload_bukti_lain==''?"":     'http://ukt.uinsby.ac.id/document/'. $model->upload_bukti_lain,
+              
+                    Url::to(['gambar', 'id' => $model->upload_bukti_lain]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_bukti_lain,
+                        'title' => 'Keterangan',  'data-dismiss' => "modal"
+                    ]
+                ):"";   
+   }
+ ],
+    [
+    'attribute' => 'permohonan_perpanjangan',
+   'format' =>'raw',
+   'value' => function($model) {
+       return $model->jenis_keringanan==1? 
+         ($model->permohonan_perpanjangan==1?'Ya':'Tidak')
+         :"";   
+   }
+ ],
+      [
+    'attribute' => 'upload_permohonan',
+   'format' =>'raw',
+   'value' => function($model) {
+       return ($model->jenis_keringanan==1 && $model->permohonan_perpanjangan==1)? Html::a(
+                        $model->upload_permohonan==''?"":    'http://ukt.uinsby.ac.id/document/'. $model->upload_permohonan,
+               
+                    Url::to(['gambar', 'id' => $model->upload_permohonan]),
+                
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_permohonan,
+                        'title' => 'Buka File',  'data-dismiss' => "modal"
+                    ]
+                ):"";   
+   }
+ ],
+
+      [
+    'attribute' => 'upload_transkrip',
+   'format' =>'raw',
+   'value' => function($model) {
+       return $model->jenis_keringanan==2? Html::a(
+                   $model->upload_transkrip==''?"":       'http://ukt.uinsby.ac.id/document/'. $model->upload_transkrip,
+              
+                    Url::to(['gambar', 'id' => $model->upload_transkrip]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_transkrip,
+                        'title' => 'Buka File',  'data-dismiss' => "modal"
+                    ]
+                ):"";   
+   }
+ ],
+    [
+    'attribute' => 'upload_kesanggupan',
+   'format' =>'raw',
+   'value' => function($model) {
+       return $model->jenis_keringanan==2? Html::a(
+                      $model->upload_kesanggupan==''?"":  'http://ukt.uinsby.ac.id/document/'. $model->upload_kesanggupan,
+              
+                    Url::to(['gambar', 'id' => $model->upload_kesanggupan]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_kesanggupan,
+                        'title' => 'Buka File',  'data-dismiss' => "modal"
+                    ]
+                ):"";   
+   }
+ ],
+      [
+    'attribute' => 'upload_permohonan',
+   'format' =>'raw',
+   'value' => function($model) {
+       return $model->jenis_keringanan==3? Html::a(
+                        $model->upload_permohonan==''?"":    'http://ukt.uinsby.ac.id/document/'. $model->upload_permohonan,
+               
+                    Url::to(['gambar', 'id' => $model->upload_permohonan]),
+                
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_permohonan,
+                        'title' => 'Buka File',  'data-dismiss' => "modal"
+                    ]
+                ):"";   
+   }
+ ],
+  [
+    'attribute' => 'upload_meninggal_covid',
+   'format' =>'raw',
+   'value' => function($model) {
+       return $model->jenis_keringanan==4? Html::a(
+                       $model->upload_meninggal_covid==''?"":    'http://ukt.uinsby.ac.id/document/'. $model->upload_meninggal_covid,
+              
+                 Url::to(['gambar', 'id' => $model->upload_meninggal_covid]),
+                 
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_meninggal_covid,
+                        'title' => 'Buka File',  'data-dismiss' => "modal"
+                    ]
+                ):"";   
+   }
+ ],
+ 
+  
+
+
    
 ];
 
@@ -142,7 +354,8 @@ $gridColumns = [
 /* @var $searchModel app\models\BorangSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Daftar Dokumen Bidikmisi');
+$this->title = Yii::t('app', 'Daftar Dokumen Permohonan Keringanan
+');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="borang-index">
@@ -165,12 +378,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
                         <?php Pjax::begin(); ?>
-                        <?php echo $this->render('_search', ['model' => $searchModel]); ?>
-
+                    
                      
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-       // 'filterModel' => $searchModel,
+        'filterModel' => $searchModel,
         'columns' => $gridColumns,
         'tableOptions' => ['class' => 'table  table-bordered table-hover'],
         'striped' => false,
@@ -207,8 +419,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <?php
 Modal::begin([
-    'id' => 'modal',
-    'header' => '<h4>Detail Dokumen</h4>',
+    'id' => 'modal1',
+    'header' => '<h4>Detail</h4>',
     'size' => 'modal-lg',
 ]);
 Pjax::begin(

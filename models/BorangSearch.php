@@ -20,7 +20,7 @@ class BorangSearch extends Borang
     public function rules()
     {
         return [
-            [['search','dataShown'] ,'safe']
+            [['nim','dataShown'] ,'safe']
 
            ];
     }
@@ -44,14 +44,14 @@ class BorangSearch extends Borang
     public function search($params,$status_verifikasi = null)
     {
         $query = Borang::find()
-          ->innerJoin('ukt_2019.mhs','ukt_2019.mhs.kode=borang.kode');
+      ;
 
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'pagination' => [
-                'pageSize' => $this->dataShown,
+                'pageSize' => 500,
             ],
         ]);
 
@@ -59,15 +59,11 @@ class BorangSearch extends Borang
 
         $this->load($params);
         
-        if ($this->search !==null) {
-            $query->andFilterWhere(['or',['like', 'borang.alamat',$this->search],['like', 'nama',$this->search] ]);
+        
+            $query->andFilterWhere(['like', 'nim',$this->nim] );
 
-        }
-        if(!is_null($status_verifikasi)) {
-            $query->andWhere(['status_verifikasi' => $status_verifikasi]);
-            $query->andWhere(['status_finalisasi' => '1']);   
-      
-        }
+        
+     
        
       $query->orderBy('status_finalisasi desc');
 
@@ -77,6 +73,8 @@ class BorangSearch extends Borang
             // $query->where('0=1');
             return $dataProvider;
         }
+      
+      
 
             
       

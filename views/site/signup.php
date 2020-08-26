@@ -19,7 +19,7 @@ for ($i = 1; $i <= 12; $i++) {
 }
 
 $tahun = [];
-for ($i = 1990; $i <= 2019; $i++) {
+for ($i = 1987; $i <= 2019; $i++) {
     $tahun[] = ['no' => str_pad($i, 4, '0', STR_PAD_LEFT)];
 }
 
@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="x_panel ">
                 <div class="x_title">
 
-                    <p>Silahkan Isi Data Dibawah ini untuk mengikuti Bidikmisi 2019 UIN Sunan Ampel Surabaya:</p>
+                    <p>Silahkan Isi Data Dibawah ini untuk permohonan penurunan UKT UIN Sunan Ampel Surabaya:</p>
 
 
                 </div>
@@ -59,8 +59,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                                           
                                                         )->label(' YYYY ') ?></div>
                             </div>
-                            <?= $form->field($model, 'nim')->textInput() ?>
-
+                    
 
                        
 

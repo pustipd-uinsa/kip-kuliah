@@ -372,12 +372,12 @@ class Mahasiswa extends \yii\db\ActiveRecord
 
     public function getProdi()
     {
-        return $this->hasOne(Prodi::className(), ['kodeunit' => 'kodeunit']);
+        return $this->hasOne(Prodi::className(), ['kode' => 'kodeunit']);
     }
 
     public function getNama_prodi()
     {
-        return is_null($this->prodi) ? "" : $this->prodi->nama_program_studi;
+        return is_null($this->prodi) ? "" : $this->prodi->nama;
     }
 
     public function getFakultas()
@@ -385,4 +385,12 @@ class Mahasiswa extends \yii\db\ActiveRecord
         return $this->hasOne(Prodi::className(), ['kodeunit' => 'kodeunitparent'])
             ->via("prodi");
     }
+  public function getBill()
+  {
+    return Bill::find()->where(['nim'=>$this->nim])->orderBy('periode desc')->one();
+    
+  }
+  
+  
+  
 }

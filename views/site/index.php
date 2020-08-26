@@ -20,7 +20,7 @@ use hscstudio\mimin\components\Mimin;
          </div>
          <div class="x_content">
             <?php
-            if (Yii::$app->user->identity->jenis_user === 'camaba') {
+            if (Yii::$app->user->identity->jenis_user === 'mahasiswa') {
                echo $this->render('dashboard_camaba');
             } else {
                echo $this->render('dashboard');
