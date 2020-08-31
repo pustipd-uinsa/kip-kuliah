@@ -23,9 +23,8 @@ use yii\helpers\Html;
         </div>
         <div class="col-md-7 col-sm-12 col-xs-12" style="border:0px solid #e5e5e5;">
         <div class="alert alert-info">
-    <h4>Selamat datang !</h4>
-    <!-- <b>BIDIKMISI</b> adalah bantuan biaya pendidikan yang hanya ditujukan untuk calon mahasiswa tidak mampu (miskin) -->
-</div>
+               <h4>Selamat datang !</h4>
+        </div>
 
 <h3 class="prod_title">Data Mahasiswa </h3>
  <h2><?=Yii::$app->user->identity->model->nama;?></h2>

@@ -31,12 +31,11 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="site-signup">
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <div class="row">
-        <div class="col-md-12">
+   
             <div class="x_panel ">
                 <div class="x_title">
 
-                    <p>Silahkan Isi Data Dibawah ini untuk permohonan penurunan UKT UIN Sunan Ampel Surabaya:</p>
+                    <p>Silahkan Isi Data Dibawah ini untuk permohonan KIP Kuliah UIN Sunan Ampel Surabaya:</p>
 
 
                 </div>
@@ -74,7 +73,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 </div>
             </div>
-        </div>
-    </div>
+      
 
 </div>

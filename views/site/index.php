@@ -15,7 +15,7 @@ use hscstudio\mimin\components\Mimin;
    <div class="col-md-12">
       <div class="x_panel">
          <div class="x_title">
-            <h2>Selamat Datang</h2>
+        
             <div class="clearfix"></div>
          </div>
          <div class="x_content">

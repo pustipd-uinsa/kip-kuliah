@@ -49,19 +49,20 @@ class SignupForm extends Model
     public function checkNim($attribute, $params)
     {
       
-        $model = MhsBanding::find()->where(['nim' => $this->username ])->one();
-        if ($model) {
-            $this->addError('username', 'NIM Sudah Pernah Mengajukan Penurunan UKT dan disetujui');
-        }
+      
         $model = Mahasiswa::find()->where(['nim' => $this->username , 'tgllahir' => $this->tahun . '-' . $this->bulan . '-' . $this->tanggal])->one();
         if (!$model) {
             $this->addError('username', 'NIM dan Tanggal Lahir Tidak Cocok');
         }
         
+        $model = Mahasiswa::find()->where(['nim' => $this->username , 'tgllahir' => $this->tahun . '-' . $this->bulan . '-' . $this->tanggal])->one();
+        if (!$model) {
+            $this->addError('username', 'NIM dan Tanggal Lahir Tidak Cocok');
+        }
       
-        $model = User::find()->where(['email' => $this->username . '@student.uinsby.ac.id'])->one();
+        $model = Mahasiswa::find()->where("periodemasuk<'20181'")->andWhere(['nim' => $this->username])->one();
         if ($model) {
-            $this->addError('NIM', 'NIM Sudah Pernah Mendaftar');
+            $this->addError('NIM', 'KIP Kuliah Untuk Mahasiswa Angkatan 2018-2020');
         }
     }
     public function attributeLabels()
