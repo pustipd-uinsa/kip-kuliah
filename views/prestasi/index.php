@@ -1,6 +1,6 @@
 <?php
 /* @var $this yii\web\View */
-$this->title = Yii::t('app', 'Input Dokumen Keringanan UKT');
+$this->title = Yii::t('app', 'Input Dokumen Permohonan KIP Kuliah');
 
 $this->params['breadcrumbs'][] = $this->title;
 ?>

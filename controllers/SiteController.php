@@ -78,10 +78,10 @@ class SiteController extends Controller
         if (Yii::$app->user->identity->jenis_user === 'mahasiswa') {
             $model = \app\models\Borang::find()->where(['nim' => Yii::$app->user->identity->username])->one();
             if (is_null($model)) {
-                Yii::$app->session->setFlash('error', 'Anda Belum Mengunggah Dokumen , Lengkapi Dokumen Untuk Pengajuan Keringanan UKT ! ');
+                Yii::$app->session->setFlash('error', 'Anda Belum Mengunggah Dokumen , Lengkapi Dokumen Untuk Pengajuan KIP Kuliah ! ');
             } else {
                 if($model->status_finalisasi !==1) {
-                    Yii::$app->session->setFlash('error', 'Anda Belum Memfinalisasi Data , Finalisasi Data Untuk Pengajuan Keringanan UKT ! ');
+                    Yii::$app->session->setFlash('error', 'Anda Belum Memfinalisasi Data , Finalisasi Data Untuk Pengajuan KIP Kuliah ! ');
                     
                 } else {
                     Yii::$app->session->setFlash('success', 'Anda Sudah Memfinalisasi Data , Tunggu Pengumuman Selanjutnya ');

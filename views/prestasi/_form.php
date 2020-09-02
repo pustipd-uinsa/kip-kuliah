@@ -49,103 +49,7 @@ $('#modal1').insertAfter($('body'));
 JS;
 $this->registerJs($js1);
 
- $js= "
-    obj =  $(this).find('option:selected');
-    val = obj.val();
-    if (val == 1) {
-        document.getElementById('keringanan1').style.display='block';
-        document.getElementById('keringanan2').style.display='none';
-        document.getElementById('keringanan3').style.display='none';
-        document.getElementById('keringanan4').style.display='none';
-        
 
-    } 
-    if (val == 2) {
-        document.getElementById('keringanan2').style.display='block';
-        document.getElementById('keringanan1').style.display='none';
-        document.getElementById('keringanan3').style.display='none';
-       document.getElementById('keringanan4').style.display='none';
-   
-
-    } 
-    if (val == 3) {
-        document.getElementById('keringanan3').style.display='block';
-        document.getElementById('keringanan2').style.display='none';
-        document.getElementById('keringanan1').style.display='none';
-       document.getElementById('keringanan4').style.display='none';
-    
-
-    } 
-    if (val == 4) {
-        document.getElementById('keringanan4').style.display='block';
-        document.getElementById('keringanan2').style.display='none';
-        document.getElementById('keringanan1').style.display='none';
-       document.getElementById('keringanan3').style.display='none';
-    
-
-    } 
-    
-    
- 
- 
- 
- ";
-
- $js2= "
- $(document).ready(function()
-    {
-    obj =  $('#borang-jenis_keringanan').find('option:selected');
-    val = obj.val();
- if (val == 1) {
-        document.getElementById('keringanan1').style.display='block';
-        document.getElementById('keringanan2').style.display='none';
-        document.getElementById('keringanan3').style.display='none';
-        document.getElementById('keringanan4').style.display='none';
-        
-
-    } 
-    if (val == 2) {
-        document.getElementById('keringanan2').style.display='block';
-        document.getElementById('keringanan1').style.display='none';
-        document.getElementById('keringanan3').style.display='none';
-       document.getElementById('keringanan4').style.display='none';
-   
-
-    } 
-    if (val == 3) {
-        document.getElementById('keringanan3').style.display='block';
-        document.getElementById('keringanan2').style.display='none';
-        document.getElementById('keringanan1').style.display='none';
-       document.getElementById('keringanan4').style.display='none';
-    
-
-    } 
-    if (val == 4) {
-        document.getElementById('keringanan4').style.display='block';
-        document.getElementById('keringanan2').style.display='none';
-        document.getElementById('keringanan1').style.display='none';
-       document.getElementById('keringanan3').style.display='none';
-    
-
-    } 
-    obj =  $('#borang-permohonan_perpanjangan').find('option:selected');
-    val = obj.val();
- if (val == 1) {
-        document.getElementById('keringanan4').style.display='block';
-        
-
-     } else {
-       document.getElementById('keringanan4').style.display='none';
-        
-     } 
-    
-    
-    
- })
- 
- 
- ";
-$this->registerJs($js2);
 
 
 /* @var $this yii\web\View */
@@ -160,17 +64,7 @@ $this->registerJs($js2);
     <br>
     <br>
   
-          <?= $form->field($model, 'jenis_keringanan')->dropDownList([
   
-    1=>'Keringanan 15%',
-    2=>'Keringanan 75%',
-    4=>'Keringanan 100% (UKT Rp 0)',
-  
-    3=>'Perpanjangan Pembayaran UKT',
-  
-],['prompt' => 'Pilih Jenis Keringanan','onchange'=>$js]) ?>
-<br>
-<br>
         <div class="row">
         <div class="col-md-3">
             <?= $form->field($model, 'upload_kk')->fileInput() ?>
@@ -181,6 +75,22 @@ $this->registerJs($js2);
                     Url::to(['gambar', 'id' => $model->upload_kk]),
                     [
                         'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_kk,
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                    ]
+                ); ?>  
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <?= $form->field($model, 'upload_ktp')->fileInput() ?>
+        </div>
+        <div class="col-md-6">
+                  <?= Html::a(
+                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                    Url::to(['gambar', 'id' => $model->upload_ktp]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_ktp,
                         'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
                     ]
                 ); ?>  
@@ -204,45 +114,272 @@ $this->registerJs($js2);
         </div>
 
     </div>
-
-      <div class="row">
+    <div class="row">
         <div class="col-md-3">
-            <?= $form->field($model, 'upload_lain')->fileInput() ?>
+            <?= $form->field($model, 'upload_foto')->fileInput() ?>
         </div>
-        <div class="col-md-1">
+        <div class="col-md-6">
                   <?= Html::a(
                     Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
-                    Url::to(['gambar', 'id' => $model->upload_lain]),
+                    Url::to(['gambar', 'id' => $model->upload_foto]),
                     [
-                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_lain,
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_foto,
                         'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
                     ]
                 ); ?>  
         </div>
-           <div class="col-md-1 text-left">  
-                         <?= Html::a(
-                    Yii::t('app', 'Contoh Dokumen '),
-                    Url::to(['/pekerjaan.docx']),
-                    [
-                        
-                        'title' => 'Contoh File', 'class' => 'btn btn-success btn-round', 
-                    ]
-                ); ?>  
-
-       
 
     </div>
 
-  <br>
-  <br>
-    <?=   $this->render('_form_file', [
-            'model' => $model,
-            'form' => $form
+    <hr>
 
-        ]);
-    ?>
-  
-         <?= Html::submitButton('Simpan', ['class' => 'btn btn-primary']) ?>
+    <div class="row">
+        <div class="col-md-3">
+            <?= $form->field($model, 'upload_raport1')->fileInput() ?>
+        </div>
+        <div class="col-md-6">
+                  <?= Html::a(
+                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                    Url::to(['gambar', 'id' => $model->upload_raport1]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_raport1,
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                    ]
+                ); ?>  
+        </div>
+
+    </div>
+
+    
+    <div class="row">
+        <div class="col-md-3">
+            <?= $form->field($model, 'upload_raport2')->fileInput() ?>
+        </div>
+        <div class="col-md-6">
+                  <?= Html::a(
+                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                    Url::to(['gambar', 'id' => $model->upload_raport2]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_raport2,
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                    ]
+                ); ?>  
+        </div>
+
+    </div>
+
+    
+    <div class="row">
+        <div class="col-md-3">
+            <?= $form->field($model, 'upload_raport3')->fileInput() ?>
+        </div>
+        <div class="col-md-6">
+                  <?= Html::a(
+                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                    Url::to(['gambar', 'id' => $model->upload_raport3]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_raport3,
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                    ]
+                ); ?>  
+        </div>
+
+    </div>
+
+    
+    <div class="row">
+        <div class="col-md-3">
+            <?= $form->field($model, 'upload_raport4')->fileInput() ?>
+        </div>
+        <div class="col-md-6">
+                  <?= Html::a(
+                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                    Url::to(['gambar', 'id' => $model->upload_raport4]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_raport4,
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                    ]
+                ); ?>  
+        </div>
+
+    </div>
+
+    
+    <div class="row">
+        <div class="col-md-3">
+            <?= $form->field($model, 'upload_raport5')->fileInput() ?>
+        </div>
+        <div class="col-md-6">
+                  <?= Html::a(
+                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                    Url::to(['gambar', 'id' => $model->upload_raport5]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_raport5,
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                    ]
+                ); ?>  
+        </div>
+
+    </div>
+
+    
+    <div class="row">
+        <div class="col-md-3">
+            <?= $form->field($model, 'upload_raport6')->fileInput() ?>
+        </div>
+        <div class="col-md-6">
+                  <?= Html::a(
+                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                    Url::to(['gambar', 'id' => $model->upload_raport6]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_raport6,
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                    ]
+                ); ?>  
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <?= $form->field($model, 'upload_prestasi')->fileInput() ?>
+        </div>
+        <div class="col-md-6">
+                  <?= Html::a(
+                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                    Url::to(['gambar', 'id' => $model->upload_prestasi]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_prestasi,
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                    ]
+                ); ?>  
+        </div>
+
+    </div>
+<hr>
+<div class="row">
+        <div class="col-md-3">
+            <?= $form->field($model, 'upload_dokumen')->fileInput() ?>
+        </div>
+        <div class="col-md-6">
+                  <?= Html::a(
+                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                    Url::to(['gambar', 'id' => $model->upload_dokumen]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_dokumen,
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                    ]
+                ); ?>  
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <?= $form->field($model, 'upload_listrik')->fileInput() ?>
+        </div>
+        <div class="col-md-6">
+                  <?= Html::a(
+                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                    Url::to(['gambar', 'id' => $model->upload_listrik]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_listrik,
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                    ]
+                ); ?>  
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <?= $form->field($model, 'upload_pdam')->fileInput() ?>
+        </div>
+        <div class="col-md-6">
+                  <?= Html::a(
+                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                    Url::to(['gambar', 'id' => $model->upload_pdam]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_pdam,
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                    ]
+                ); ?>  
+        </div>
+
+    </div>
+
+
+<div class="row">
+        <div class="col-md-3">
+            <?= $form->field($model, 'upload_pbb')->fileInput() ?>
+        </div>
+        <div class="col-md-6">
+                  <?= Html::a(
+                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                    Url::to(['gambar', 'id' => $model->upload_pbb]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_pbb,
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                    ]
+                ); ?>  
+        </div>
+
+    </div>
+
+    <hr>
+
+
+
+<div class="row">
+        <div class="col-md-3">
+            <?= $form->field($model, 'upload_meninggal')->fileInput() ?>
+        </div>
+        <div class="col-md-6">
+                  <?= Html::a(
+                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                    Url::to(['gambar', 'id' => $model->upload_meninggal]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_meninggal,
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                    ]
+                ); ?>  
+        </div>
+
+    </div>
+
+    
+<div class="row">
+        <div class="col-md-3">
+            <?= $form->field($model, 'upload_phk')->fileInput() ?>
+        </div>
+        <div class="col-md-6">
+                  <?= Html::a(
+                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                    Url::to(['gambar', 'id' => $model->upload_phk]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_phk,
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                    ]
+                ); ?>  
+        </div>
+
+    </div>
+<div class="row">
+        <div class="col-md-3">
+            <?= $form->field($model, 'upload_pakta_integritas')->fileInput() ?>
+        </div>
+        <div class="col-md-6">
+                  <?= Html::a(
+                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                    Url::to(['gambar', 'id' => $model->upload_pakta_integritas]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_pakta_integritas,
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                    ]
+                ); ?>  
+        </div>
+
+    </div>
+
+           <?= Html::submitButton('Simpan', ['class' => 'btn btn-primary']) ?>
    
 
     <?php ActiveForm::end(); ?>

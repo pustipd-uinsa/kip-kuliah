@@ -25,21 +25,24 @@ class Borang extends \yii\db\ActiveRecord
     {
         $files =
             [
-
-'upload_meninggal' ,
-	'upload_pemutusan' ,
-	'upload_kerugian' ,
-	'upload_penutupan' ,
-	'upload_penurunan' ,
-	'upload_lain' ,
-	'upload_transkrip' ,
-	'upload_kesanggupan' ,
-	'upload_permohonan' ,
-	'upload_kk' ,
-	'upload_ktm' ,   
-  'upload_bukti_lain',      
-  'upload_meninggal_covid',      
-          
+                'upload_kk' ,
+                'upload_ktp' ,
+                'upload_foto' ,
+                'upload_ktm' ,
+                'upload_raport1' ,
+                'upload_raport2' ,
+                'upload_raport3' ,
+                'upload_raport4' ,
+                'upload_raport5' ,
+                'upload_raport6' ,
+                'upload_prestasi' ,
+                'upload_listrik' ,
+                'upload_pdam' ,
+                'upload_pbb' ,
+                'upload_dokumen' ,
+                'upload_meninggal' ,
+                'upload_phk' ,
+                'upload_pakta_integritas' ,       
         ];
         foreach ($files as $file) {
             $this->old_file[$file] = $this->$file;
@@ -58,20 +61,24 @@ class Borang extends \yii\db\ActiveRecord
             $files =
                 [
                 
-   
-'upload_meninggal' ,
-	'upload_pemutusan' ,
-	'upload_kerugian' ,
-	'upload_penutupan' ,
-	'upload_penurunan' ,
-	'upload_lain' ,
-	'upload_transkrip' ,
-	'upload_kesanggupan' ,
-	'upload_permohonan' ,
-	'upload_kk' ,
-	'upload_ktm' ,   
-               'upload_bukti_lain', 
-              'upload_meninggal_covid',      
+                    'upload_kk' ,
+                    'upload_ktp' ,
+                    'upload_foto' ,
+                    'upload_ktm' ,
+                    'upload_raport1' ,
+                    'upload_raport2' ,
+                    'upload_raport3' ,
+                    'upload_raport4' ,
+                    'upload_raport5' ,
+                    'upload_raport6' ,
+                    'upload_prestasi' ,
+                    'upload_listrik' ,
+                    'upload_pdam' ,
+                    'upload_pbb' ,
+                    'upload_dokumen' ,
+                    'upload_meninggal' ,
+                    'upload_phk' ,
+                    'upload_pakta_integritas' ,
             ];
             foreach ($files as $file) {
                 $this->upload($file);
@@ -90,33 +97,37 @@ class Borang extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-          [['jenis_keringanan'],'required'],
+          
             [[
-            'status_finalisasi','permohonan_perpanjangan'
+            'status_finalisasi'
             ], 'integer'],
             [['nim'], 'string', 'max' => 20],
 
             [
                 [
-                  
-'upload_meninggal' ,
-	'upload_pemutusan' ,
-	'upload_kerugian' ,
-	'upload_penutupan' ,
-	'upload_penurunan' ,
-	'upload_lain' ,
-	'upload_transkrip' ,
-	'upload_kesanggupan' ,
-	'upload_permohonan' ,
-	'upload_kk' ,
-	'upload_ktm' ,   
-                   'upload_bukti_lain', 
-                  'upload_meninggal_covid', 
+                    'upload_kk' ,
+                    'upload_ktp' ,
+                    'upload_foto' ,
+                    'upload_ktm' ,
+                    'upload_raport1' ,
+                    'upload_raport2' ,
+                    'upload_raport3' ,
+                    'upload_raport4' ,
+                    'upload_raport5' ,
+                    'upload_raport6' ,
+                    'upload_prestasi' ,
+                    'upload_listrik' ,
+                    'upload_pdam' ,
+                    'upload_pbb' ,
+                    'upload_dokumen' ,
+                    'upload_meninggal' ,
+                    'upload_phk' ,
+                    'upload_pakta_integritas' ,
                   
                 ], 'file',
                 'skipOnEmpty' => true, 'extensions' => 'jpeg,jpg,png,pdf', 'maxSize' => 104857600
             ],
-          [['ket_masalah_lain'],'safe']
+         
         
         ];
     }
@@ -148,21 +159,24 @@ class Borang extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-                  
-'upload_meninggal' => "Orang Tua Meninggal (Upload Bukti)" ,
-	'upload_pemutusan' => "Orang Tua Mengalami PHK (Upload Bukti)" ,
-	'upload_kerugian' => "Orang Tua Mengalami Kerugian Usaha / Pailit (Upload Bukti)" ,
-	'upload_penutupan' => "Orang Tua Mengalami Penutupan Usaha (Upload Bukti)" ,
-	'upload_penurunan' => "Orang Tua Mengalami Penurunan Pendapatan Signifikan (Upload Bukti)" ,
-   'upload_bukti_lain' =>'Upload Bukti Lainnya',         
-	'upload_transkrip' => "Upload Transkrip Sementara" ,
-	'upload_kesanggupan'  => "Upload Kesanggupan Menyelesaikan Tugas Akhir" ,
-	'upload_permohonan'  => "Upload Permohonan pengunduran masa pembayaran UKT" ,
-	'upload_lain' => ' Surat Pernyataan Pekerjaan Orangtua (Bapak/Ibu) / Wali	' ,   
-  'upload_meninggal_covid' => 'Surat Keterangan Kematian Orang Tua Akibat Covid-19 dari Rumah Sakit / Puskesmas',   
-          'permohonan_perpanjangan' =>'Permohonan Perpanjangan Masa Pembayaran Untuk UKT 6 - 7'
-      
-        ];
+            'upload_kk'  => "KK",
+            'upload_ktp'  => "KTP",
+            'upload_foto'  => "Pas foto",
+            'upload_ktm' => "KTM",
+            'upload_raport1' => "Raport Semester 1",
+            'upload_raport2' => "Raport Semester 2",
+            'upload_raport3' => "Raport Semester 3",
+            'upload_raport4' => "Raport Semester 4",
+            'upload_raport5' => "Raport Semester 5",
+            'upload_raport6' => "Raport Semester 6",
+            'upload_prestasi' => 'Dokumen Prestasi',
+            'upload_listrik' =>'Rekening Listrik Bulan Terbaru' ,
+            'upload_pdam' =>'Rekening PDAM Bulan Terbaru' ,
+            'upload_pbb' =>'Bukti pembayaran PBB tahun terakhir dari orang tua/wali ' ,
+            'upload_dokumen' => "Kartu Indonesia Pintar untuk PIP/Kartu Keluarga Sejahtera untuk PKH/Kartu Jakarta Pintar (KJP); atau penghasilan orang tua/wali bagi calon penerima yang tidak memiliki Kartu Indonesia Pintar untuk PIP/Kartu Keluarga Sejahtera untuk PKH/Kartu Jakarta Pintar" ,
+            'upload_meninggal' => "Orang Tua meninggal dunia dibuktikan dengan surat keterangan kematian" ,
+            'upload_phk' =>"Pemutusan hubungan kerja dibuktikan dengan surat keterangan PHK dari perusahaan atau tempat kerja",
+            'upload_pakta_integritas' =>"Pakta Integritas (Lampiran form)" ,        ];
     }
 
     public function getMahasiswa()

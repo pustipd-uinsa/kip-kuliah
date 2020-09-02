@@ -6,7 +6,7 @@ use yii\helpers\Url;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
-$this->title = 'Permohonan Keringanan UKT 2020  UIN Sunan Ampel';
+$this->title = 'Permohonan KIP Kuliah UIN Sunan Ampel';
 dmstr\web\AdminLteAsset::register($this);
 
 
