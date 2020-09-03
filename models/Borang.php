@@ -60,7 +60,7 @@ class Borang extends \yii\db\ActiveRecord
             // Place your custom code here
             $files =
                 [
-                
+                    'upload_ijazah' ,
                     'upload_kk' ,
                     'upload_ktp' ,
                     'upload_foto' ,
@@ -122,6 +122,8 @@ class Borang extends \yii\db\ActiveRecord
                     'upload_dokumen' ,
                     'upload_meninggal' ,
                     'upload_phk' ,
+                    'upload_ijazah' ,
+                    
                     'upload_pakta_integritas' ,
                   
                 ], 'file',
@@ -169,7 +171,10 @@ class Borang extends \yii\db\ActiveRecord
             'upload_raport4' => "Raport Semester 4",
             'upload_raport5' => "Raport Semester 5",
             'upload_raport6' => "Raport Semester 6",
+            'upload_ijazah' => "ljazah beserta transkrip nilai yang dilegalisasi oleh Kepala Madrasah",
+            
             'upload_prestasi' => 'Dokumen Prestasi',
+
             'upload_listrik' =>'Rekening Listrik Bulan Terbaru' ,
             'upload_pdam' =>'Rekening PDAM Bulan Terbaru' ,
             'upload_pbb' =>'Bukti pembayaran PBB tahun terakhir dari orang tua/wali ' ,

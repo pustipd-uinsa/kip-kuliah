@@ -239,6 +239,22 @@ $this->registerJs($js1);
         </div>
 
     </div>
+    <div class="row">
+        <div class="col-md-3">
+            <?= $form->field($model, 'upload_ijazah')->fileInput() ?>
+        </div>
+        <div class="col-md-6">
+                  <?= Html::a(
+                    Yii::t('app', '<i class="fa fa-search" aria-hidden="true"></i> '),
+                    Url::to(['gambar', 'id' => $model->upload_ijazah]),
+                    [
+                        'data-toggle' => 'modal', 'data-target' => '#modal1', 'class' => 'popupModal', 'id' => 'href' . $model->upload_ijazah,
+                        'title' => 'Buka File', 'class' => 'btn btn-info btn-round', 'data-dismiss' => "modal"
+                    ]
+                ); ?>  
+        </div>
+
+    </div>
 
     <div class="row">
         <div class="col-md-3">
