@@ -50,19 +50,15 @@ class SignupForm extends Model
     {
       
       
-        $model = Mahasiswa::find()->where(['nim' => $this->username , 'tgllahir' => $this->tahun . '-' . $this->bulan . '-' . $this->tanggal])->one();
-        if (!$model) {
-            $this->addError('username', 'NIM dan Tanggal Lahir Tidak Cocok');
-        }
-        
+     
         $model = Mahasiswa::find()->where(['nim' => $this->username , 'tgllahir' => $this->tahun . '-' . $this->bulan . '-' . $this->tanggal])->one();
         if (!$model) {
             $this->addError('username', 'NIM dan Tanggal Lahir Tidak Cocok');
         }
       
-        $model = Mahasiswa::find()->where("periodemasuk<'20181'")->andWhere(['nim' => $this->username])->one();
+        $model = Mahasiswa::find()-where(['nim' => $this->username])->one();
         if ($model) {
-            $this->addError('NIM', 'KIP Kuliah Untuk Mahasiswa Angkatan 2018-2020');
+            $this->addError('NIM', 'KIP Kuliah Untuk Mahasiswa Angkatan 2019-2020');
         }
     }
     public function attributeLabels()
