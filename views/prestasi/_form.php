@@ -316,7 +316,7 @@ $this->registerJs($js1);
 
     </div>
     
-  <!--
+  
   
         <div class="row">
         <div class="col-md-3">
@@ -351,7 +351,7 @@ $this->registerJs($js1);
         </div>
 
     </div>
--->
+
 
     <div class="row">
         <div class="col-md-3">

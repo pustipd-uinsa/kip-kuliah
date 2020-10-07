@@ -42,10 +42,6 @@ class Borang extends \yii\db\ActiveRecord
                 'upload_dokumen' ,
                 'upload_meninggal' ,
                 'upload_phk' ,
-                'upload_rumah' ,
-            'upload_penghasilan',
-             'upload_ijazah',
-          'upload_kendaraan',
                 'upload_pakta_integritas' ,       
         ];
         foreach ($files as $file) {
@@ -83,10 +79,6 @@ class Borang extends \yii\db\ActiveRecord
                     'upload_meninggal' ,
                     'upload_phk' ,
                     'upload_pakta_integritas' ,
-                'upload_penghasilan',
-              'upload_kendaraan',
-                    'upload_rumah' ,
-                
             ];
             foreach ($files as $file) {
                 $this->upload($file);
@@ -106,13 +98,8 @@ class Borang extends \yii\db\ActiveRecord
     {
         return [
           
-          
-            [ ['jumlah_keluarga'],'required' ] ,
-            [ ['penghasilan_kotor'],'number' ] ,
-          [
-              
-              [
-               'status_finalisasi','jumlah_keluarga'
+            [[
+            'status_finalisasi'
             ], 'integer'],
             [['nim'], 'string', 'max' => 20],
 
@@ -136,9 +123,6 @@ class Borang extends \yii\db\ActiveRecord
                     'upload_meninggal' ,
                     'upload_phk' ,
                     'upload_ijazah' ,
-                  'upload_rumah' ,
-                  'upload_penghasilan',
-                  'upload_kendaraan',
                     
                     'upload_pakta_integritas' ,
                   
@@ -177,13 +161,10 @@ class Borang extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'upload_rumah' => 'Foto rumah (tampak dari luar, kondisi di dalam, lantai, atap)',
-          'upload_kk'  => "Hasil Scan Kartu Susunan Keluarga ",
-            'upload_ktp'  => "Hasil Scan KTP",
+            'upload_kk'  => "KK",
+            'upload_ktp'  => "KTP",
             'upload_foto'  => "Pas foto",
-            'upload_ktm' => "Hasil Scan Kartu Tanda Mahasiswa",
-           'jumlah_keluarga' => 'Jumlah Anggota Keluarga',
-            'upload_penghasilan' => 'Pernyataan Penghasilan Orangtua ',
+            'upload_ktm' => "KTM",
             'upload_raport1' => "Raport Semester 1",
             'upload_raport2' => "Raport Semester 2",
             'upload_raport3' => "Raport Semester 3",
@@ -191,18 +172,18 @@ class Borang extends \yii\db\ActiveRecord
             'upload_raport5' => "Raport Semester 5",
             'upload_raport6' => "Raport Semester 6",
             'upload_ijazah' => "ljazah beserta transkrip nilai yang dilegalisasi oleh Kepala Madrasah",
-          'upload_kendaraan' => 'Surat keterangan kepemilikan kendaraan bermotor',
             
             'upload_prestasi' => 'Dokumen Prestasi',
+            'upload_rumah' =>" 1. Rumah tampak depan harus terlihat batas sisi kanan dan sisi kiri juga terlihat atapnya 2. Foto tampak Lantai seluruh ruang tamu,
+             3. Foto tampak seluruh ruang Tamu, 4. Foto tampak seluruh dapur, 5. Foto tampak seluruh kamar mandi",
 
             'upload_listrik' =>'Rekening Listrik Bulan Terbaru' ,
             'upload_pdam' =>'Rekening PDAM Bulan Terbaru' ,
             'upload_pbb' =>'Bukti pembayaran PBB tahun terakhir dari orang tua/wali ' ,
-            'upload_dokumen' => "Hasil scan  Fotokopi Kartu Indonesia Pintar untuk PIP/Kartu Keluarga
-Sejahtera untuk PKH/Kartu Jakarta Pintar (bila ada)" ,
+            'upload_dokumen' => "Kartu Indonesia Pintar untuk PIP/Kartu Keluarga Sejahtera untuk PKH/Kartu Jakarta Pintar (KJP); atau penghasilan orang tua/wali bagi calon penerima yang tidak memiliki Kartu Indonesia Pintar untuk PIP/Kartu Keluarga Sejahtera untuk PKH/Kartu Jakarta Pintar" ,
             'upload_meninggal' => "Orang Tua meninggal dunia dibuktikan dengan surat keterangan kematian" ,
             'upload_phk' =>"Pemutusan hubungan kerja dibuktikan dengan surat keterangan PHK dari perusahaan atau tempat kerja",
-            'upload_pakta_integritas' =>"Pakta Integritas" ,        ];
+            'upload_pakta_integritas' =>"Pakta Integritas (Lampiran form)" ,        ];
     }
 
     public function getMahasiswa()
