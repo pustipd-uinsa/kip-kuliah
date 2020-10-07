@@ -2,7 +2,8 @@
 use dmstr\widgets\Alert;
 
 use yii\helpers\Html;
-
+$model = \app\models\Borang::find()->where(['nim' => Yii::$app->user->identity->username])->one();
+     
 ?>
 <div class="x_panel">
     <div class="x_title">
@@ -17,8 +18,10 @@ use yii\helpers\Html;
     </div>
     <div class="x_content">
         <div class="col-md-5 col-sm-12 col-xs-12">
-      <img src="https://siakad.uinsby.ac.id/akademik/siakad/uploads/fotomhs/<?=substr( Yii::$app->user->identity->model->periodemasuk,0,4)?>/<?=Yii::$app->user->identity->username?>">     
-
+          <?php if(!is_null($model)) { ?>
+      <img src="http://kipk.uinsby.ac.id/document/<?=$model->upload_foto?>" >   
+         <?php } ?>
+                
 
         </div>
         <div class="col-md-7 col-sm-12 col-xs-12" style="border:0px solid #e5e5e5;">
@@ -41,7 +44,6 @@ use yii\helpers\Html;
  ["class"=>'btn btn-success btn-flat']) ?>
 
  <?php
-     $model = \app\models\Borang::find()->where(['nim' => Yii::$app->user->identity->username])->one();
             if (!is_null($model) ) 
              {
                 echo  html::a("Finalisasi Data", ["/prestasi/finalisasi"], ["class"=>'btn btn-info btn-flat','data-confirm' => 'Pastikan Dokumen yang di unggah lengkap dan benar , setelah Finalisasi data tidak bisa diubah ']);
